@@ -1,11 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { toast } from "sonner";
 import heroImg from "@/assets/sonolift-hero.jpg";
 import bonusImg from "@/assets/sonolift-bonus.jpg";
 import sleepImg from "@/assets/sonolift-sleep.jpg";
+import { fetchFeaturedProduct, type ProductNode } from "@/lib/shopify";
+import { useCartStore } from "@/stores/cartStore";
+import { useCartSync } from "@/hooks/useCartSync";
 
-// TODO: Substitua pela URL real do checkout Yampi antes de publicar.
-const CHECKOUT_URL = "https://seguro.yampi.com.br/checkout";
 const CTA_LABEL = "QUERO MEU KIT FACIAL + BRINDE GRÁTIS";
 
 export const Route = createFileRoute("/")({
@@ -13,6 +16,7 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  useCartSync();
   return (
     <div className="min-h-screen bg-background text-foreground">
       <StickyBar />
@@ -73,7 +77,7 @@ function Nav() {
           <a href="#avaliacoes" className="hover:text-midnight-deep">Avaliações</a>
         </nav>
         <a
-          href={CHECKOUT_URL}
+          href="#oferta"
           className="hidden rounded-full bg-midnight px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-porcelain shadow-soft transition hover:bg-midnight-deep md:inline-block"
         >
           Comprar
@@ -145,19 +149,57 @@ function OfferBadge() {
   );
 }
 
+function useFeaturedProduct() {
+  return useQuery({
+    queryKey: ["sonolift-featured-product"],
+    queryFn: fetchFeaturedProduct,
+    staleTime: 5 * 60 * 1000,
+  });
+}
+
 function CTAButton({ block = false }: { block?: boolean }) {
+  const { data: product, isLoading: loadingProduct } = useFeaturedProduct();
+  const addItem = useCartStore((s) => s.addItem);
+  const isLoading = useCartStore((s) => s.isLoading);
+
+  const handleClick = async () => {
+    const variant = product?.variants.edges[0]?.node;
+    if (!variant) {
+      toast.error("Produto indisponível no momento.");
+      return;
+    }
+    const checkoutUrl = await addItem({
+      variantId: variant.id,
+      title: product.title,
+      imageUrl: product.images.edges[0]?.node.url,
+      price: variant.price,
+      quantity: 1,
+    });
+    if (checkoutUrl) {
+      window.open(checkoutUrl, "_blank");
+    } else {
+      toast.error("Não foi possível iniciar o checkout. Tente novamente.");
+    }
+  };
+
+  const busy = loadingProduct || isLoading;
+
   return (
-    <a
-      href={CHECKOUT_URL}
-      className={`group inline-flex items-center justify-center gap-2 rounded-full bg-gold-gradient px-8 py-4 text-center text-sm font-bold uppercase tracking-wider text-midnight-deep shadow-luxe transition hover:scale-[1.02] hover:shadow-[0_20px_40px_-15px_oklch(0.78_0.13_82/0.6)] sm:text-base ${
+    <button
+      onClick={handleClick}
+      disabled={busy}
+      className={`group inline-flex items-center justify-center gap-2 rounded-full bg-gold-gradient px-8 py-4 text-center text-sm font-bold uppercase tracking-wider text-midnight-deep shadow-luxe transition hover:scale-[1.02] hover:shadow-[0_20px_40px_-15px_oklch(0.78_0.13_82/0.6)] disabled:cursor-not-allowed disabled:opacity-70 sm:text-base ${
         block ? "w-full" : ""
       }`}
     >
-      {CTA_LABEL}
-      <span className="transition group-hover:translate-x-1">→</span>
-    </a>
+      {busy ? "Processando…" : CTA_LABEL}
+      {!busy && <span className="transition group-hover:translate-x-1">→</span>}
+    </button>
   );
 }
+
+// Avoid unused import warning on ProductNode
+export type _P = ProductNode;
 
 /* =========================================================================
  *  SECTION · Trust strip
