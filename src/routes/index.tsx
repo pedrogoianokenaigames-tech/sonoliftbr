@@ -1,11 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { toast } from "sonner";
 import heroImg from "@/assets/sonolift-hero.jpg";
 import bonusImg from "@/assets/sonolift-bonus.jpg";
 import sleepImg from "@/assets/sonolift-sleep.jpg";
+import { fetchFeaturedProduct, type ProductNode } from "@/lib/shopify";
+import { useCartStore } from "@/stores/cartStore";
+import { useCartSync } from "@/hooks/useCartSync";
 
-// TODO: Substitua pela URL real do checkout Yampi antes de publicar.
-const CHECKOUT_URL = "https://seguro.yampi.com.br/checkout";
 const CTA_LABEL = "QUERO MEU KIT FACIAL + BRINDE GRÁTIS";
 
 export const Route = createFileRoute("/")({
@@ -13,6 +16,7 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  useCartSync();
   return (
     <div className="min-h-screen bg-background text-foreground">
       <StickyBar />
