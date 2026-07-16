@@ -655,6 +655,8 @@ function UGCSection() {
                   playsInline
                   autoPlay
                   preload="metadata"
+                  controls
+                  controlsList="nodownload"
                 />
                 <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 text-white">
                   <p className="font-display text-lg leading-tight">{v.name}</p>
