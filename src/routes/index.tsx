@@ -11,6 +11,12 @@ import ugc2 from "@/assets/ugc2.mp4.asset.json";
 import ugc3 from "@/assets/ugc3.mp4.asset.json";
 import ugc4 from "@/assets/ugc4.mp4.asset.json";
 import ugc5 from "@/assets/ugc5.mp4.asset.json";
+import area1 from "@/assets/area1.jpg.asset.json";
+import area2 from "@/assets/area2.jpg.asset.json";
+import area3 from "@/assets/area3.jpg.asset.json";
+import area4 from "@/assets/area4.jpg.asset.json";
+import area5 from "@/assets/area5.jpg.asset.json";
+import area6 from "@/assets/area6.jpg.asset.json";
 
 const CTA_LABEL = "QUERO MEU KIT FACIAL + COLO GRÁTIS";
 
@@ -53,12 +59,12 @@ const UGC_VIDEOS: { src: string; poster: string; name: string; benefit: string }
 ];
 
 const TREATMENT_MAP: { area: string; img: string }[] = [
-  { area: "Testa", img: "https://images.unsplash.com/photo-1596704017254-9b121068fb31?auto=format&fit=crop&w=800&q=80" },
-  { area: "Contorno dos olhos", img: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=800&q=80" },
-  { area: "Sulco nasolabial", img: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=800&q=80" },
-  { area: "Bochechas", img: "https://images.unsplash.com/photo-1614270263654-cf9a49b3f26a?auto=format&fit=crop&w=800&q=80" },
-  { area: "Pescoço", img: "https://images.unsplash.com/photo-1614285457768-646e5eff8ab9?auto=format&fit=crop&w=800&q=80" },
-  { area: "Colo", img: "https://images.unsplash.com/photo-1620331311520-246422fd82f9?auto=format&fit=crop&w=800&q=80" },
+  { area: "Testa", img: area1.url },
+  { area: "Contorno dos olhos", img: area2.url },
+  { area: "Sulco nasolabial", img: area3.url },
+  { area: "Bochechas", img: area4.url },
+  { area: "Pescoço", img: area5.url },
+  { area: "Colo", img: area6.url },
 ];
 
 export const Route = createFileRoute("/")({
