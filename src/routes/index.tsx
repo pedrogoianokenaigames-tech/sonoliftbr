@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { toast } from "sonner";
@@ -622,17 +623,17 @@ function FooterSection() {
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">Institucional</p>
             <ul className="mt-4 space-y-2 text-sm text-cream/70">
-              <li>Política de privacidade</li>
-              <li>Termos de uso</li>
-              <li>Reembolso e trocas</li>
-              <li>Frete e entrega</li>
+              <li><Link to="/politica-de-privacidade" className="hover:text-gold">Política de privacidade</Link></li>
+              <li><Link to="/termos-de-uso" className="hover:text-gold">Termos de uso</Link></li>
+              <li><Link to="/politica-de-reembolso" className="hover:text-gold">Reembolso e trocas</Link></li>
+              <li><Link to="/politica-de-frete" className="hover:text-gold">Frete e entrega</Link></li>
             </ul>
           </div>
         </div>
       </div>
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-4 py-6 text-xs text-cream/60 md:flex-row">
-          <span>© 2026 SonoLift™. Todos os direitos reservados.</span>
+          <span>© 2026 SonoLift Beauty LTDA · CNPJ 76.047.876/0001-90</span>
           <span>Visa · Mastercard · ELO · Pix</span>
         </div>
       </div>
