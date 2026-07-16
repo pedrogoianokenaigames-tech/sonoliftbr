@@ -9,7 +9,7 @@ import { fetchFeaturedProduct, type ProductNode } from "@/lib/shopify";
 import { useCartStore } from "@/stores/cartStore";
 import { useCartSync } from "@/hooks/useCartSync";
 
-const CTA_LABEL = "QUERO MEU KIT FACIAL + BRINDE GRÁTIS";
+const CTA_LABEL = "QUERO MEU KIT FACIAL + COLO GRÁTIS";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -50,7 +50,7 @@ function StickyBar() {
     <div className="sticky top-0 z-50 bg-midnight-gradient text-porcelain">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-center gap-1 px-4 py-2.5 text-center text-[13px] sm:flex-row sm:gap-4 sm:text-sm">
         <span className="font-medium tracking-wide">
-          🎁 <span className="text-gold">BRINDE GARANTIDO:</span> Kit Pescoço e Colo incluído grátis no seu pedido.
+          🎁 <span className="text-gold">BRINDE GARANTIDO:</span> Kit Colo incluído grátis no seu pedido.
         </span>
         <span className="hidden text-gold/70 sm:inline">•</span>
         <span className="font-mono text-gold">
@@ -136,7 +136,7 @@ function OfferBadge() {
     <div className="rounded-2xl border border-gold/30 bg-card p-6 shadow-soft">
       <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">Oferta de lançamento</p>
       <p className="mt-2 font-display text-xl leading-tight text-midnight-deep sm:text-2xl">
-        Kit Facial SonoLift <span className="text-muted-foreground">+</span> Pescoço e Colo <span className="text-gold">GRÁTIS</span>
+        Kit Facial SonoLift <span className="text-muted-foreground">+</span> Colo <span className="text-gold">GRÁTIS</span>
       </p>
       <div className="mt-4 flex flex-wrap items-baseline gap-3">
         <span className="text-sm text-muted-foreground line-through">De R$ 397</span>
@@ -354,13 +354,6 @@ function Offer() {
     },
     {
       tag: "Bônus Exclusivo",
-      name: "SonoLift™ Pescoço",
-      areas: ["Pescoço", "Linhas causadas pela posição de dormir"],
-      price: "R$ 67",
-      free: true,
-    },
-    {
-      tag: "Bônus Exclusivo",
       name: "SonoLift™ Colo",
       areas: ["Colo", "Linhas e vincos causados pela compressão noturna"],
       price: "R$ 67",
@@ -373,14 +366,14 @@ function Offer() {
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">Oferta especial de lançamento</p>
           <h2 className="mt-3 font-display text-3xl leading-tight text-midnight-deep md:text-4xl">
-            Compre o Kit Facial e ganhe <em className="italic text-gold">Pescoço e Colo</em> grátis.
+            Compre o Kit Facial e ganhe o <em className="italic text-gold">Kit Colo</em> grátis.
           </h2>
           <p className="mt-4 text-muted-foreground">
             Proteção completa contra as marcas do travesseiro, pagando por uma única peça.
           </p>
         </div>
 
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
+        <div className="mt-14 grid gap-6 md:grid-cols-2">
           {items.map((i) => (
             <div key={i.name} className="flex flex-col rounded-2xl border border-border bg-card p-6 shadow-soft">
               <p className={`text-[11px] font-bold uppercase tracking-[0.18em] ${i.free ? "text-gold" : "text-muted-foreground"}`}>
@@ -409,7 +402,7 @@ function Offer() {
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">Você recebe hoje</p>
               <p className="mt-2 font-display text-2xl leading-tight md:text-3xl">
-                Sistema Facial <span className="text-porcelain/70">+</span> Pescoço <span className="text-porcelain/70">+</span> Colo
+                Sistema Facial <span className="text-porcelain/70">+</span> Colo <span className="text-gold">GRÁTIS</span>
               </p>
               <div className="mt-6 flex flex-wrap items-baseline gap-3">
                 <span className="text-sm text-porcelain/60 line-through">Valor total R$ 397</span>
@@ -423,7 +416,7 @@ function Offer() {
             </div>
             <img
               src={bonusImg}
-              alt="Bônus grátis: Kit Pescoço e Colo em embalagem dourada"
+              alt="Bônus grátis: Kit Colo SonoLift em embalagem dourada"
               width={1200}
               height={1200}
               loading="lazy"
@@ -509,7 +502,7 @@ function Guarantee() {
           Experimente sem risco. Ame ou devolvemos seu dinheiro.
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
-          Teste o Sistema Facial SonoLift™ com Pescoço e Colo inclusos por 30 noites. Se você não acordar com a pele visivelmente mais lisa e firme, devolvemos 100% do seu investimento.
+          Teste o Sistema Facial SonoLift™ com o Kit Colo incluso por 30 noites. Se você não acordar com a pele visivelmente mais lisa e firme, devolvemos 100% do seu investimento.
         </p>
         <div className="mt-8"><CTAButton /></div>
         <p className="mt-4 text-xs text-muted-foreground">
