@@ -18,7 +18,8 @@ import areaPescoco from "@/assets/pescoco.jpg.asset.json";
 import areaPeito from "@/assets/peito.jpg.asset.json";
 import stepPrepAsset from "@/assets/ritual-prep.webp.asset.json";
 import stepPeelAsset from "@/assets/ritual-pos.webp.asset.json";
-import stepStoreAsset from "@/assets/ritual-noite.webp.asset.json";
+import stepNightAsset from "@/assets/ritual-noite.webp.asset.json";
+import stepStoreAsset from "@/assets/step-store.webp.asset.json";
 
 const CTA_LABEL = "QUERO MEU KIT FACIAL + COLO GRÁTIS";
 
