@@ -134,3 +134,31 @@
 @utility shadow-soft {
   box-shadow: var(--shadow-soft);
 }
+
+@keyframes reveal-up {
+  from { opacity: 0; transform: translate3d(0, 24px, 0); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+@keyframes cta-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 oklch(0.78 0.13 82 / 0.55), var(--shadow-luxe); }
+  50%      { box-shadow: 0 0 0 14px oklch(0.78 0.13 82 / 0), var(--shadow-luxe); }
+}
+
+@utility reveal {
+  opacity: 0;
+  will-change: opacity, transform;
+}
+
+@utility reveal-in {
+  animation: reveal-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@utility animate-cta-pulse {
+  animation: cta-pulse 2.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal-in { opacity: 1 !important; animation: none !important; transform: none !important; }
+  .animate-cta-pulse { animation: none !important; }
+}

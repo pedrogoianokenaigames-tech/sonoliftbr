@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type ReactNode, type CSSProperties } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { toast } from "sonner";
 import { fetchFeaturedProduct, type ProductNode } from "@/lib/shopify";
@@ -67,19 +67,64 @@ function Index() {
       <TopBar />
       <Nav />
       <HeroSection />
-      <InvisibleEnemySection />
-      <BeforeAfterSliderSection />
-      <BeforeAfterSection />
-      <ClinicalStudySection />
-      <MechanismsSection />
-      <HowToUseSection />
-      <UGCSection />
-      <TreatmentMapSection />
-      <OfferSection />
-      <ReviewsSection />
-      <FAQSection />
+      <Reveal><InvisibleEnemySection /></Reveal>
+      <Reveal><BeforeAfterSliderSection /></Reveal>
+      <Reveal><BeforeAfterSection /></Reveal>
+      <Reveal><ClinicalStudySection /></Reveal>
+      <Reveal><MechanismsSection /></Reveal>
+      <Reveal><HowToUseSection /></Reveal>
+      <Reveal><UGCSection /></Reveal>
+      <Reveal><TreatmentMapSection /></Reveal>
+      <Reveal><OfferSection /></Reveal>
+      <Reveal><ReviewsSection /></Reveal>
+      <Reveal><FAQSection /></Reveal>
       <FooterSection />
     </div>
+  );
+}
+
+/* ============================================================
+ *  Reveal — Scroll-triggered fade-in-up (Intersection Observer)
+ * ============================================================ */
+function Reveal({
+  children,
+  delay = 0,
+  as: Tag = "div",
+}: {
+  children: ReactNode;
+  delay?: number;
+  as?: "div" | "section" | "li" | "article";
+}) {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const [shown, setShown] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            setShown(true);
+            io.disconnect();
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -60px 0px" },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  const style: CSSProperties = { animationDelay: `${delay}ms` };
+  return (
+    <Tag
+      ref={ref as never}
+      className={shown ? "reveal-in" : "reveal"}
+      style={style}
+    >
+      {children}
+    </Tag>
   );
 }
 
@@ -193,7 +238,7 @@ function CTAButton({ block = false, label = CTA_LABEL }: { block?: boolean; labe
     <button
       onClick={handleClick}
       disabled={busy}
-      className={`group inline-flex items-center justify-center gap-2 rounded-full bg-gold-gradient px-8 py-4 text-center text-sm font-bold uppercase tracking-wider text-midnight-deep shadow-luxe transition hover:scale-[1.02] disabled:cursor-not-allowed disabled:opacity-70 sm:text-base ${block ? "w-full" : ""}`}
+      className={`group inline-flex items-center justify-center gap-2 rounded-full bg-gold-gradient px-8 py-4 text-center text-sm font-bold uppercase tracking-wider text-midnight-deep shadow-luxe animate-cta-pulse transition hover:scale-[1.02] disabled:cursor-not-allowed disabled:opacity-70 sm:text-base ${block ? "w-full" : ""}`}
     >
       {busy ? "Processando…" : label}
       {!busy && <span className="transition group-hover:translate-x-1">→</span>}
@@ -460,8 +505,8 @@ function HowToUseSection() {
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((s, i) => (
+            <Reveal key={s.title} delay={i * 120}>
             <div
-              key={s.title}
               className="group flex flex-col overflow-hidden rounded-2xl border border-border/60 bg-cream shadow-soft transition hover:shadow-luxe"
             >
               <div className="relative aspect-square overflow-hidden">
@@ -483,6 +528,7 @@ function HowToUseSection() {
                 </p>
               </div>
             </div>
+            </Reveal>
           ))}
         </div>
       </div>
@@ -562,8 +608,10 @@ function ClinicalStudySection() {
           </p>
         </div>
         <div className="mt-14 grid gap-6 sm:grid-cols-2 md:grid-cols-4">
-          {stats.map((s) => (
-            <CountStat key={s.label} n={s.n} label={s.label} />
+          {stats.map((s, i) => (
+            <Reveal key={s.label} delay={i * 120}>
+              <CountStat n={s.n} label={s.label} />
+            </Reveal>
           ))}
         </div>
       </div>
@@ -633,8 +681,9 @@ function TreatmentMapSection() {
           </p>
         </div>
         <div className="mt-14 grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-6">
-          {TREATMENT_MAP.map((t) => (
-            <div key={t.area} className="group relative overflow-hidden rounded-2xl shadow-soft">
+          {TREATMENT_MAP.map((t, i) => (
+            <Reveal key={t.area} delay={i * 90}>
+            <div className="group relative overflow-hidden rounded-2xl shadow-soft">
               <img
                 src={t.img}
                 alt={`Área tratada: ${t.area}`}
@@ -646,6 +695,7 @@ function TreatmentMapSection() {
                 {t.area}
               </p>
             </div>
+            </Reveal>
           ))}
         </div>
       </div>
