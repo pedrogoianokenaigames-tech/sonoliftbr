@@ -6,6 +6,11 @@ import { toast } from "sonner";
 import { fetchFeaturedProduct, type ProductNode } from "@/lib/shopify";
 import { useCartStore } from "@/stores/cartStore";
 import { useCartSync } from "@/hooks/useCartSync";
+import ugc1 from "@/assets/ugc1.mp4.asset.json";
+import ugc2 from "@/assets/ugc2.mp4.asset.json";
+import ugc3 from "@/assets/ugc3.mp4.asset.json";
+import ugc4 from "@/assets/ugc4.mp4.asset.json";
+import ugc5 from "@/assets/ugc5.mp4.asset.json";
 
 const CTA_LABEL = "QUERO MEU KIT FACIAL + COLO GRÁTIS";
 
@@ -16,31 +21,31 @@ const BEFORE_AFTER_VIDEO =
   "https://videos.pexels.com/video-files/6540923/6540923-uhd_1440_2732_25fps.mp4";
 const UGC_VIDEOS: { src: string; poster: string; name: string; benefit: string }[] = [
   {
-    src: "https://videos.pexels.com/video-files/8940722/8940722-uhd_1440_2732_25fps.mp4",
+    src: ugc1.url,
     poster: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80",
     name: "Marina S.",
     benefit: "Pele lisa ao acordar",
   },
   {
-    src: "https://videos.pexels.com/video-files/7592725/7592725-uhd_1440_2732_25fps.mp4",
+    src: ugc2.url,
     poster: "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=800&q=80",
     name: "Cláudia R.",
     benefit: "Sumiram as marcas do travesseiro",
   },
   {
-    src: "https://videos.pexels.com/video-files/8940924/8940924-uhd_1440_2732_25fps.mp4",
+    src: ugc3.url,
     poster: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80",
     name: "Regina T.",
     benefit: "Colo mais firme em 3 semanas",
   },
   {
-    src: "https://videos.pexels.com/video-files/7592731/7592731-uhd_1440_2732_25fps.mp4",
+    src: ugc4.url,
     poster: "https://images.unsplash.com/photo-1512316609839-ce289d3eba0a?auto=format&fit=crop&w=800&q=80",
     name: "Sônia L.",
     benefit: "Acordo descansada e sem vincos",
   },
   {
-    src: "https://videos.pexels.com/video-files/7663029/7663029-uhd_1440_2732_25fps.mp4",
+    src: ugc5.url,
     poster: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=800&q=80",
     name: "Beatriz F.",
     benefit: "Rugas do sono atenuadas",
