@@ -83,7 +83,7 @@ function QuemSomosPage() {
         você dorme.
       </P>
 
-      <P className-="">
+      <P>
         Dúvidas ou suporte:{" "}
         <a href="mailto:sonolift@gmail.com" className="text-gold underline">
           sonolift@gmail.com
