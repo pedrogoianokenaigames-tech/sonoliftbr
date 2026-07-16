@@ -580,11 +580,14 @@ function CountStat({ n, suffix = "%", label }: { n: number; suffix?: string; lab
       ref={ref}
       className="rounded-2xl border border-gold/30 bg-white p-8 text-center shadow-soft"
     >
-      <p className="font-display text-6xl font-semibold tabular-nums text-midnight-deep md:text-7xl">
+      <p
+        className="font-display font-semibold tabular-nums text-midnight-deep"
+        style={{ fontSize: "clamp(3.5rem,8vw,6rem)", lineHeight: 1, letterSpacing: "-.02em" }}
+      >
         {value}
         <span className="text-gold">{suffix}</span>
       </p>
-      <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{label}</p>
+      <p className="mt-4 text-base leading-relaxed text-muted-foreground md:text-lg">{label}</p>
     </div>
   );
 }
