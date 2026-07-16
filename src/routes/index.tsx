@@ -292,14 +292,14 @@ function BeforeAfterSliderSection() {
           <img
             src={SLIDER_AFTER}
             alt="Depois — pele lisa"
-            className="absolute inset-0 h-full w-full object-cover"
+            className="absolute inset-0 h-full w-full object-cover scale-125 origin-center"
             draggable={false}
           />
           {/* Before (overlay clipped by slider position) */}
           <img
             src={SLIDER_BEFORE}
             alt="Antes — pele marcada"
-            className="absolute inset-0 h-full w-full object-cover"
+            className="absolute inset-0 h-full w-full object-cover scale-125 origin-center"
             style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}
             draggable={false}
           />
