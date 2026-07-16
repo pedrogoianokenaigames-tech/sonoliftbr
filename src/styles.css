@@ -44,6 +44,8 @@
   --color-gold-soft: var(--gold-soft);
   --color-champagne: var(--champagne);
   --color-porcelain: var(--porcelain);
+  --color-cream: var(--cream);
+  --color-lavender: var(--lavender);
   --font-display: "Playfair Display", ui-serif, Georgia, serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 }
@@ -58,6 +60,8 @@
   --gold-soft: oklch(0.86 0.09 85);
   --champagne: oklch(0.94 0.04 82);
   --porcelain: oklch(0.985 0.008 80);
+  --cream: oklch(0.985 0.012 85);
+  --lavender: oklch(0.95 0.03 290);
 
   /* Semantic mapping */
   --background: var(--porcelain);
