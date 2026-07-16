@@ -263,10 +263,11 @@ function InvisibleEnemySection() {
 /* ============================================================
  *  Before / After — interactive comparison slider
  * ============================================================ */
-const SLIDER_BEFORE =
-  "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=1200&q=80";
-const SLIDER_AFTER =
-  "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=1200&q=80";
+import antesAsset from "@/assets/antes.png.asset.json";
+import depoisAsset from "@/assets/depois.png.asset.json";
+
+const SLIDER_BEFORE = antesAsset.url;
+const SLIDER_AFTER = depoisAsset.url;
 
 function BeforeAfterSliderSection() {
   const [pos, setPos] = useState(50);
