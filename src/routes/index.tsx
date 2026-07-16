@@ -650,10 +650,8 @@ function UGCSection() {
                   src={v.src}
                   poster={v.poster}
                   className="aspect-[9/16] h-auto w-full object-cover"
-                  muted
                   loop
                   playsInline
-                  autoPlay
                   preload="metadata"
                   controls
                   controlsList="nodownload"
