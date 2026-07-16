@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type ReactNode, type CSSProperties } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { toast } from "sonner";
 import { fetchFeaturedProduct, type ProductNode } from "@/lib/shopify";
@@ -67,19 +67,64 @@ function Index() {
       <TopBar />
       <Nav />
       <HeroSection />
-      <InvisibleEnemySection />
-      <BeforeAfterSliderSection />
-      <BeforeAfterSection />
-      <ClinicalStudySection />
-      <MechanismsSection />
-      <HowToUseSection />
-      <UGCSection />
-      <TreatmentMapSection />
-      <OfferSection />
-      <ReviewsSection />
-      <FAQSection />
+      <Reveal><InvisibleEnemySection /></Reveal>
+      <Reveal><BeforeAfterSliderSection /></Reveal>
+      <Reveal><BeforeAfterSection /></Reveal>
+      <Reveal><ClinicalStudySection /></Reveal>
+      <Reveal><MechanismsSection /></Reveal>
+      <Reveal><HowToUseSection /></Reveal>
+      <Reveal><UGCSection /></Reveal>
+      <Reveal><TreatmentMapSection /></Reveal>
+      <Reveal><OfferSection /></Reveal>
+      <Reveal><ReviewsSection /></Reveal>
+      <Reveal><FAQSection /></Reveal>
       <FooterSection />
     </div>
+  );
+}
+
+/* ============================================================
+ *  Reveal — Scroll-triggered fade-in-up (Intersection Observer)
+ * ============================================================ */
+function Reveal({
+  children,
+  delay = 0,
+  as: Tag = "div",
+}: {
+  children: ReactNode;
+  delay?: number;
+  as?: "div" | "section" | "li" | "article";
+}) {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const [shown, setShown] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            setShown(true);
+            io.disconnect();
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -60px 0px" },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  const style: CSSProperties = { animationDelay: `${delay}ms` };
+  return (
+    <Tag
+      ref={ref as never}
+      className={shown ? "reveal-in" : "reveal"}
+      style={style}
+    >
+      {children}
+    </Tag>
   );
 }
 
