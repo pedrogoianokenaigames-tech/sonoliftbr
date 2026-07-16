@@ -235,6 +235,267 @@ function BeforeAfterSection() {
 }
 
 /* ============================================================
+ *  Invisible Enemy — emotional hook for the 35+ audience
+ * ============================================================ */
+function InvisibleEnemySection() {
+  return (
+    <section className="bg-cream py-24 md:py-32">
+      <div className="mx-auto max-w-3xl px-4 text-center">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">
+          O inimigo invisível
+        </p>
+        <h2 className="mt-4 font-display text-3xl leading-[1.15] text-midnight-deep md:text-5xl">
+          Enquanto você descansa, algo invisível{" "}
+          <em className="italic text-gold">marca</em> a sua pele.
+        </h2>
+        <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
+          No começo, são apenas <strong className="text-midnight-deep">marcas</strong> de
+          travesseiro que somem no banho. Mas com o tempo, a perda de colágeno
+          transforma essas marcas em{" "}
+          <em className="italic text-midnight-deep">rugas permanentes</em>. Você só
+          percebe quando é tarde demais.
+        </p>
+      </div>
+    </section>
+  );
+}
+
+/* ============================================================
+ *  Before / After — interactive comparison slider
+ * ============================================================ */
+const SLIDER_BEFORE =
+  "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=1200&q=80";
+const SLIDER_AFTER =
+  "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=1200&q=80";
+
+function BeforeAfterSliderSection() {
+  const [pos, setPos] = useState(50);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const dragging = useRef(false);
+
+  const updateFromClientX = (clientX: number) => {
+    const el = containerRef.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const pct = ((clientX - rect.left) / rect.width) * 100;
+    setPos(Math.max(0, Math.min(100, pct)));
+  };
+
+  useEffect(() => {
+    const onMove = (e: MouseEvent | TouchEvent) => {
+      if (!dragging.current) return;
+      const x = "touches" in e ? e.touches[0].clientX : (e as MouseEvent).clientX;
+      updateFromClientX(x);
+    };
+    const stop = () => (dragging.current = false);
+    window.addEventListener("mousemove", onMove);
+    window.addEventListener("touchmove", onMove);
+    window.addEventListener("mouseup", stop);
+    window.addEventListener("touchend", stop);
+    return () => {
+      window.removeEventListener("mousemove", onMove);
+      window.removeEventListener("touchmove", onMove);
+      window.removeEventListener("mouseup", stop);
+      window.removeEventListener("touchend", stop);
+    };
+  }, []);
+
+  return (
+    <section className="bg-white py-24 md:py-32">
+      <div className="mx-auto max-w-4xl px-4 text-center">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">
+          Prova visual
+        </p>
+        <h2 className="mt-3 font-display text-3xl leading-tight text-midnight-deep md:text-5xl">
+          Suavize as marcas desde a primeira noite.
+        </h2>
+        <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
+          Deslize para ver a recuperação da pele do colo.
+        </p>
+
+        <div
+          ref={containerRef}
+          className="relative mx-auto mt-12 aspect-[4/3] w-full max-w-3xl select-none overflow-hidden rounded-[2rem] shadow-luxe"
+          onMouseDown={(e) => {
+            dragging.current = true;
+            updateFromClientX(e.clientX);
+          }}
+          onTouchStart={(e) => {
+            dragging.current = true;
+            updateFromClientX(e.touches[0].clientX);
+          }}
+        >
+          {/* After (base) */}
+          <img
+            src={SLIDER_AFTER}
+            alt="Depois — pele lisa"
+            className="absolute inset-0 h-full w-full object-cover"
+            draggable={false}
+          />
+          {/* Before (overlay clipped by slider position) */}
+          <div
+            className="absolute inset-0 overflow-hidden"
+            style={{ width: `${pos}%` }}
+          >
+            <img
+              src={SLIDER_BEFORE}
+              alt="Antes — pele marcada"
+              className="absolute inset-0 h-full w-full object-cover"
+              style={{ width: `${(100 / pos) * 100}%`, maxWidth: "none" }}
+              draggable={false}
+            />
+          </div>
+
+          {/* Labels */}
+          <span className="absolute left-4 top-4 rounded-full bg-midnight-deep/80 px-3 py-1 text-[11px] font-semibold uppercase tracking-widest text-cream">
+            Antes
+          </span>
+          <span className="absolute right-4 top-4 rounded-full bg-gold px-3 py-1 text-[11px] font-semibold uppercase tracking-widest text-midnight-deep">
+            Depois
+          </span>
+
+          {/* Handle */}
+          <div
+            className="pointer-events-none absolute inset-y-0"
+            style={{ left: `${pos}%`, transform: "translateX(-50%)" }}
+          >
+            <div className="h-full w-[3px] bg-white shadow-luxe" />
+            <div className="absolute top-1/2 left-1/2 flex h-11 w-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-midnight-deep shadow-luxe">
+              <span className="text-lg font-bold">⇔</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ============================================================
+ *  Mechanisms — 3 pillars of how it works
+ * ============================================================ */
+function MechanismsSection() {
+  const items = [
+    {
+      icon: "⟟",
+      title: "Compressão Física",
+      body: "Impede que a pele dobre e amasse contra o travesseiro durante o sono.",
+    },
+    {
+      icon: "❈",
+      title: "Hidratação Profunda",
+      body: "Cria um microclima que puxa a umidade para a superfície da pele.",
+    },
+    {
+      icon: "✦",
+      title: "Estímulo Contínuo",
+      body: "Melhora a circulação local e previne a quebra do colágeno noite após noite.",
+    },
+  ];
+  return (
+    <section className="bg-cream py-24 md:py-32">
+      <div className="mx-auto max-w-6xl px-4">
+        <div className="mx-auto max-w-2xl text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">
+            Como funciona
+          </p>
+          <h2 className="mt-3 font-display text-3xl leading-tight text-midnight-deep md:text-5xl">
+            Três mecanismos. Uma pele blindada.
+          </h2>
+        </div>
+        <div className="mt-14 grid gap-6 md:grid-cols-3">
+          {items.map((m) => (
+            <div
+              key={m.title}
+              className="rounded-2xl border border-gold/30 bg-white p-8 shadow-soft"
+            >
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gold-gradient text-xl text-midnight-deep">
+                {m.icon}
+              </div>
+              <h3 className="mt-6 font-display text-2xl text-midnight-deep">
+                {m.title}
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                {m.body}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ============================================================
+ *  How To Use — 4 easy steps
+ * ============================================================ */
+function HowToUseSection() {
+  const steps = [
+    {
+      title: "Preparação",
+      body: "Limpe e seque bem a pele. Não aplique cremes antes.",
+      img: "https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=800&q=80",
+    },
+    {
+      title: "Posicionamento",
+      body: "Retire a película protetora e aplique o patch na região desejada.",
+      img: "https://images.unsplash.com/photo-1596704017254-9b121068fb31?auto=format&fit=crop&w=800&q=80",
+    },
+    {
+      title: "Ação Noturna",
+      body: "Durma tranquilamente. O microclima do silicone faz o trabalho.",
+      img: "https://images.unsplash.com/photo-1520206183501-b80df61043c2?auto=format&fit=crop&w=800&q=80",
+    },
+    {
+      title: "Reutilização",
+      body: "Ao acordar, retire suavemente, lave se necessário e guarde na base protetora.",
+      img: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=800&q=80",
+    },
+  ];
+  return (
+    <section className="bg-white py-24 md:py-32">
+      <div className="mx-auto max-w-6xl px-4">
+        <div className="mx-auto max-w-2xl text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">
+            Ritual simples
+          </p>
+          <h2 className="mt-3 font-display text-3xl leading-tight text-midnight-deep md:text-5xl">
+            Como blindar a sua pele em 4 passos rápidos.
+          </h2>
+        </div>
+
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {steps.map((s, i) => (
+            <div
+              key={s.title}
+              className="group flex flex-col overflow-hidden rounded-2xl border border-border/60 bg-cream shadow-soft transition hover:shadow-luxe"
+            >
+              <div className="relative aspect-square overflow-hidden">
+                <img
+                  src={s.img}
+                  alt={s.title}
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                />
+                <span className="absolute left-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-gold-gradient font-display text-lg font-bold text-midnight-deep shadow-luxe">
+                  {i + 1}
+                </span>
+              </div>
+              <div className="p-6">
+                <h3 className="font-display text-xl text-midnight-deep">
+                  {s.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  {s.body}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ============================================================
  *  Clinical Study — Count Up animation
  * ============================================================ */
 function useCountUp(target: number, durationMs = 1400) {
