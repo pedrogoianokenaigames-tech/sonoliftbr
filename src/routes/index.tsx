@@ -605,7 +605,7 @@ function ClinicalStudySection() {
             Eficácia comprovada.
           </h2>
           <p className="mt-4 text-muted-foreground">
-            Resultados observados com 312 voluntárias entre 35 e 50 anos.
+            Resultados observados com 312 voluntárias entre 35 e 65 anos.
           </p>
         </div>
         <div className="mt-14 grid gap-6 sm:grid-cols-2 md:grid-cols-4">
