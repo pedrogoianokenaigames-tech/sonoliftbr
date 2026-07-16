@@ -11,12 +11,11 @@ import ugc2 from "@/assets/ugc2.mp4.asset.json";
 import ugc3 from "@/assets/ugc3.mp4.asset.json";
 import ugc4 from "@/assets/ugc4.mp4.asset.json";
 import ugc5 from "@/assets/ugc5.mp4.asset.json";
-import area1 from "@/assets/area1.jpg.asset.json";
-import area2 from "@/assets/area2.jpg.asset.json";
-import area3 from "@/assets/area3.jpg.asset.json";
-import area4 from "@/assets/area4.jpg.asset.json";
-import area5 from "@/assets/area5.jpg.asset.json";
-import area6 from "@/assets/area6.jpg.asset.json";
+import areaTesta from "@/assets/testa.jpg.asset.json";
+import areaOlho from "@/assets/olho-sorriso.jpg.asset.json";
+import areaLabio from "@/assets/labio.jpg.asset.json";
+import areaPescoco from "@/assets/pescoco.jpg.asset.json";
+import areaPeito from "@/assets/peito.jpg.asset.json";
 
 const CTA_LABEL = "QUERO MEU KIT FACIAL + COLO GRÁTIS";
 
@@ -59,12 +58,11 @@ const UGC_VIDEOS: { src: string; poster: string; name: string; benefit: string }
 ];
 
 const TREATMENT_MAP: { area: string; img: string }[] = [
-  { area: "Testa", img: area1.url },
-  { area: "Contorno dos olhos", img: area2.url },
-  { area: "Sulco nasolabial", img: area3.url },
-  { area: "Bochechas", img: area4.url },
-  { area: "Pescoço", img: area5.url },
-  { area: "Colo", img: area6.url },
+  { area: "Testa", img: areaTesta.url },
+  { area: "Olho e Sorriso", img: areaOlho.url },
+  { area: "Lábio", img: areaLabio.url },
+  { area: "Pescoço", img: areaPescoco.url },
+  { area: "Peito", img: areaPeito.url },
 ];
 
 export const Route = createFileRoute("/")({
