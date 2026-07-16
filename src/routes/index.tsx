@@ -223,37 +223,16 @@ function useFeaturedProduct() {
 }
 
 function CTAButton({ block = false, label = CTA_LABEL }: { block?: boolean; label?: string }) {
-  const { data: product, isLoading: loadingProduct } = useFeaturedProduct();
-  const addItem = useCartStore((s) => s.addItem);
-  const isLoading = useCartStore((s) => s.isLoading);
-
-  const handleClick = async () => {
-    const variant = product?.variants.edges[0]?.node;
-    if (!variant) {
-      toast.error("Produto indisponível no momento.");
-      return;
-    }
-    const checkoutUrl = await addItem({
-      variantId: variant.id,
-      title: product.title,
-      imageUrl: product.images.edges[0]?.node.url,
-      price: variant.price,
-      quantity: 1,
-    });
-    if (checkoutUrl) window.open(checkoutUrl, "_blank");
-    else toast.error("Não foi possível iniciar o checkout. Tente novamente.");
-  };
-
-  const busy = loadingProduct || isLoading;
   return (
-    <button
-      onClick={handleClick}
-      disabled={busy}
-      className={`group inline-flex items-center justify-center gap-2 rounded-full bg-gold-gradient px-8 py-4 text-center text-sm font-bold uppercase tracking-wider text-midnight-deep shadow-luxe animate-cta-pulse transition hover:scale-[1.02] disabled:cursor-not-allowed disabled:opacity-70 sm:text-base ${block ? "w-full" : ""}`}
+    <a
+      href="https://sono-lift.pay.yampi.com.br/r/R558X0P2M5"
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`group inline-flex items-center justify-center gap-2 rounded-full bg-gold-gradient px-8 py-4 text-center text-sm font-bold uppercase tracking-wider text-midnight-deep shadow-luxe animate-cta-pulse transition hover:scale-[1.02] sm:text-base ${block ? "w-full" : ""}`}
     >
-      {busy ? "Processando…" : label}
-      {!busy && <span className="transition group-hover:translate-x-1">→</span>}
-    </button>
+      {label}
+      <span className="transition group-hover:translate-x-1">→</span>
+    </a>
   );
 }
 
