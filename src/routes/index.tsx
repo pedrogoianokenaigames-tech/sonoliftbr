@@ -477,7 +477,7 @@ function HowToUseSection() {
     {
       title: "Ação Noturna",
       body: "Durma tranquilamente. O microclima do silicone faz o trabalho.",
-      img: "https://images.unsplash.com/photo-1520206183501-b80df61043c2?auto=format&fit=crop&w=800&q=80",
+      img: stepNightAsset.url,
     },
     {
       title: "Reutilização",
