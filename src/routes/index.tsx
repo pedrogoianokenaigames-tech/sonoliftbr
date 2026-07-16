@@ -18,7 +18,8 @@ import areaPescoco from "@/assets/pescoco.jpg.asset.json";
 import areaPeito from "@/assets/peito.jpg.asset.json";
 import stepPrepAsset from "@/assets/ritual-prep.webp.asset.json";
 import stepPeelAsset from "@/assets/ritual-pos.webp.asset.json";
-import stepStoreAsset from "@/assets/ritual-noite.webp.asset.json";
+import stepNightAsset from "@/assets/ritual-noite.webp.asset.json";
+import stepStoreAsset from "@/assets/step-store.webp.asset.json";
 
 const CTA_LABEL = "QUERO MEU KIT FACIAL + COLO GRÁTIS";
 
@@ -476,7 +477,7 @@ function HowToUseSection() {
     {
       title: "Ação Noturna",
       body: "Durma tranquilamente. O microclima do silicone faz o trabalho.",
-      img: "https://images.unsplash.com/photo-1520206183501-b80df61043c2?auto=format&fit=crop&w=800&q=80",
+      img: stepNightAsset.url,
     },
     {
       title: "Reutilização",
