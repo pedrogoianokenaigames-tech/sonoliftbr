@@ -272,7 +272,6 @@ const SLIDER_AFTER = depoisAsset.url;
 function BeforeAfterSliderSection() {
   const [pos, setPos] = useState(50);
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const dragging = useRef(false);
 
   const updateFromClientX = (clientX: number) => {
     const el = containerRef.current;
@@ -281,25 +280,6 @@ function BeforeAfterSliderSection() {
     const pct = ((clientX - rect.left) / rect.width) * 100;
     setPos(Math.max(0, Math.min(100, pct)));
   };
-
-  useEffect(() => {
-    const onMove = (e: MouseEvent | TouchEvent) => {
-      if (!dragging.current) return;
-      const x = "touches" in e ? e.touches[0].clientX : (e as MouseEvent).clientX;
-      updateFromClientX(x);
-    };
-    const stop = () => (dragging.current = false);
-    window.addEventListener("mousemove", onMove);
-    window.addEventListener("touchmove", onMove);
-    window.addEventListener("mouseup", stop);
-    window.addEventListener("touchend", stop);
-    return () => {
-      window.removeEventListener("mousemove", onMove);
-      window.removeEventListener("touchmove", onMove);
-      window.removeEventListener("mouseup", stop);
-      window.removeEventListener("touchend", stop);
-    };
-  }, []);
 
   return (
     <section className="bg-white py-24 md:py-32">
@@ -316,14 +296,14 @@ function BeforeAfterSliderSection() {
 
         <div
           ref={containerRef}
-          className="relative mx-auto mt-12 aspect-[4/3] w-full max-w-3xl select-none overflow-hidden rounded-[2rem] shadow-luxe"
-          onMouseDown={(e) => {
-            dragging.current = true;
+          className="relative mx-auto mt-12 aspect-[4/3] w-full max-w-3xl cursor-ew-resize touch-none select-none overflow-hidden rounded-[2rem] shadow-luxe"
+          onPointerDown={(e) => {
+            (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
             updateFromClientX(e.clientX);
           }}
-          onTouchStart={(e) => {
-            dragging.current = true;
-            updateFromClientX(e.touches[0].clientX);
+          onPointerMove={(e) => {
+            if (e.buttons === 0 && e.pointerType === "mouse") return;
+            updateFromClientX(e.clientX);
           }}
         >
           {/* After (base) */}
