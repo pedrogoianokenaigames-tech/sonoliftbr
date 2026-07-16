@@ -935,8 +935,8 @@ function FooterSection() {
               <li><Link to="/quem-somos" className="hover:text-gold">Quem somos</Link></li>
               <li><Link to="/politica-de-privacidade" className="hover:text-gold">Política de privacidade</Link></li>
               <li><Link to="/termos-de-uso" className="hover:text-gold">Termos de uso</Link></li>
-              <li><Link to="/politica-de-reembolso" className="hover:text-gold">Reembolso e trocas</Link></li>
-              <li><Link to="/politica-de-frete" className="hover:text-gold">Frete e entrega</Link></li>
+              <li><a href="https://zggech-4a.myshopify.com/pages/reembolso-trocas-e-devolucoes" className="hover:text-gold">Reembolso e trocas</a></li>
+              <li><a href="https://zggech-4a.myshopify.com/pages/frete-e-entrega" className="hover:text-gold">Frete e entrega</a></li>
             </ul>
           </div>
         </div>
