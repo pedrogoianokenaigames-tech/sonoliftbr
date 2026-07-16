@@ -80,7 +80,7 @@ function Index() {
       <Reveal><BeforeAfterSliderSection /></Reveal>
       <Reveal><ClinicalStudySection /></Reveal>
       <Reveal><MechanismsSection /></Reveal>
-      <Reveal><HowToUseSection /></Reveal>
+      <HowToUseSection />
       <Reveal><UGCSection /></Reveal>
       <Reveal><TreatmentMapSection /></Reveal>
       <Reveal><OfferSection /></Reveal>
