@@ -505,8 +505,8 @@ function HowToUseSection() {
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((s, i) => (
+            <Reveal key={s.title} delay={i * 120}>
             <div
-              key={s.title}
               className="group flex flex-col overflow-hidden rounded-2xl border border-border/60 bg-cream shadow-soft transition hover:shadow-luxe"
             >
               <div className="relative aspect-square overflow-hidden">
@@ -528,6 +528,7 @@ function HowToUseSection() {
                 </p>
               </div>
             </div>
+            </Reveal>
           ))}
         </div>
       </div>
@@ -607,8 +608,10 @@ function ClinicalStudySection() {
           </p>
         </div>
         <div className="mt-14 grid gap-6 sm:grid-cols-2 md:grid-cols-4">
-          {stats.map((s) => (
-            <CountStat key={s.label} n={s.n} label={s.label} />
+          {stats.map((s, i) => (
+            <Reveal key={s.label} delay={i * 120}>
+              <CountStat n={s.n} label={s.label} />
+            </Reveal>
           ))}
         </div>
       </div>
@@ -678,8 +681,9 @@ function TreatmentMapSection() {
           </p>
         </div>
         <div className="mt-14 grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-6">
-          {TREATMENT_MAP.map((t) => (
-            <div key={t.area} className="group relative overflow-hidden rounded-2xl shadow-soft">
+          {TREATMENT_MAP.map((t, i) => (
+            <Reveal key={t.area} delay={i * 90}>
+            <div className="group relative overflow-hidden rounded-2xl shadow-soft">
               <img
                 src={t.img}
                 alt={`Área tratada: ${t.area}`}
@@ -691,6 +695,7 @@ function TreatmentMapSection() {
                 {t.area}
               </p>
             </div>
+            </Reveal>
           ))}
         </div>
       </div>
