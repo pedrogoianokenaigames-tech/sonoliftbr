@@ -623,6 +623,7 @@ function FooterSection() {
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">Institucional</p>
             <ul className="mt-4 space-y-2 text-sm text-cream/70">
+              <li><Link to="/quem-somos" className="hover:text-gold">Quem somos</Link></li>
               <li><Link to="/politica-de-privacidade" className="hover:text-gold">Política de privacidade</Link></li>
               <li><Link to="/termos-de-uso" className="hover:text-gold">Termos de uso</Link></li>
               <li><Link to="/politica-de-reembolso" className="hover:text-gold">Reembolso e trocas</Link></li>

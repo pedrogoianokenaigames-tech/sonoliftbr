@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TermosDeUsoRouteImport } from './routes/termos-de-uso'
+import { Route as QuemSomosRouteImport } from './routes/quem-somos'
 import { Route as PoliticaDeReembolsoRouteImport } from './routes/politica-de-reembolso'
 import { Route as PoliticaDePrivacidadeRouteImport } from './routes/politica-de-privacidade'
 import { Route as PoliticaDeFreteRouteImport } from './routes/politica-de-frete'
@@ -18,6 +19,11 @@ import { Route as IndexRouteImport } from './routes/index'
 const TermosDeUsoRoute = TermosDeUsoRouteImport.update({
   id: '/termos-de-uso',
   path: '/termos-de-uso',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QuemSomosRoute = QuemSomosRouteImport.update({
+  id: '/quem-somos',
+  path: '/quem-somos',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PoliticaDeReembolsoRoute = PoliticaDeReembolsoRouteImport.update({
@@ -46,6 +52,7 @@ export interface FileRoutesByFullPath {
   '/politica-de-frete': typeof PoliticaDeFreteRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/politica-de-reembolso': typeof PoliticaDeReembolsoRoute
+  '/quem-somos': typeof QuemSomosRoute
   '/termos-de-uso': typeof TermosDeUsoRoute
 }
 export interface FileRoutesByTo {
@@ -53,6 +60,7 @@ export interface FileRoutesByTo {
   '/politica-de-frete': typeof PoliticaDeFreteRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/politica-de-reembolso': typeof PoliticaDeReembolsoRoute
+  '/quem-somos': typeof QuemSomosRoute
   '/termos-de-uso': typeof TermosDeUsoRoute
 }
 export interface FileRoutesById {
@@ -61,6 +69,7 @@ export interface FileRoutesById {
   '/politica-de-frete': typeof PoliticaDeFreteRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/politica-de-reembolso': typeof PoliticaDeReembolsoRoute
+  '/quem-somos': typeof QuemSomosRoute
   '/termos-de-uso': typeof TermosDeUsoRoute
 }
 export interface FileRouteTypes {
@@ -70,6 +79,7 @@ export interface FileRouteTypes {
     | '/politica-de-frete'
     | '/politica-de-privacidade'
     | '/politica-de-reembolso'
+    | '/quem-somos'
     | '/termos-de-uso'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -77,6 +87,7 @@ export interface FileRouteTypes {
     | '/politica-de-frete'
     | '/politica-de-privacidade'
     | '/politica-de-reembolso'
+    | '/quem-somos'
     | '/termos-de-uso'
   id:
     | '__root__'
@@ -84,6 +95,7 @@ export interface FileRouteTypes {
     | '/politica-de-frete'
     | '/politica-de-privacidade'
     | '/politica-de-reembolso'
+    | '/quem-somos'
     | '/termos-de-uso'
   fileRoutesById: FileRoutesById
 }
@@ -92,6 +104,7 @@ export interface RootRouteChildren {
   PoliticaDeFreteRoute: typeof PoliticaDeFreteRoute
   PoliticaDePrivacidadeRoute: typeof PoliticaDePrivacidadeRoute
   PoliticaDeReembolsoRoute: typeof PoliticaDeReembolsoRoute
+  QuemSomosRoute: typeof QuemSomosRoute
   TermosDeUsoRoute: typeof TermosDeUsoRoute
 }
 
@@ -102,6 +115,13 @@ declare module '@tanstack/react-router' {
       path: '/termos-de-uso'
       fullPath: '/termos-de-uso'
       preLoaderRoute: typeof TermosDeUsoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/quem-somos': {
+      id: '/quem-somos'
+      path: '/quem-somos'
+      fullPath: '/quem-somos'
+      preLoaderRoute: typeof QuemSomosRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/politica-de-reembolso': {
@@ -140,6 +160,7 @@ const rootRouteChildren: RootRouteChildren = {
   PoliticaDeFreteRoute: PoliticaDeFreteRoute,
   PoliticaDePrivacidadeRoute: PoliticaDePrivacidadeRoute,
   PoliticaDeReembolsoRoute: PoliticaDeReembolsoRoute,
+  QuemSomosRoute: QuemSomosRoute,
   TermosDeUsoRoute: TermosDeUsoRoute,
 }
 export const routeTree = rootRouteImport
