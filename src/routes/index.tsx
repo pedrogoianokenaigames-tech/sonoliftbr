@@ -16,6 +16,9 @@ import areaOlho from "@/assets/olho-sorriso.jpg.asset.json";
 import areaLabio from "@/assets/labio.jpg.asset.json";
 import areaPescoco from "@/assets/pescoco.jpg.asset.json";
 import areaPeito from "@/assets/peito.jpg.asset.json";
+import stepPrepAsset from "@/assets/step-prep.webp.asset.json";
+import stepPeelAsset from "@/assets/step-peel.webp.asset.json";
+import stepStoreAsset from "@/assets/step-store.webp.asset.json";
 
 const CTA_LABEL = "QUERO MEU KIT FACIAL + COLO GRÁTIS";
 
@@ -80,7 +83,7 @@ function Index() {
       <Reveal><BeforeAfterSliderSection /></Reveal>
       <Reveal><ClinicalStudySection /></Reveal>
       <Reveal><MechanismsSection /></Reveal>
-      <Reveal><HowToUseSection /></Reveal>
+      <HowToUseSection />
       <Reveal><UGCSection /></Reveal>
       <Reveal><TreatmentMapSection /></Reveal>
       <Reveal><OfferSection /></Reveal>
@@ -477,16 +480,19 @@ function MechanismsSection() {
  *  How To Use — 4 easy steps
  * ============================================================ */
 function HowToUseSection() {
+  const stepPrep = stepPrepAsset.url;
+  const stepPeel = stepPeelAsset.url;
+  const stepStore = stepStoreAsset.url;
   const steps = [
     {
       title: "Preparação",
       body: "Limpe e seque bem a pele. Não aplique cremes antes.",
-      img: "https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=800&q=80",
+      img: stepPrep,
     },
     {
       title: "Posicionamento",
       body: "Retire a película protetora e aplique o patch na região desejada.",
-      img: "https://images.unsplash.com/photo-1596704017254-9b121068fb31?auto=format&fit=crop&w=800&q=80",
+      img: stepPeel,
     },
     {
       title: "Ação Noturna",
@@ -496,7 +502,7 @@ function HowToUseSection() {
     {
       title: "Reutilização",
       body: "Ao acordar, retire suavemente, lave se necessário e guarde na base protetora.",
-      img: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=800&q=80",
+      img: stepStore,
     },
   ];
   return (
