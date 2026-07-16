@@ -78,7 +78,6 @@ function Index() {
       <HeroSection />
       <Reveal><InvisibleEnemySection /></Reveal>
       <Reveal><BeforeAfterSliderSection /></Reveal>
-      <Reveal><BeforeAfterSection /></Reveal>
       <Reveal><ClinicalStudySection /></Reveal>
       <Reveal><MechanismsSection /></Reveal>
       <Reveal><HowToUseSection /></Reveal>
