@@ -16,9 +16,9 @@ import areaOlho from "@/assets/olho-sorriso.jpg.asset.json";
 import areaLabio from "@/assets/labio.jpg.asset.json";
 import areaPescoco from "@/assets/pescoco.jpg.asset.json";
 import areaPeito from "@/assets/peito.jpg.asset.json";
-import stepPrepAsset from "@/assets/step-prep.webp.asset.json";
-import stepPeelAsset from "@/assets/step-peel.webp.asset.json";
-import stepStoreAsset from "@/assets/step-store.webp.asset.json";
+import stepPrepAsset from "@/assets/ritual-prep.webp.asset.json";
+import stepPeelAsset from "@/assets/ritual-pos.webp.asset.json";
+import stepStoreAsset from "@/assets/ritual-noite.webp.asset.json";
 
 const CTA_LABEL = "QUERO MEU KIT FACIAL + COLO GRÁTIS";
 
