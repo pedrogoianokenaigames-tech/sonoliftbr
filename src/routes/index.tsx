@@ -238,7 +238,7 @@ function CTAButton({ block = false, label = CTA_LABEL }: { block?: boolean; labe
     <button
       onClick={handleClick}
       disabled={busy}
-      className={`group inline-flex items-center justify-center gap-2 rounded-full bg-gold-gradient px-8 py-4 text-center text-sm font-bold uppercase tracking-wider text-midnight-deep shadow-luxe transition hover:scale-[1.02] disabled:cursor-not-allowed disabled:opacity-70 sm:text-base ${block ? "w-full" : ""}`}
+      className={`group inline-flex items-center justify-center gap-2 rounded-full bg-gold-gradient px-8 py-4 text-center text-sm font-bold uppercase tracking-wider text-midnight-deep shadow-luxe animate-cta-pulse transition hover:scale-[1.02] disabled:cursor-not-allowed disabled:opacity-70 sm:text-base ${block ? "w-full" : ""}`}
     >
       {busy ? "Processando…" : label}
       {!busy && <span className="transition group-hover:translate-x-1">→</span>}
