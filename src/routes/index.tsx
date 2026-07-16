@@ -271,15 +271,6 @@ const SLIDER_AFTER = depoisAsset.url;
 
 function BeforeAfterSliderSection() {
   const [pos, setPos] = useState(50);
-  const containerRef = useRef<HTMLDivElement | null>(null);
-
-  const updateFromClientX = (clientX: number) => {
-    const el = containerRef.current;
-    if (!el) return;
-    const rect = el.getBoundingClientRect();
-    const pct = ((clientX - rect.left) / rect.width) * 100;
-    setPos(Math.max(0, Math.min(100, pct)));
-  };
 
   return (
     <section className="bg-white py-24 md:py-32">
@@ -295,16 +286,7 @@ function BeforeAfterSliderSection() {
         </p>
 
         <div
-          ref={containerRef}
           className="relative mx-auto mt-12 aspect-[4/3] w-full max-w-3xl cursor-ew-resize touch-none select-none overflow-hidden rounded-[2rem] shadow-luxe"
-          onPointerDown={(e) => {
-            (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
-            updateFromClientX(e.clientX);
-          }}
-          onPointerMove={(e) => {
-            if (e.buttons === 0 && e.pointerType === "mouse") return;
-            updateFromClientX(e.clientX);
-          }}
         >
           {/* After (base) */}
           <img
@@ -314,18 +296,13 @@ function BeforeAfterSliderSection() {
             draggable={false}
           />
           {/* Before (overlay clipped by slider position) */}
-          <div
-            className="absolute inset-0 overflow-hidden"
-            style={{ width: `${pos}%` }}
-          >
-            <img
-              src={SLIDER_BEFORE}
-              alt="Antes — pele marcada"
-              className="absolute inset-0 h-full w-full object-cover"
-              style={{ width: `${(100 / pos) * 100}%`, maxWidth: "none" }}
-              draggable={false}
-            />
-          </div>
+          <img
+            src={SLIDER_BEFORE}
+            alt="Antes — pele marcada"
+            className="absolute inset-0 h-full w-full object-cover"
+            style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}
+            draggable={false}
+          />
 
           {/* Labels */}
           <span className="absolute left-4 top-4 rounded-full bg-midnight-deep/80 px-3 py-1 text-[11px] font-semibold uppercase tracking-widest text-cream">
@@ -345,6 +322,17 @@ function BeforeAfterSliderSection() {
               <span className="text-lg font-bold">⇔</span>
             </div>
           </div>
+
+          <input
+            type="range"
+            min="0"
+            max="100"
+            value={pos}
+            onInput={(event) => setPos(Number(event.currentTarget.value))}
+            onChange={(event) => setPos(Number(event.currentTarget.value))}
+            aria-label="Deslize para comparar antes e depois"
+            className="absolute inset-0 z-20 h-full w-full cursor-ew-resize opacity-0"
+          />
         </div>
       </div>
     </section>
