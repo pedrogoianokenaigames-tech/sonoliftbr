@@ -360,34 +360,60 @@ function MechanismsSection() {
       body: "Melhora a circulação local e previne a quebra do colágeno noite após noite.",
     },
   ];
+  const [open, setOpen] = useState<number | null>(0);
   return (
     <section className="bg-cream py-24 md:py-32">
-      <div className="mx-auto max-w-6xl px-4">
-        <div className="mx-auto max-w-2xl text-center">
+      <div className="mx-auto grid max-w-6xl gap-12 px-4 md:grid-cols-2 md:items-center">
+        <div>
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">
             Como funciona
           </p>
           <h2 className="mt-3 font-display text-3xl leading-tight text-midnight-deep md:text-5xl">
-            Três mecanismos. Uma pele blindada.
+            Por que os adesivos Sonolift funcionam tanto?
           </h2>
+          <p className="mt-5 text-base leading-relaxed text-muted-foreground">
+            Nossos adesivos são <strong className="text-midnight-deep">100% de grau médico</strong>, feitos de silicone hipoalergênico e podem ser reutilizados por até <strong className="text-midnight-deep">30 noites</strong>.
+          </p>
+          <p className="mt-3 text-base leading-relaxed text-muted-foreground">
+            Eles funcionam porque tratam a causa real das sleep lines, através de <strong className="text-midnight-deep">3 mecanismos</strong>:
+          </p>
         </div>
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
-          {items.map((m) => (
-            <div
-              key={m.title}
-              className="rounded-2xl border border-gold/30 bg-white p-8 shadow-soft"
-            >
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gold-gradient text-xl text-midnight-deep">
-                {m.icon}
-              </div>
-              <h3 className="mt-6 font-display text-2xl text-midnight-deep">
-                {m.title}
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                {m.body}
-              </p>
-            </div>
-          ))}
+        <div className="rounded-[2rem] bg-midnight-deep p-3 shadow-luxe md:p-4">
+          {items.map((m, i) => {
+            const isOpen = open === i;
+            return (
+              <button
+                type="button"
+                key={m.title}
+                onClick={() => setOpen(isOpen ? null : i)}
+                className="block w-full border-b border-white/10 px-5 py-5 text-left last:border-b-0 md:px-6"
+              >
+                <div className="flex items-center justify-between gap-4">
+                  <div className="flex items-center gap-4">
+                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-gold-gradient text-lg text-midnight-deep">
+                      {m.icon}
+                    </span>
+                    <span className="font-display text-xl text-cream md:text-2xl">
+                      {m.title}
+                    </span>
+                  </div>
+                  <span
+                    className={`text-gold transition-transform ${isOpen ? "rotate-180" : ""}`}
+                    aria-hidden
+                  >
+                    ▾
+                  </span>
+                </div>
+                <div
+                  className={`grid transition-all duration-300 ${isOpen ? "mt-3 grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
+                >
+                  <p className="overflow-hidden pl-14 pr-2 text-sm leading-relaxed text-cream/80">
+                    {m.body}
+                  </p>
+                </div>
+              </button>
+            );
+          })}
         </div>
       </div>
     </section>
