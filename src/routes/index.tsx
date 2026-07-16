@@ -80,6 +80,7 @@ function Index() {
       <Reveal><BeforeAfterSliderSection /></Reveal>
       <Reveal><ClinicalStudySection /></Reveal>
       <Reveal><MechanismsSection /></Reveal>
+      <Reveal><HowToUseSection /></Reveal>
       <Reveal><UGCSection /></Reveal>
       <Reveal><TreatmentMapSection /></Reveal>
       <Reveal><OfferSection /></Reveal>
@@ -502,41 +503,48 @@ function HowToUseSection() {
     <section className="bg-white py-24 md:py-32">
       <div className="mx-auto max-w-6xl px-4">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">
-            Ritual simples
-          </p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">Ritual simples</p>
           <h2 className="mt-3 font-display text-3xl leading-tight text-midnight-deep md:text-5xl">
             Como blindar a sua pele em 4 passos rápidos.
           </h2>
         </div>
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {steps.map((s, i) => (
-            <Reveal key={s.title} delay={i * 120}>
-            <div
-              className="group flex flex-col overflow-hidden rounded-2xl border border-border/60 bg-cream shadow-soft transition hover:shadow-luxe"
-            >
-              <div className="relative aspect-square overflow-hidden">
-                <img
-                  src={s.img}
-                  alt={s.title}
-                  className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                />
-                <span className="absolute left-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-gold-gradient font-display text-lg font-bold text-midnight-deep shadow-luxe">
-                  {i + 1}
-                </span>
-              </div>
-              <div className="p-6">
-                <h3 className="font-display text-xl text-midnight-deep">
-                  {s.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  {s.body}
-                </p>
-              </div>
-            </div>
-            </Reveal>
-          ))}
+        <div className="mt-20 space-y-24 md:space-y-32">
+          {steps.map((s, i) => {
+            const reverse = i % 2 === 1;
+            return (
+              <Reveal key={s.title} delay={80}>
+                <div
+                  className={`grid items-center gap-10 md:grid-cols-2 md:gap-16 ${
+                    reverse ? "md:[&>div:first-child]:order-2" : ""
+                  }`}
+                >
+                  <div>
+                    <div className="flex items-center gap-4">
+                      <span className="h-px w-10 bg-midnight-deep/70" />
+                      <span className="font-display text-sm font-bold tracking-widest text-midnight-deep">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                    </div>
+                    <h3 className="mt-6 font-display text-3xl leading-tight text-midnight-deep md:text-5xl">
+                      {s.title}
+                    </h3>
+                    <p className="mt-5 max-w-md text-base leading-relaxed text-muted-foreground">
+                      {s.body}
+                    </p>
+                  </div>
+                  <div className="overflow-hidden rounded-[2rem] shadow-luxe">
+                    <img
+                      src={s.img}
+                      alt={s.title}
+                      loading="lazy"
+                      className="aspect-[4/5] w-full object-cover md:aspect-[5/6]"
+                    />
+                  </div>
+                </div>
+              </Reveal>
+            );
+          })}
         </div>
       </div>
     </section>
