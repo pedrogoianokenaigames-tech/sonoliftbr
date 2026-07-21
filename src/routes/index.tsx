@@ -100,8 +100,8 @@ function Index() {
  *  WhatsApp Float — fixed bottom-right button
  * ============================================================ */
 function WhatsAppFloat() {
-  // Substitua pelo seu número de WhatsApp com DDD e código do país
-  const WHATSAPP_NUMBER = "5511999999999";
+  // Número de WhatsApp com DDD e código do país
+  const WHATSAPP_NUMBER = "5511941942267";
   const message = encodeURIComponent("Olá! Vi o SonoLift e quero saber mais.");
   return (
     <a
