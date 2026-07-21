@@ -91,6 +91,7 @@ function Index() {
       <Reveal><ReviewsSection /></Reveal>
       <Reveal><FAQSection /></Reveal>
       <FooterSection />
+      <WhatsAppFloat />
     </div>
   );
 }
