@@ -86,10 +86,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { name: "author", content: "SonoLift" },
       { name: "theme-color", content: "#0B1B3B" },
-      { property: "og:title", content: "SonoLift™ — Kit Facial + Brinde Grátis por R$ 197" },
-      { property: "og:description", content: "A barreira invisível contra as rugas do sono. Kit Facial + Pescoço e Colo grátis." },
+      { property: "og:title", content: "SonoLift™ — Kit Facial + Pescoço e Colo por R$ 197" },
+      { property: "og:description", content: "Kit Facial SonoLift™ com brinde grátis Pescoço e Colo. A barreira invisível contra as rugas do sono. Em até 12x de R$ 16,42 sem juros." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "SonoLift™ — Kit Facial + Pescoço e Colo por R$ 197" },
+      { name: "twitter:description", content: "Kit Facial SonoLift™ com brinde grátis Pescoço e Colo. A barreira invisível contra as rugas do sono. Em até 12x de R$ 16,42 sem juros." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/1dacc805-bec4-4af1-bb29-f3ad1f35c66f/id-preview-2c09f598--8e2875b6-88f6-4189-acb8-98d3a3a05914.lovable.app-1784821686436.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/1dacc805-bec4-4af1-bb29-f3ad1f35c66f/id-preview-2c09f598--8e2875b6-88f6-4189-acb8-98d3a3a05914.lovable.app-1784821686436.png" },
     ],
     links: [
       {
