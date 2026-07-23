@@ -158,6 +158,20 @@
   animation: cta-pulse 2.4s ease-in-out infinite;
 }
 
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@utility animate-marquee {
+  animation: marquee-scroll 28s linear infinite;
+}
+
+@keyframes hero-fade {
+  0%, 100% { opacity: 0; }
+  10%, 30% { opacity: 1; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal, .reveal-in { opacity: 1 !important; animation: none !important; transform: none !important; }
   .animate-cta-pulse { animation: none !important; }
