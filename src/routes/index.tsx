@@ -82,6 +82,7 @@ function Index() {
   return (
     <div className="min-h-screen bg-cream text-midnight-deep">
       <TopBar />
+      <Marquee />
       <Nav />
       <HeroSection />
       <Reveal><InvisibleEnemySection /></Reveal>
@@ -171,10 +172,50 @@ function Reveal({
  *  Sticky top bar (Shopify announcement bar)
  * ============================================================ */
 function TopBar() {
+  const [secondsLeft, setSecondsLeft] = useState(10 * 60);
+  useEffect(() => {
+    const id = setInterval(() => {
+      setSecondsLeft((s) => (s > 0 ? s - 1 : 0));
+    }, 1000);
+    return () => clearInterval(id);
+  }, []);
+  const mm = String(Math.floor(secondsLeft / 60)).padStart(2, "0");
+  const ss = String(secondsLeft % 60).padStart(2, "0");
   return (
     <div className="sticky top-0 z-50 bg-black text-cream">
-      <div className="mx-auto max-w-6xl px-4 py-2.5 text-center text-[13px] font-medium tracking-wide sm:text-sm">
-        🎁 <span className="text-gold">BRINDE GARANTIDO:</span> Kit Colo incluído grátis no seu pedido.
+      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-2 gap-y-1 px-4 py-2 text-center text-[12px] font-medium tracking-wide sm:text-sm">
+        <span className="text-base leading-none text-gold">⚠️</span>
+        <span>
+          <span className="text-gold">Atenção:</span> Kit Pescoço e Colo{" "}
+          <strong className="text-gold">GRÁTIS</strong> reservado por:
+        </span>
+        <span className="rounded-md bg-gold px-2 py-0.5 font-mono text-[12px] font-bold text-midnight-deep sm:text-sm">
+          {mm}:{ss}
+        </span>
+      </div>
+    </div>
+  );
+}
+
+/* ============================================================
+ *  Marquee — rotating benefits banner
+ * ============================================================ */
+function Marquee() {
+  const items = [
+    "GARANTIA DE 30 DIAS",
+    "SISTEMA SONOLIFT™ COMPLETO",
+    "PROTEÇÃO CONTRA AS MARCAS DO SONO",
+    "ENVIO RÁPIDO E SEGURO",
+    "OFERTA ESPECIAL DE LANÇAMENTO",
+  ];
+  const line = items.join("  •  ");
+  return (
+    <div className="sticky top-[38px] z-40 overflow-hidden bg-[#7a0f14] text-white sm:top-[40px]">
+      <div className="flex w-max animate-marquee whitespace-nowrap py-2 text-[12px] font-semibold uppercase tracking-widest sm:text-sm">
+        <span className="px-6">{line}&nbsp;&nbsp;•&nbsp;&nbsp;{line}&nbsp;&nbsp;•&nbsp;&nbsp;</span>
+        <span className="px-6" aria-hidden>
+          {line}&nbsp;&nbsp;•&nbsp;&nbsp;{line}&nbsp;&nbsp;•&nbsp;&nbsp;
+        </span>
       </div>
     </div>
   );
@@ -184,24 +225,57 @@ function TopBar() {
  *  Navigation
  * ============================================================ */
 function Nav() {
+  const [open, setOpen] = useState(false);
   return (
-    <header className="border-b border-border/40 bg-cream/90 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
-        <a href="#top" className="font-display text-2xl tracking-tight text-midnight-deep">
+    <header className="border-b border-border/40 bg-white">
+      <div className="mx-auto grid max-w-6xl grid-cols-[auto_1fr_auto] items-center px-4 py-3 md:grid-cols-3">
+        {/* Hamburger (mobile) */}
+        <button
+          type="button"
+          aria-label="Abrir menu"
+          onClick={() => setOpen((v) => !v)}
+          className="justify-self-start text-midnight-deep md:invisible"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="h-6 w-6">
+            <line x1="4" y1="7" x2="20" y2="7" />
+            <line x1="4" y1="12" x2="20" y2="12" />
+            <line x1="4" y1="17" x2="20" y2="17" />
+          </svg>
+        </button>
+
+        {/* Left links (desktop) */}
+        <nav className="hidden justify-self-start gap-6 text-sm font-semibold uppercase tracking-widest text-midnight-deep md:flex">
+          <a href="#oferta" className="hover:text-gold">Loja</a>
+          <a href="#ciencia" className="hover:text-gold">Ciência</a>
+        </nav>
+
+        {/* Centered logo */}
+        <a
+          href="#top"
+          className="justify-self-center font-display text-2xl tracking-tight text-midnight-deep sm:text-3xl"
+        >
           SonoLift<sup className="text-gold">™</sup>
         </a>
-        <nav className="hidden gap-8 text-sm font-medium text-muted-foreground md:flex">
-          <a href="#ciencia" className="hover:text-midnight-deep">Eficácia</a>
-          <a href="#resultados" className="hover:text-midnight-deep">Resultados</a>
-          <a href="#oferta" className="hover:text-midnight-deep">Oferta</a>
+
+        {/* Right links (desktop) */}
+        <nav className="hidden justify-self-end gap-6 text-sm font-semibold uppercase tracking-widest text-midnight-deep md:flex">
+          <a href="#resultados" className="hover:text-gold">Avaliações</a>
+          <a href="#oferta" className="hover:text-gold">Comprar</a>
         </nav>
-        <a
-          href="#oferta"
-          className="hidden rounded-full bg-midnight px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-cream shadow-soft transition hover:bg-midnight-deep md:inline-block"
-        >
-          Comprar
-        </a>
+
+        {/* Cart placeholder to balance grid on mobile */}
+        <span className="justify-self-end md:hidden" aria-hidden />
       </div>
+
+      {/* Mobile menu */}
+      {open && (
+        <nav className="flex flex-col items-center gap-3 border-t border-border/40 bg-white py-4 text-sm font-semibold uppercase tracking-widest text-midnight-deep md:hidden">
+          <a href="#oferta" onClick={() => setOpen(false)}>Loja</a>
+          <a href="#ciencia" onClick={() => setOpen(false)}>Ciência</a>
+          <a href="#resultados" onClick={() => setOpen(false)}>Avaliações</a>
+          <a href="#oferta" onClick={() => setOpen(false)}>Comprar</a>
+        </nav>
+      )}
     </header>
   );
 }
@@ -210,33 +284,95 @@ function Nav() {
  *  Hero
  * ============================================================ */
 function HeroSection() {
-  return (
-    <section id="top" className="relative overflow-hidden">
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${HERO_IMG})` }}
-        aria-hidden
-      />
-      <div className="absolute inset-0 bg-gradient-to-r from-cream via-cream/85 to-cream/40 md:from-cream md:via-cream/70 md:to-transparent" aria-hidden />
+  const slides = [heroImg1.url, heroImg2.url, heroImg3.url, heroImg4.url];
+  const [idx, setIdx] = useState(0);
+  useEffect(() => {
+    const id = setInterval(() => setIdx((i) => (i + 1) % slides.length), 3500);
+    return () => clearInterval(id);
+  }, [slides.length]);
 
-      <div className="relative mx-auto max-w-6xl px-4 py-24 md:py-36">
-        <div className="max-w-2xl space-y-8">
-          <span className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-lavender px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-midnight-deep">
-            <span className="h-1.5 w-1.5 rounded-full bg-gold" />
-            Tecnologia patenteada
-          </span>
-          <h1 className="font-display text-4xl leading-[1.05] tracking-tight text-midnight-deep sm:text-5xl md:text-6xl">
-            Acorde sem as <em className="italic text-gold">marcas</em> que o travesseiro deixa.
-          </h1>
-          <p className="max-w-lg text-lg leading-relaxed text-muted-foreground">
-            Uma barreira invisível de silicone médico que protege sua pele durante as 8 horas mais decisivas do seu dia.
-          </p>
-          <CTAButton />
-          <div className="flex items-center gap-3 text-sm text-midnight">
-            <span className="text-gold text-lg">★★★★★</span>
-            <span><strong>+12.480</strong> avaliações verificadas</span>
+  return (
+    <section id="top" className="bg-cream">
+      <div className="mx-auto flex max-w-6xl flex-col items-center justify-center px-4 py-10 text-center md:py-16">
+        {/* 1. Tag */}
+        <span className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-lavender px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-midnight-deep">
+          <span className="h-1.5 w-1.5 rounded-full bg-gold" />
+          Tecnologia patenteada
+        </span>
+
+        {/* 2. Headline + descrição */}
+        <h1 className="mt-5 max-w-2xl font-display text-4xl leading-[1.05] tracking-tight text-midnight-deep sm:text-5xl md:text-6xl">
+          Acorde sem as <em className="italic text-gold">marcas</em> que o travesseiro deixa.
+        </h1>
+        <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+          Uma barreira invisível de silicone médico que protege sua pele durante as 8 horas mais decisivas do seu dia.
+        </p>
+
+        {/* 3. Slider/carrossel de imagens */}
+        <div className="relative mt-8 aspect-square w-full max-w-md overflow-hidden rounded-[2rem] shadow-luxe">
+          {slides.map((src, i) => (
+            <img
+              key={src}
+              src={src}
+              alt={`SonoLift em uso ${i + 1}`}
+              className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
+                i === idx ? "opacity-100" : "opacity-0"
+              }`}
+              draggable={false}
+            />
+          ))}
+          <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-1.5">
+            {slides.map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                onClick={() => setIdx(i)}
+                aria-label={`Ir para slide ${i + 1}`}
+                className={`h-1.5 rounded-full transition-all ${
+                  i === idx ? "w-6 bg-white" : "w-1.5 bg-white/60"
+                }`}
+              />
+            ))}
           </div>
         </div>
+
+        {/* 4. CTA principal — largo no mobile */}
+        <div className="mt-8 w-full max-w-md">
+          <CTAButton block />
+        </div>
+
+        {/* 5. Avaliações */}
+        <div className="mt-4 flex items-center justify-center gap-2 text-sm text-midnight">
+          <span className="text-lg text-gold">★★★★★</span>
+          <span><strong>+12.480</strong> avaliações verificadas</span>
+        </div>
+
+        {/* Gatilhos de confiança */}
+        <div className="mt-6 flex flex-col items-center gap-3">
+          <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-midnight-deep">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-4 w-4">
+              <rect x="4" y="11" width="16" height="9" rx="2" />
+              <path d="M8 11V7a4 4 0 0 1 8 0v4" />
+            </svg>
+            Compra 100% segura
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-2 text-[11px] font-bold uppercase tracking-widest text-midnight-deep">
+            <span className="rounded border border-border bg-white px-2 py-1">VISA</span>
+            <span className="rounded border border-border bg-white px-2 py-1">Mastercard</span>
+            <span className="rounded border border-border bg-white px-2 py-1">Elo</span>
+            <span className="rounded border border-border bg-white px-2 py-1 text-[#32BCAD]">Pix</span>
+          </div>
+        </div>
+
+        {/* Checklist de objeções */}
+        <ul className="mt-6 flex flex-col items-center gap-2 text-sm text-midnight-deep">
+          {["Hipoalergênico", "Dermatologicamente testado", "Frete grátis Brasil"].map((it) => (
+            <li key={it} className="flex items-center gap-2">
+              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#c8102e] text-[11px] font-bold text-white">✓</span>
+              <span>{it}</span>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );
