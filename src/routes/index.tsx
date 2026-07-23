@@ -228,26 +228,28 @@ function Nav() {
   const [open, setOpen] = useState(false);
   return (
     <header className="border-b border-border/40 bg-white">
-      <div className="mx-auto grid max-w-6xl grid-cols-[auto_1fr_auto] items-center px-4 py-3 md:grid-cols-3">
-        {/* Hamburger (mobile) */}
-        <button
-          type="button"
-          aria-label="Abrir menu"
-          onClick={() => setOpen((v) => !v)}
-          className="justify-self-start text-midnight-deep md:invisible"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="h-6 w-6">
-            <line x1="4" y1="7" x2="20" y2="7" />
-            <line x1="4" y1="12" x2="20" y2="12" />
-            <line x1="4" y1="17" x2="20" y2="17" />
-          </svg>
-        </button>
-
-        {/* Left links (desktop) */}
-        <nav className="hidden justify-self-start gap-6 text-sm font-semibold uppercase tracking-widest text-midnight-deep md:flex">
-          <a href="#oferta" className="hover:text-gold">Loja</a>
-          <a href="#ciencia" className="hover:text-gold">Ciência</a>
-        </nav>
+      <div className="mx-auto grid max-w-6xl grid-cols-3 items-center px-4 py-3">
+        {/* Left slot */}
+        <div className="justify-self-start">
+          {/* Hamburger (mobile) */}
+          <button
+            type="button"
+            aria-label="Abrir menu"
+            onClick={() => setOpen((v) => !v)}
+            className="text-midnight-deep md:hidden"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="h-6 w-6">
+              <line x1="4" y1="7" x2="20" y2="7" />
+              <line x1="4" y1="12" x2="20" y2="12" />
+              <line x1="4" y1="17" x2="20" y2="17" />
+            </svg>
+          </button>
+          {/* Left links (desktop) */}
+          <nav className="hidden gap-6 text-sm font-semibold uppercase tracking-widest text-midnight-deep md:flex">
+            <a href="#oferta" className="hover:text-gold">Loja</a>
+            <a href="#ciencia" className="hover:text-gold">Ciência</a>
+          </nav>
+        </div>
 
         {/* Centered logo */}
         <a
@@ -257,14 +259,13 @@ function Nav() {
           SonoLift<sup className="text-gold">™</sup>
         </a>
 
-        {/* Right links (desktop) */}
-        <nav className="hidden justify-self-end gap-6 text-sm font-semibold uppercase tracking-widest text-midnight-deep md:flex">
-          <a href="#resultados" className="hover:text-gold">Avaliações</a>
-          <a href="#oferta" className="hover:text-gold">Comprar</a>
-        </nav>
-
-        {/* Cart placeholder to balance grid on mobile */}
-        <span className="justify-self-end md:hidden" aria-hidden />
+        {/* Right slot */}
+        <div className="justify-self-end">
+          <nav className="hidden gap-6 text-sm font-semibold uppercase tracking-widest text-midnight-deep md:flex">
+            <a href="#resultados" className="hover:text-gold">Avaliações</a>
+            <a href="#oferta" className="hover:text-gold">Comprar</a>
+          </nav>
+        </div>
       </div>
 
       {/* Mobile menu */}
