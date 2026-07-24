@@ -342,6 +342,17 @@ function HeroSection() {
           <CTAButton block />
         </div>
 
+        {/* 4b. Oferta de preço */}
+        <div className="mt-5 flex flex-col items-center gap-1 text-center">
+          <p className="text-base font-bold text-midnight-deep sm:text-lg md:text-xl">
+            Leve os 2 Kits hoje por apenas{" "}
+            <span className="text-[#c8102e]">12x de R$ 19,78</span>
+          </p>
+          <p className="text-xs text-muted-foreground sm:text-sm">
+            (ou só <strong className="font-semibold text-midnight-deep">R$ 187,15</strong> com 5% de desconto no Pix!)
+          </p>
+        </div>
+
         {/* 5. Avaliações */}
         <div className="mt-4 flex items-center justify-center gap-2 text-sm text-midnight">
           <span className="text-lg text-gold">★★★★★</span>
