@@ -337,21 +337,22 @@ function HeroSection() {
           </div>
         </div>
 
-        {/* 4. CTA principal — largo no mobile */}
-        <div className="mt-8 w-full max-w-md">
+        {/* 4. Caixa de oferta */}
+        <div className="mt-8 w-full max-w-md rounded-xl border border-amber-300/70 bg-amber-50 px-4 py-3 text-center text-sm font-semibold text-amber-900 sm:text-base">
+          🎁 OFERTA DE HOJE: Compre o Kit Rosto e GANHE o Kit Colo 100% Grátis
+        </div>
+
+        {/* 4a. CTA principal — largo no mobile */}
+        <div className="mt-3 w-full max-w-md">
           <CTAButton block />
         </div>
 
         {/* 4b. Oferta de preço */}
-        <div className="mt-5 flex flex-col items-center gap-1 text-center">
-          <p className="text-base font-bold text-midnight-deep sm:text-lg md:text-xl">
-            Leve os 2 Kits hoje por apenas{" "}
-            <span className="text-[#c8102e]">12x de R$ 19,78</span>
-          </p>
-          <p className="text-xs text-muted-foreground sm:text-sm">
-            (ou só <strong className="font-semibold text-midnight-deep">R$ 187,15</strong> com 5% de desconto no Pix!)
-          </p>
-        </div>
+        <p className="mt-5 max-w-md text-center text-sm font-normal text-muted-foreground sm:text-base">
+          Leve 2 Kits pelo preço de 1 por apenas{" "}
+          <strong className="font-extrabold text-[#c8102e]">R$ 187,15 no Pix</strong>{" "}
+          (ou 12x de R$ 19,78 no cartão)
+        </p>
 
         {/* 5. Avaliações */}
         <div className="mt-4 flex items-center justify-center gap-2 text-sm text-midnight">
