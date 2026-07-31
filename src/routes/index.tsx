@@ -183,13 +183,13 @@ function TopBar() {
   const ss = String(secondsLeft % 60).padStart(2, "0");
   return (
     <div className="sticky top-0 z-50 bg-black text-cream">
-      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-2 gap-y-1 px-4 py-2 text-center text-[12px] font-medium tracking-wide sm:text-sm">
-        <span className="text-base leading-none text-gold">⚠️</span>
+      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-2 gap-y-1 px-4 py-2.5 text-center text-[13px] font-semibold tracking-wide sm:text-base">
+        <span className="text-lg leading-none">⚠️</span>
         <span>
-          <span className="text-gold">Atenção:</span> Kit Pescoço e Colo{" "}
-          <strong className="text-gold">GRÁTIS</strong> reservado por:
+          <strong className="text-[#ff3b3b]">Atenção:</strong>{" "}
+          <strong className="text-[#ff3b3b]">Kit Pescoço e Colo GRÁTIS</strong> reservado por:
         </span>
-        <span className="rounded-md bg-gold px-2 py-0.5 font-mono text-[12px] font-bold text-midnight-deep sm:text-sm">
+        <span className="rounded-md bg-[#c8102e] px-3 py-1 font-mono text-lg font-extrabold tabular-nums text-white shadow-md sm:text-2xl">
           {mm}:{ss}
         </span>
       </div>
@@ -295,14 +295,8 @@ function HeroSection() {
   return (
     <section id="top" className="bg-cream">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-center px-4 py-10 text-center md:py-16">
-        {/* 1. Tag */}
-        <span className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-lavender px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-midnight-deep">
-          <span className="h-1.5 w-1.5 rounded-full bg-gold" />
-          Tecnologia patenteada
-        </span>
-
         {/* 2. Headline + descrição */}
-        <h1 className="mt-5 max-w-2xl font-display text-4xl leading-[1.05] tracking-tight text-midnight-deep sm:text-5xl md:text-6xl">
+        <h1 className="max-w-2xl font-display text-4xl leading-[1.05] tracking-tight text-midnight-deep sm:text-5xl md:text-6xl">
           Acorde sem as <em className="italic text-gold">marcas</em> que o travesseiro deixa.
         </h1>
         <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
@@ -366,13 +360,22 @@ function HeroSection() {
         </div>
 
         {/* 5. Avaliações */}
-        <div className="mt-4 flex items-center justify-center gap-2 text-sm text-midnight">
-          <span className="text-lg text-gold">★★★★★</span>
-          <span><strong>+12.480</strong> avaliações verificadas</span>
+        <div className="mt-5 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-lg font-semibold text-midnight-deep sm:text-xl">
+          <span className="text-2xl tracking-wider text-gold sm:text-3xl">★★★★★</span>
+          <span><strong className="text-xl sm:text-2xl">+12.480</strong> avaliações verificadas</span>
         </div>
 
         {/* Gatilhos de confiança */}
         <div className="mt-5 flex flex-col items-center gap-3">
+          <div className="flex items-center gap-2 rounded-full border border-emerald-300 bg-emerald-50 px-4 py-1.5 text-sm font-bold uppercase tracking-widest text-emerald-800">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-5 w-5">
+              <path d="M1 3h13v13H1z" />
+              <path d="M14 8h4l3 3v5h-7z" />
+              <circle cx="5.5" cy="18.5" r="1.5" />
+              <circle cx="17.5" cy="18.5" r="1.5" />
+            </svg>
+            Frete Grátis Brasil
+          </div>
           <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-midnight-deep">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-4 w-4">
               <rect x="4" y="11" width="16" height="9" rx="2" />
