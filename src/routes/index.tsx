@@ -310,7 +310,7 @@ function HeroSection() {
         </p>
 
         {/* 3. Slider/carrossel de imagens */}
-        <div className="relative mt-8 aspect-square w-full max-w-md overflow-hidden rounded-[2rem] shadow-luxe">
+        <div className="relative mt-8 aspect-square w-full max-w-2xl overflow-hidden rounded-[2rem] shadow-luxe">
           {slides.map((src, i) => (
             <img
               key={src}
@@ -322,37 +322,48 @@ function HeroSection() {
               draggable={false}
             />
           ))}
-          <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-1.5">
-            {slides.map((_, i) => (
-              <button
-                key={i}
-                type="button"
-                onClick={() => setIdx(i)}
-                aria-label={`Ir para slide ${i + 1}`}
-                className={`h-1.5 rounded-full transition-all ${
-                  i === idx ? "w-6 bg-white" : "w-1.5 bg-white/60"
-                }`}
-              />
-            ))}
-          </div>
+        </div>
+
+        {/* Indicadores */}
+        <div className="mt-5 flex items-center justify-center gap-2.5">
+          {slides.map((_, i) => (
+            <button
+              key={i}
+              type="button"
+              onClick={() => setIdx(i)}
+              aria-label={`Ir para slide ${i + 1}`}
+              className={`h-3 w-3 rounded-full transition-all ${
+                i === idx ? "scale-125 bg-midnight-deep" : "bg-midnight-deep/25"
+              }`}
+            />
+          ))}
         </div>
 
         {/* 4. Caixa de oferta */}
-        <div className="mt-8 w-full max-w-md rounded-xl border border-amber-300/70 bg-amber-50 px-4 py-3 text-center text-sm font-semibold text-amber-900 sm:text-base">
+        <div className="mt-8 w-full max-w-xl rounded-xl border border-amber-300/70 bg-amber-50 px-4 py-3 text-center text-sm font-semibold text-amber-900 sm:text-base">
           🎁 OFERTA DE HOJE: Compre o Kit Rosto e GANHE o Kit Colo 100% Grátis
         </div>
 
-        {/* 4a. CTA principal — largo no mobile */}
-        <div className="mt-3 w-full max-w-md">
-          <CTAButton block />
+        {/* 4b. Bloco de preços */}
+        <div className="mt-6 flex w-full max-w-xl flex-col items-center">
+          <p className="text-sm text-muted-foreground sm:text-base">
+            Valor total: <span className="line-through">R$ 397</span>
+          </p>
+          <p className="mt-1 text-xs font-bold uppercase tracking-[0.22em] text-[#c8102e]">
+            Oferta especial
+          </p>
+          <p className="mt-1 font-display text-6xl font-extrabold leading-none text-[#c8102e] sm:text-7xl">
+            R$ 197
+          </p>
+          <p className="mt-2 text-sm text-midnight-deep sm:text-base">
+            Em até <strong>12x de R$ 16,42</strong> sem juros
+          </p>
         </div>
 
-        {/* 4b. Oferta de preço */}
-        <p className="mt-5 max-w-md text-center text-sm font-normal text-muted-foreground sm:text-base">
-          Leve 2 Kits pelo preço de 1 por apenas{" "}
-          <strong className="font-extrabold text-[#c8102e]">R$ 187,15 no Pix</strong>{" "}
-          (ou 12x de R$ 19,78 no cartão)
-        </p>
+        {/* 4c. CTA principal */}
+        <div className="mt-6 w-full max-w-xl">
+          <CTAButton block label="GARANTIR MEU KIT FACIAL + COLO GRÁTIS" />
+        </div>
 
         {/* 5. Avaliações */}
         <div className="mt-4 flex items-center justify-center gap-2 text-sm text-midnight">
@@ -361,7 +372,7 @@ function HeroSection() {
         </div>
 
         {/* Gatilhos de confiança */}
-        <div className="mt-6 flex flex-col items-center gap-3">
+        <div className="mt-5 flex flex-col items-center gap-3">
           <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-midnight-deep">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-4 w-4">
               <rect x="4" y="11" width="16" height="9" rx="2" />
@@ -377,15 +388,6 @@ function HeroSection() {
           </div>
         </div>
 
-        {/* Checklist de objeções */}
-        <ul className="mt-6 flex flex-col items-center gap-2 text-sm text-midnight-deep">
-          {["Hipoalergênico", "Dermatologicamente testado", "Frete grátis Brasil"].map((it) => (
-            <li key={it} className="flex items-center gap-2">
-              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#c8102e] text-[11px] font-bold text-white">✓</span>
-              <span>{it}</span>
-            </li>
-          ))}
-        </ul>
       </div>
     </section>
   );
