@@ -1101,7 +1101,7 @@ function FooterSection() {
           <div>
             <p className="font-display text-2xl">SonoLift<sup className="text-gold">™</sup></p>
             <p className="mt-3 max-w-sm text-sm text-cream/70">
-              Sistema de proteção contra as rugas do sono. Tecnologia patenteada de silicone médico.
+              Sistema de proteção contra as rugas do sono. Silicone médico de alta performance.
             </p>
           </div>
           <div>
