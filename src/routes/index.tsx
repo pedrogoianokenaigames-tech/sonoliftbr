@@ -994,7 +994,7 @@ function OfferSection() {
           </div>
 
           <div className="mt-8">
-            <CTAButton block label="GARANTIR MEU KIT FACIAL + COLO GRÁTIS" />
+            <CTAButton block label="GARANTIR MEU KIT + BRINDE →" />
           </div>
 
           <div className="mt-6 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[11px] uppercase tracking-[0.15em] text-white/70">
