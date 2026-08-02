@@ -338,30 +338,52 @@ function HeroSection() {
         </div>
 
         {/* 4b. Bloco de preços */}
-        <div className="mt-6 flex w-full max-w-xl flex-col items-center">
-          <p className="text-sm text-muted-foreground sm:text-base">
-            Valor total: <span className="line-through">R$ 397</span>
+        <div className="mt-6 w-full max-w-xl rounded-2xl border border-[#c8102e]/25 bg-white px-5 py-6 shadow-soft">
+          <p className="text-base text-muted-foreground sm:text-lg">
+            De <span className="line-through decoration-[#c8102e] decoration-2">R$ 397</span>
           </p>
-          <p className="mt-1 text-xs font-bold uppercase tracking-[0.22em] text-[#c8102e]">
+          <p className="mx-auto mt-2 w-fit rounded-full bg-[#c8102e] px-4 py-1 text-xs font-extrabold uppercase tracking-[0.22em] text-white sm:text-sm">
             Oferta especial
           </p>
-          <p className="mt-1 font-display text-6xl font-extrabold leading-none text-[#c8102e] sm:text-7xl">
+          <p className="mt-2 font-display text-7xl font-extrabold leading-none text-[#c8102e] sm:text-8xl">
             R$ 197
           </p>
-          <p className="mt-2 text-sm text-midnight-deep sm:text-base">
+          <p className="mt-3 text-base font-semibold text-emerald-700 sm:text-lg">
+            ou R$ 187,15 no Pix
+          </p>
+          <p className="mt-1 text-sm text-midnight-deep sm:text-base">
             Em até <strong>12x de R$ 16,42</strong> sem juros
           </p>
         </div>
 
+        {/* 4b-2. Benefícios rápidos */}
+        <ul className="mt-5 grid w-full max-w-xl gap-2 text-left text-base font-medium text-midnight-deep sm:grid-cols-2 sm:text-lg">
+          <li className="flex items-center gap-2 rounded-xl bg-white/70 px-3 py-2">✅ <span>16 adesivos faciais</span></li>
+          <li className="flex items-center gap-2 rounded-xl bg-white/70 px-3 py-2">🎁 <span>Kit Colo Grátis</span></li>
+          <li className="flex items-center gap-2 rounded-xl bg-white/70 px-3 py-2">🚚 <span>Frete Grátis para todo Brasil</span></li>
+          <li className="flex items-center gap-2 rounded-xl bg-white/70 px-3 py-2">🛡️ <span>Garantia de 30 dias</span></li>
+        </ul>
+
         {/* 4c. CTA principal */}
         <div className="mt-6 w-full max-w-xl">
-          <CTAButton block label="GARANTIR MEU KIT FACIAL + COLO GRÁTIS" />
+          <CTAButton block label="GARANTIR MEU KIT + BRINDE →" />
         </div>
 
         {/* 5. Avaliações */}
-        <div className="mt-5 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-lg font-semibold text-midnight-deep sm:text-xl">
-          <span className="text-2xl tracking-wider text-gold sm:text-3xl">★★★★★</span>
-          <span><strong className="text-xl sm:text-2xl">+12.480</strong> avaliações verificadas</span>
+        <div className="mt-6 w-full max-w-xl rounded-2xl border border-gold/40 bg-white px-5 py-4">
+          <div className="text-3xl tracking-[0.15em] text-gold sm:text-4xl">★★★★★</div>
+          <p className="mt-1 text-lg font-semibold text-midnight-deep sm:text-xl">
+            Mais de <strong className="text-xl sm:text-2xl">12.480</strong> clientes satisfeitas
+          </p>
+          <p className="text-sm text-muted-foreground sm:text-base">avaliações verificadas</p>
+        </div>
+
+        {/* 5b. Indicadores de confiança */}
+        <div className="mt-4 grid w-full max-w-xl grid-cols-2 gap-2 text-sm font-semibold text-midnight-deep sm:text-base">
+          <span className="rounded-xl border border-border bg-white px-3 py-2">🔒 Compra 100% Segura</span>
+          <span className="rounded-xl border border-border bg-white px-3 py-2">📦 Envio com Rastreamento</span>
+          <span className="rounded-xl border border-border bg-white px-3 py-2">💳 Parcelamento em 12x</span>
+          <span className="rounded-xl border border-border bg-white px-3 py-2">🛡️ Garantia de 30 dias</span>
         </div>
 
         {/* Gatilhos de confiança */}
