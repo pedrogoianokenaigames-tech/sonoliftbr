@@ -10,7 +10,6 @@ import ugc1 from "@/assets/ugc1.mp4.asset.json";
 import ugc2 from "@/assets/ugc2.mp4.asset.json";
 import ugc3 from "@/assets/ugc3.mp4.asset.json";
 import ugc4 from "@/assets/ugc4.mp4.asset.json";
-import ugc5 from "@/assets/ugc5.mp4.asset.json";
 import areaTesta from "@/assets/testa.jpg.asset.json";
 import areaOlho from "@/assets/olho-sorriso.jpg.asset.json";
 import areaLabio from "@/assets/labio.jpg.asset.json";
@@ -55,12 +54,6 @@ const UGC_VIDEOS: { src: string; poster: string; name: string; benefit: string }
     poster: "https://images.unsplash.com/photo-1512316609839-ce289d3eba0a?auto=format&fit=crop&w=800&q=80",
     name: "Sônia L.",
     benefit: "Acordo descansada e sem vincos",
-  },
-  {
-    src: ugc5.url,
-    poster: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=800&q=80",
-    name: "Beatriz F.",
-    benefit: "Rugas do sono atenuadas",
   },
 ];
 
@@ -366,14 +359,17 @@ function HeroSection() {
 
         {/* 4c. CTA principal */}
         <div className="mt-6 w-full max-w-xl">
-          <CTAButton block label="GARANTIR MEU KIT + BRINDE →" />
+          <CTAButton block label="GARANTIR MEU KIT + COLO GRÁTIS →" />
+          <p className="mt-2 text-center text-sm font-medium text-midnight-deep sm:text-base">
+            🔒 Compra Segura • Frete Grátis • Garantia de 30 noites
+          </p>
         </div>
 
         {/* 5. Avaliações */}
-        <div className="mt-6 w-full max-w-xl rounded-2xl border border-gold/40 bg-white px-5 py-4">
+        <div className="mt-3 w-full max-w-xl rounded-2xl border border-gold/40 bg-white px-5 py-4">
           <div className="text-3xl tracking-[0.15em] text-gold sm:text-4xl">★★★★★</div>
           <p className="mt-1 text-lg font-semibold text-midnight-deep sm:text-xl">
-            Mais de <strong className="text-xl sm:text-2xl">12.480</strong> clientes satisfeitas
+            Mais de <strong className="text-xl sm:text-2xl">12.480</strong> mulheres já escolheram SonoLift<sup className="text-gold">™</sup>
           </p>
           <p className="text-sm text-muted-foreground sm:text-base">avaliações verificadas</p>
         </div>
@@ -431,7 +427,7 @@ function CTAButton({ block = false, label = CTA_LABEL }: { block?: boolean; labe
       href="https://sono-lift.pay.yampi.com.br/r/R558X0P2M5"
       target="_blank"
       rel="noopener noreferrer"
-      className={`group inline-flex items-center justify-center gap-2 rounded-full bg-gold-gradient px-8 py-4 text-center text-sm font-bold uppercase tracking-wider text-midnight-deep shadow-luxe animate-cta-pulse transition hover:scale-[1.02] sm:text-base ${block ? "w-full" : ""}`}
+      className={`group inline-flex min-h-[60px] items-center justify-center gap-2 rounded-full bg-gold-gradient px-8 py-[1.15rem] text-center text-base font-bold uppercase tracking-wider text-midnight-deep shadow-luxe animate-cta-pulse transition hover:scale-[1.02] hover:brightness-105 hover:shadow-xl sm:min-h-[64px] sm:text-lg ${block ? "w-full" : ""}`}
     >
       {label}
       <span className="transition group-hover:translate-x-1">→</span>
@@ -750,26 +746,38 @@ function useCountUp(target: number, durationMs = 1400) {
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    const run = () => {
+      if (started.current) return;
+      started.current = true;
+      const start = performance.now();
+      const tick = (now: number) => {
+        const p = Math.min(1, (now - start) / durationMs);
+        const eased = 1 - Math.pow(1 - p, 3);
+        setValue(Math.round(eased * target));
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    };
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting && !started.current) {
-            started.current = true;
-            const start = performance.now();
-            const tick = (now: number) => {
-              const p = Math.min(1, (now - start) / durationMs);
-              const eased = 1 - Math.pow(1 - p, 3);
-              setValue(Math.round(eased * target));
-              if (p < 1) requestAnimationFrame(tick);
-            };
-            requestAnimationFrame(tick);
-          }
+          if (entry.isIntersecting) run();
         });
       },
-      { threshold: 0.4 },
+      { threshold: 0.15, rootMargin: "0px 0px -40px 0px" },
     );
     io.observe(el);
-    return () => io.disconnect();
+    // Failsafe: never leave the stat showing 0 if the observer never fires.
+    const fallback = window.setTimeout(() => {
+      if (!started.current) {
+        started.current = true;
+        setValue(target);
+      }
+    }, 3000);
+    return () => {
+      io.disconnect();
+      window.clearTimeout(fallback);
+    };
   }, [target, durationMs]);
 
   return { ref, value };
@@ -946,8 +954,8 @@ function OfferSection() {
           </article>
 
           {/* Card 2 — Bônus */}
-          <article className="relative flex flex-col rounded-3xl border-2 border-gold bg-cream p-8 shadow-luxe">
-            <span className="absolute -top-3 left-6 rounded-full bg-gold-gradient px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-midnight-deep">
+          <article className="relative mt-4 flex flex-col rounded-3xl border-2 border-gold bg-cream p-8 pt-9 shadow-luxe md:mt-0">
+            <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-gold-gradient px-4 py-1.5 text-[10px] font-bold uppercase leading-none tracking-[0.2em] text-midnight-deep shadow-soft md:left-6 md:translate-x-0">
               Bônus grátis
             </span>
             <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-gold">
@@ -978,8 +986,11 @@ function OfferSection() {
           <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-gold">
             Você recebe hoje
           </p>
-          <p className="mt-3 text-center font-display text-2xl leading-tight md:text-3xl">
-            Sistema Facial <span className="text-white/60">+</span> Colo <span className="text-gold">GRÁTIS</span>
+          <p className="mt-3 flex flex-wrap items-center justify-center gap-x-2 text-center font-display text-2xl leading-tight md:text-3xl">
+            <span>Sistema Facial</span>
+            <span className="text-white/60">+</span>
+            <span>Colo</span>
+            <span className="text-gold">GRÁTIS</span>
           </p>
 
           <div className="mt-6 text-center">
@@ -994,12 +1005,17 @@ function OfferSection() {
           </div>
 
           <div className="mt-8">
-            <CTAButton block label="GARANTIR MEU KIT + BRINDE →" />
+            <CTAButton block label="GARANTIR MEU KIT + COLO GRÁTIS →" />
           </div>
 
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[11px] uppercase tracking-[0.15em] text-white/70">
-            <span>🔒 Compra segura</span>
-            <span>·</span>
+          <div className="mt-4 flex items-center justify-center gap-2 text-sm font-semibold text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-5 w-5 text-gold">
+              <rect x="4" y="11" width="16" height="9" rx="2" />
+              <path d="M8 11V7a4 4 0 0 1 8 0v4" />
+            </svg>
+            Compra 100% Segura
+          </div>
+          <div className="mt-3 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[11px] uppercase tracking-[0.15em] text-white/70">
             <span>VISA</span>
             <span>·</span>
             <span>Mastercard</span>
