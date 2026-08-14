@@ -20,7 +20,7 @@ import stepPeelAsset from "@/assets/ritual-pos.webp.asset.json";
 import stepNightAsset from "@/assets/ritual-noite.webp.asset.json";
 import stepStoreAsset from "@/assets/step-store.webp.asset.json";
 import heroImg1 from "@/assets/slide-kit.jpg.asset.json";
-import heroVideo from "@/assets/hero-video.mp4.asset.json";
+import heroVideo from "@/assets/hero-video-2.mp4.asset.json";
 
 const CTA_LABEL = "QUERO MEU KIT FACIAL + COLO GRÁTIS";
 
@@ -278,19 +278,18 @@ function HeroSection() {
           <video
             ref={videoRef}
             src={heroVideo.url}
-            poster={heroImg1.url}
             autoPlay
             loop
             muted
             playsInline
             preload="auto"
-            className="h-full w-full object-cover"
+            className="h-full w-full object-contain"
           />
           <button
             type="button"
             onClick={toggleSound}
             aria-label={muted ? "Ativar som do vídeo" : "Desativar som do vídeo"}
-            className="absolute bottom-4 left-1/2 flex -translate-x-1/2 items-center gap-2 rounded-full bg-black/75 px-5 py-3 text-sm font-bold text-white backdrop-blur transition hover:bg-black sm:text-base"
+            className="absolute top-4 left-1/2 flex -translate-x-1/2 items-center gap-2 rounded-full bg-black/75 px-5 py-3 text-sm font-bold text-white backdrop-blur transition hover:bg-black sm:text-base"
           >
             {muted ? "🔊 Toque para ativar o som" : "🔇 Desativar som"}
           </button>
