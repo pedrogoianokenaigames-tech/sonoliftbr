@@ -20,8 +20,7 @@ import stepPeelAsset from "@/assets/ritual-pos.webp.asset.json";
 import stepNightAsset from "@/assets/ritual-noite.webp.asset.json";
 import stepStoreAsset from "@/assets/step-store.webp.asset.json";
 import heroImg1 from "@/assets/slide-kit.jpg.asset.json";
-import heroImg2 from "@/assets/slide-colo.jpg.asset.json";
-import heroImg3 from "@/assets/slide-resultado.jpg.asset.json";
+import heroVideo from "@/assets/hero-video.mp4.asset.json";
 
 const CTA_LABEL = "QUERO MEU KIT FACIAL + COLO GRÁTIS";
 
@@ -74,7 +73,6 @@ function Index() {
   return (
     <div className="min-h-screen bg-cream text-midnight-deep">
       <TopBar />
-      <Marquee />
       <Nav />
       <HeroSection />
       <Reveal><InvisibleEnemySection /></Reveal>
@@ -190,30 +188,6 @@ function TopBar() {
 }
 
 /* ============================================================
- *  Marquee — rotating benefits banner
- * ============================================================ */
-function Marquee() {
-  const items = [
-    "GARANTIA DE 30 DIAS",
-    "SISTEMA SONOLIFT™ COMPLETO",
-    "PROTEÇÃO CONTRA AS MARCAS DO SONO",
-    "ENVIO RÁPIDO E SEGURO",
-    "OFERTA ESPECIAL DE LANÇAMENTO",
-  ];
-  const line = items.join("  •  ");
-  return (
-    <div className="sticky top-[38px] z-40 overflow-hidden bg-[#7a0f14] text-white sm:top-[40px]">
-      <div className="flex w-max animate-marquee whitespace-nowrap py-2 text-[12px] font-semibold uppercase tracking-widest sm:text-sm">
-        <span className="px-6">{line}&nbsp;&nbsp;•&nbsp;&nbsp;{line}&nbsp;&nbsp;•&nbsp;&nbsp;</span>
-        <span className="px-6" aria-hidden>
-          {line}&nbsp;&nbsp;•&nbsp;&nbsp;{line}&nbsp;&nbsp;•&nbsp;&nbsp;
-        </span>
-      </div>
-    </div>
-  );
-}
-
-/* ============================================================
  *  Navigation
  * ============================================================ */
 function Nav() {
@@ -277,12 +251,16 @@ function Nav() {
  *  Hero
  * ============================================================ */
 function HeroSection() {
-  const slides = [heroImg1.url, heroImg2.url, heroImg3.url];
-  const [idx, setIdx] = useState(0);
-  useEffect(() => {
-    const id = setInterval(() => setIdx((i) => (i + 1) % slides.length), 3500);
-    return () => clearInterval(id);
-  }, [slides.length]);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const [muted, setMuted] = useState(true);
+  const toggleSound = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.muted = !v.muted;
+    if (!v.muted) v.volume = 1;
+    void v.play().catch(() => {});
+    setMuted(v.muted);
+  };
 
   return (
     <section id="top" className="bg-cream">
@@ -295,34 +273,27 @@ function HeroSection() {
           Uma barreira invisível de silicone médico que protege sua pele durante as 8 horas mais decisivas do seu dia.
         </p>
 
-        {/* 3. Slider/carrossel de imagens */}
-        <div className="relative mt-8 aspect-square w-full max-w-2xl overflow-hidden rounded-[2rem] shadow-luxe">
-          {slides.map((src, i) => (
-            <img
-              key={src}
-              src={src}
-              alt={`SonoLift em uso ${i + 1}`}
-              className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
-                i === idx ? "opacity-100" : "opacity-0"
-              }`}
-              draggable={false}
-            />
-          ))}
-        </div>
-
-        {/* Indicadores */}
-        <div className="mt-5 flex items-center justify-center gap-2.5">
-          {slides.map((_, i) => (
-            <button
-              key={i}
-              type="button"
-              onClick={() => setIdx(i)}
-              aria-label={`Ir para slide ${i + 1}`}
-              className={`h-3 w-3 rounded-full transition-all ${
-                i === idx ? "scale-125 bg-midnight-deep" : "bg-midnight-deep/25"
-              }`}
-            />
-          ))}
+        {/* 3. Vídeo vertical (formato Reels) */}
+        <div className="relative mt-8 aspect-[9/16] w-full max-w-[380px] overflow-hidden rounded-[2rem] bg-black shadow-luxe">
+          <video
+            ref={videoRef}
+            src={heroVideo.url}
+            poster={heroImg1.url}
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            className="h-full w-full object-cover"
+          />
+          <button
+            type="button"
+            onClick={toggleSound}
+            aria-label={muted ? "Ativar som do vídeo" : "Desativar som do vídeo"}
+            className="absolute bottom-4 left-1/2 flex -translate-x-1/2 items-center gap-2 rounded-full bg-black/75 px-5 py-3 text-sm font-bold text-white backdrop-blur transition hover:bg-black sm:text-base"
+          >
+            {muted ? "🔊 Toque para ativar o som" : "🔇 Desativar som"}
+          </button>
         </div>
 
         {/* 4. Caixa de oferta */}
