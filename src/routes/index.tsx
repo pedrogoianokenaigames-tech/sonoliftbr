@@ -74,6 +74,7 @@ function Index() {
       <TopBar />
       <Nav />
       <HeroSection />
+      <Reveal><AdvertorialSection /></Reveal>
       <Reveal><InvisibleEnemySection /></Reveal>
       <Reveal><BeforeAfterSliderSection /></Reveal>
       <Reveal><ClinicalStudySection /></Reveal>
@@ -250,6 +251,115 @@ function Nav() {
  *  Hero
  * ============================================================ */
 function HeroSection() {
+  const { data: product } = useFeaturedProduct();
+  const [activeImage, setActiveImage] = useState(0);
+
+  // Fallback images if Shopify fetch fails
+  const images = product?.images?.edges.map((e) => e.node.url) || [
+    "https://images.unsplash.com/photo-1520206183501-b80df61043c2?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1512316609839-ce289d3eba0a?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80",
+  ];
+
+  return (
+    <section id="top" className="bg-cream">
+      <div className="mx-auto flex max-w-6xl flex-col px-4 py-6 md:flex-row md:gap-12 md:py-12">
+        {/* 1. Galeria de Imagens */}
+        <div className="w-full md:w-1/2">
+          <div className="relative aspect-square w-full overflow-hidden rounded-2xl bg-white shadow-soft">
+            <img
+              src={images[activeImage]}
+              alt="Produto SonoLift"
+              className="h-full w-full object-contain p-4"
+            />
+          </div>
+          <div className="mt-4 flex gap-3 overflow-x-auto pb-2">
+            {images.map((img, i) => (
+              <button
+                key={i}
+                onClick={() => setActiveImage(i)}
+                className={`relative aspect-square w-20 shrink-0 overflow-hidden rounded-lg border-2 bg-white transition ${
+                  activeImage === i ? "border-gold shadow-md" : "border-transparent opacity-70 hover:opacity-100"
+                }`}
+              >
+                <img src={img} alt={`Miniatura ${i + 1}`} className="h-full w-full object-cover" />
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* 2, 3, 4. Info e CTA */}
+        <div className="mt-8 flex flex-col md:mt-0 md:w-1/2">
+          {/* Avaliações */}
+          <div className="flex items-center gap-2">
+            <div className="text-xl tracking-[0.1em] text-gold">★★★★★</div>
+            <span className="text-sm font-semibold text-midnight-deep">(12.480+ avaliações)</span>
+          </div>
+
+          {/* Título */}
+          <h1 className="mt-3 font-display text-3xl leading-tight text-midnight-deep sm:text-4xl">
+            {product?.title || "Kit SonoLift™ Facial + Colo"}
+          </h1>
+
+          {/* Preço */}
+          <div className="mt-6">
+            <p className="text-sm text-muted-foreground">
+              De <span className="line-through decoration-[#c8102e] decoration-2">R$ 397,00</span>
+            </p>
+            <div className="mt-1 flex items-baseline gap-3">
+              <span className="font-display text-5xl font-extrabold text-[#c8102e]">R$ 197</span>
+              <span className="rounded-full bg-[#c8102e] px-3 py-0.5 text-[10px] font-black uppercase tracking-widest text-white">
+                50% OFF
+              </span>
+            </div>
+            <p className="mt-2 text-base font-semibold text-emerald-700">
+              ou R$ 187,15 no Pix
+            </p>
+            <p className="text-sm text-midnight-deep">
+              Em até <strong>12x de R$ 16,42</strong> sem juros
+            </p>
+          </div>
+
+          {/* Caixa de oferta curta */}
+          <div className="mt-6 rounded-xl border border-amber-300/70 bg-amber-50 px-4 py-2.5 text-center text-[13px] font-bold text-amber-900">
+            🎁 OFERTA: Kit Rosto + Kit Colo GRÁTIS
+          </div>
+
+          {/* CTA Principal */}
+          <div className="mt-6">
+            <CTAButton block label="GARANTIR MEU KIT →" />
+          </div>
+
+          {/* Benefícios rápidos centralizados/icones */}
+          <div className="mt-6 grid grid-cols-2 gap-3 text-[13px] font-semibold text-midnight-deep">
+            <div className="flex items-center gap-2"><span className="text-emerald-600">✓</span> Frete Grátis Brasil</div>
+            <div className="flex items-center gap-2"><span className="text-emerald-600">✓</span> Garantia 30 Dias</div>
+            <div className="flex items-center gap-2"><span className="text-emerald-600">✓</span> 16 Adesivos Rosto</div>
+            <div className="flex items-center gap-2"><span className="text-emerald-600">✓</span> +1 Colo Grátis</div>
+          </div>
+
+          {/* Gatilhos de confiança simples */}
+          <div className="mt-6 flex items-center justify-center gap-4 border-t border-border pt-6 grayscale opacity-60">
+            <span className="text-[10px] font-bold uppercase tracking-widest">VISA</span>
+            <span className="text-[10px] font-bold uppercase tracking-widest">Master</span>
+            <span className="text-[10px] font-bold uppercase tracking-widest">Elo</span>
+            <span className="text-[10px] font-bold uppercase tracking-widest">Pix</span>
+            <div className="h-4 w-px bg-border"></div>
+            <div className="flex items-center gap-1 text-[10px] font-bold uppercase tracking-widest">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" className="h-3 w-3">
+                <rect x="4" y="11" width="16" height="9" rx="2" />
+                <path d="M8 11V7a4 4 0 0 1 8 0v4" />
+              </svg>
+              Seguro
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function AdvertorialSection() {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [muted, setMuted] = useState(true);
   const toggleSound = () => {
@@ -262,18 +372,23 @@ function HeroSection() {
   };
 
   return (
-    <section id="top" className="bg-cream">
-      <div className="mx-auto flex max-w-6xl flex-col items-center justify-center px-4 py-10 text-center md:py-16">
-        {/* 2. Headline + descrição */}
-        <h1 className="max-w-2xl font-display text-4xl leading-[1.05] tracking-tight text-midnight-deep sm:text-5xl md:text-6xl">
+    <section className="bg-cream pt-10 pb-20 md:pt-16 md:pb-32">
+      <div className="mx-auto flex max-w-6xl flex-col items-center justify-center px-4 text-center">
+        {/* Banner Antigo 'VOCÊ DORME DE LADO?' logic - can be re-added if user wants specific text, 
+            but prompt says "Acorde sem as marcas..." is the core text here. */}
+        <div className="mb-6 rounded-full bg-gold-gradient px-6 py-1 text-[11px] font-black uppercase tracking-[0.25em] text-midnight-deep shadow-soft">
+          Você dorme de lado?
+        </div>
+
+        <h2 className="max-w-2xl font-display text-4xl leading-[1.05] tracking-tight text-midnight-deep sm:text-5xl md:text-6xl">
           Acorde sem as <em className="italic text-gold">marcas</em> que o travesseiro deixa.
-        </h1>
-        <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+        </h2>
+        <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
           Uma barreira invisível de silicone médico que protege sua pele durante as 8 horas mais decisivas do seu dia.
         </p>
 
-        {/* 3. Vídeo vertical (formato Reels) */}
-        <div className="relative mt-8 aspect-[9/16] w-full max-w-[380px] overflow-hidden rounded-[2rem] bg-black shadow-luxe">
+        {/* Vídeo vertical (formato Reels) */}
+        <div className="relative mt-12 aspect-[9/16] w-full max-w-[380px] overflow-hidden rounded-[2.5rem] bg-black shadow-luxe transition-transform hover:scale-[1.01]">
           <video
             ref={videoRef}
             src={heroVideo.url}
@@ -288,95 +403,11 @@ function HeroSection() {
             type="button"
             onClick={toggleSound}
             aria-label={muted ? "Ativar som do vídeo" : "Desativar som do vídeo"}
-            className="absolute top-4 left-1/2 flex -translate-x-1/2 items-center gap-2 rounded-full bg-black/75 px-5 py-3 text-sm font-bold text-white backdrop-blur transition hover:bg-black sm:text-base"
+            className="absolute top-6 left-1/2 flex -translate-x-1/2 items-center gap-2 rounded-full bg-black/80 px-5 py-3 text-sm font-bold text-white backdrop-blur-md transition hover:bg-black"
           >
             {muted ? "🔊 Toque para ativar o som" : "🔇 Desativar som"}
           </button>
         </div>
-
-        {/* 4. Caixa de oferta */}
-        <div className="mt-8 w-full max-w-xl rounded-xl border border-amber-300/70 bg-amber-50 px-4 py-3 text-center text-sm font-semibold text-amber-900 sm:text-base">
-          🎁 OFERTA DE HOJE: Compre o Kit Rosto e GANHE o Kit Colo 100% Grátis
-        </div>
-
-        {/* 4b. Bloco de preços */}
-        <div className="mt-6 w-full max-w-xl rounded-2xl border border-[#c8102e]/25 bg-white px-5 py-6 shadow-soft">
-          <p className="text-base text-muted-foreground sm:text-lg">
-            De <span className="line-through decoration-[#c8102e] decoration-2">R$ 397</span>
-          </p>
-          <p className="mx-auto mt-2 w-fit rounded-full bg-[#c8102e] px-4 py-1 text-xs font-extrabold uppercase tracking-[0.22em] text-white sm:text-sm">
-            Oferta especial
-          </p>
-          <p className="mt-2 font-display text-7xl font-extrabold leading-none text-[#c8102e] sm:text-8xl">
-            R$ 197
-          </p>
-          <p className="mt-3 text-base font-semibold text-emerald-700 sm:text-lg">
-            ou R$ 187,15 no Pix
-          </p>
-          <p className="mt-1 text-sm text-midnight-deep sm:text-base">
-            Em até <strong>12x de R$ 16,42</strong> sem juros
-          </p>
-        </div>
-
-        {/* 4b-2. Benefícios rápidos */}
-        <ul className="mt-5 grid w-full max-w-xl gap-2 text-left text-base font-medium text-midnight-deep sm:grid-cols-2 sm:text-lg">
-          <li className="flex items-center gap-2 rounded-xl bg-white/70 px-3 py-2">✅ <span>16 adesivos faciais</span></li>
-          <li className="flex items-center gap-2 rounded-xl bg-white/70 px-3 py-2">🎁 <span>Kit Colo Grátis</span></li>
-          <li className="flex items-center gap-2 rounded-xl bg-white/70 px-3 py-2">🚚 <span>Frete Grátis para todo Brasil</span></li>
-          <li className="flex items-center gap-2 rounded-xl bg-white/70 px-3 py-2">🛡️ <span>Garantia de 30 dias</span></li>
-        </ul>
-
-        {/* 4c. CTA principal */}
-        <div className="mt-6 w-full max-w-xl">
-          <CTAButton block label="GARANTIR MEU KIT + COLO GRÁTIS →" />
-          <p className="mt-2 text-center text-sm font-medium text-midnight-deep sm:text-base">
-            🔒 Compra Segura • Frete Grátis • Garantia de 30 noites
-          </p>
-        </div>
-
-        {/* 5. Avaliações */}
-        <div className="mt-3 w-full max-w-xl rounded-2xl border border-gold/40 bg-white px-5 py-4">
-          <div className="text-3xl tracking-[0.15em] text-gold sm:text-4xl">★★★★★</div>
-          <p className="mt-1 text-lg font-semibold text-midnight-deep sm:text-xl">
-            Mais de <strong className="text-xl sm:text-2xl">12.480</strong> mulheres já escolheram SonoLift<sup className="text-gold">™</sup>
-          </p>
-          <p className="text-sm text-muted-foreground sm:text-base">avaliações verificadas</p>
-        </div>
-
-        {/* 5b. Indicadores de confiança */}
-        <div className="mt-4 grid w-full max-w-xl grid-cols-2 gap-2 text-sm font-semibold text-midnight-deep sm:text-base">
-          <span className="rounded-xl border border-border bg-white px-3 py-2">🔒 Compra 100% Segura</span>
-          <span className="rounded-xl border border-border bg-white px-3 py-2">📦 Envio com Rastreamento</span>
-          <span className="rounded-xl border border-border bg-white px-3 py-2">💳 Parcelamento em 12x</span>
-          <span className="rounded-xl border border-border bg-white px-3 py-2">🛡️ Garantia de 30 dias</span>
-        </div>
-
-        {/* Gatilhos de confiança */}
-        <div className="mt-5 flex flex-col items-center gap-3">
-          <div className="flex items-center gap-2 rounded-full border border-emerald-300 bg-emerald-50 px-4 py-1.5 text-sm font-bold uppercase tracking-widest text-emerald-800">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-5 w-5">
-              <path d="M1 3h13v13H1z" />
-              <path d="M14 8h4l3 3v5h-7z" />
-              <circle cx="5.5" cy="18.5" r="1.5" />
-              <circle cx="17.5" cy="18.5" r="1.5" />
-            </svg>
-            Frete Grátis Brasil
-          </div>
-          <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-midnight-deep">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-4 w-4">
-              <rect x="4" y="11" width="16" height="9" rx="2" />
-              <path d="M8 11V7a4 4 0 0 1 8 0v4" />
-            </svg>
-            Compra 100% segura
-          </div>
-          <div className="flex flex-wrap items-center justify-center gap-2 text-[11px] font-bold uppercase tracking-widest text-midnight-deep">
-            <span className="rounded border border-border bg-white px-2 py-1">VISA</span>
-            <span className="rounded border border-border bg-white px-2 py-1">Mastercard</span>
-            <span className="rounded border border-border bg-white px-2 py-1">Elo</span>
-            <span className="rounded border border-border bg-white px-2 py-1 text-[#32BCAD]">Pix</span>
-          </div>
-        </div>
-
       </div>
     </section>
   );
