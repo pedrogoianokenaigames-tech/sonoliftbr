@@ -275,11 +275,11 @@ function HeroSection() {
       <div className="mx-auto flex max-w-6xl flex-col px-4 py-6 md:flex-row md:gap-12 md:py-12">
         {/* 1. Galeria de Imagens */}
         <div className="w-full md:w-1/2">
-          <div className="relative aspect-square w-full overflow-hidden rounded-2xl bg-white shadow-soft">
+          <div className="relative aspect-square w-full overflow-hidden rounded-2xl bg-white shadow-soft max-h-[50vh] sm:max-h-none">
             <img
               src={images[activeImage]}
               alt="Produto SonoLift"
-              className="h-full w-full object-contain p-4"
+              className="h-full w-full object-contain sm:object-contain p-4 sm:p-4 object-center"
             />
           </div>
           <div className="mt-4 flex gap-3 overflow-x-auto pb-2">
