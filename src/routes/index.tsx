@@ -74,6 +74,7 @@ function Index() {
       <TopBar />
       <Nav />
       <HeroSection />
+      <Reveal><AdvertorialSection /></Reveal>
       <Reveal><InvisibleEnemySection /></Reveal>
       <Reveal><BeforeAfterSliderSection /></Reveal>
       <Reveal><ClinicalStudySection /></Reveal>
