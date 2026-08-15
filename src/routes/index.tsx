@@ -260,8 +260,8 @@ function HeroSection() {
   const { data: product } = useFeaturedProduct();
   const [activeImage, setActiveImage] = useState(0);
 
-  // Fallback images if Shopify fetch fails
-  const images = product?.images?.edges.map((e) => e.node.url) || [
+  // Fallback images - prioritizing local assets to ensure they appear even if Shopify fails
+  const images = [
     heroImg1.url,
     heroImg2.url,
     heroImg3.url,
