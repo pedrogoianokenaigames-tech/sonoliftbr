@@ -377,22 +377,22 @@ function HeroSection() {
           {/* Gatilhos de confiança com ícones coloridos e estáveis */}
           <div className="mt-8 flex flex-wrap items-center justify-center gap-x-5 gap-y-3 border-t border-border pt-6 opacity-90">
             <img 
-              src="https://raw.githubusercontent.com/a-bentley/payment-icons/master/png/visa.png" 
+              src="https://img.icons8.com/color/48/visa.png" 
               alt="Visa" 
               className="h-5 w-auto object-contain sm:h-6" 
             />
             <img 
-              src="https://raw.githubusercontent.com/a-bentley/payment-icons/master/png/mastercard.png" 
+              src="https://img.icons8.com/color/48/mastercard.png" 
               alt="Mastercard" 
               className="h-6 w-auto object-contain sm:h-7" 
             />
             <img 
-              src="https://raw.githubusercontent.com/a-bentley/payment-icons/master/png/elo.png" 
+              src="https://img.icons8.com/color/48/elo.png" 
               alt="Elo" 
               className="h-5 w-auto object-contain sm:h-6" 
             />
             <img 
-              src="https://raw.githubusercontent.com/a-bentley/payment-icons/master/png/pix.png" 
+              src="https://img.icons8.com/color/48/pix.png" 
               alt="Pix" 
               className="h-5 w-auto object-contain sm:h-6" 
             />
