@@ -392,14 +392,14 @@ function HeroSection() {
             
             {/* Elo */}
             <img 
-              src="https://id-preview--8e2875b6-88f6-4189-acb8-98d3a3a05914.lovable.app/assets/elo-logo.jpg" 
+              src="/elo-logo.jpg" 
               alt="Elo" 
               className="h-5 w-auto object-contain sm:h-6" 
             />
 
             {/* Pix */}
             <img 
-              src="https://id-preview--8e2875b6-88f6-4189-acb8-98d3a3a05914.lovable.app/assets/pix-logo.png" 
+              src="/pix-logo.png" 
               alt="Pix" 
               className="h-5 w-auto object-contain sm:h-6" 
             />
