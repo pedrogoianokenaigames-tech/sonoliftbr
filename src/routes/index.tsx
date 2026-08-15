@@ -26,6 +26,8 @@ import heroImg3 from "@/assets/hero3.jpg.asset.json";
 import heroImg4 from "@/assets/hero4.jpg.asset.json";
 import heroImg5 from "@/assets/hero5.webp.asset.json";
 import heroImg6 from "@/assets/hero6.jpg.asset.json";
+import pixLogo from "@/assets/pix-logo.png.asset.json";
+import eloLogo from "@/assets/elo-logo.jpg.asset.json";
 
 const CTA_LABEL = "QUERO MEU KIT FACIAL + COLO GRÁTIS";
 
@@ -400,7 +402,7 @@ function HeroSection() {
             {/* Elo */}
             <div className="flex h-6 items-center justify-center">
               <img 
-                src="https://sonoliftbr.lovable.app/elo-logo.jpg" 
+                src={eloLogo.url} 
                 alt="Elo" 
                 className="h-full w-auto object-contain" 
               />
@@ -409,7 +411,7 @@ function HeroSection() {
             {/* Pix */}
             <div className="flex h-6 items-center justify-center">
               <img 
-                src="https://sonoliftbr.lovable.app/pix-logo.png" 
+                src={pixLogo.url} 
                 alt="Pix" 
                 className="h-full w-auto object-contain" 
               />
