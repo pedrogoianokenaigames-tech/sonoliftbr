@@ -1261,9 +1261,15 @@ function FooterSection() {
         </div>
       </div>
       <div className="border-t border-white/10">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-4 py-6 text-xs text-cream/60 md:flex-row">
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 py-8 text-xs text-cream/60 md:flex-row">
           <span>© 2026 SonoLift Beauty LTDA · CNPJ 76.047.876/0001-90</span>
-          <span>Visa · Mastercard · ELO · Pix</span>
+          
+          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 opacity-60 filter brightness-0 invert">
+            <img src="https://img.icons8.com/color/48/visa.png" alt="Visa" className="h-4 w-auto object-contain" />
+            <img src="https://img.icons8.com/color/48/mastercard.png" alt="Mastercard" className="h-5 w-auto object-contain" />
+            <img src="https://sonoliftbr.lovable.app/elo-logo.jpg" alt="Elo" className="h-4 w-auto object-contain" />
+            <img src="https://sonoliftbr.lovable.app/pix-logo.png" alt="Pix" className="h-4 w-auto object-contain" />
+          </div>
         </div>
       </div>
     </footer>
