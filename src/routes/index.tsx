@@ -377,36 +377,44 @@ function HeroSection() {
           {/* Gatilhos de confiança com ícones fiéis às referências */}
           <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-4 border-t border-border pt-6 opacity-95">
             {/* Visa */}
-            <img 
-              src="https://img.icons8.com/color/48/visa.png" 
-              alt="Visa" 
-              className="h-5 w-auto object-contain sm:h-6" 
-            />
+            <div className="flex h-6 items-center justify-center">
+              <img 
+                src="https://img.icons8.com/color/48/visa.png" 
+                alt="Visa" 
+                className="h-full w-auto object-contain" 
+              />
+            </div>
             
             {/* Mastercard */}
-            <img 
-              src="https://img.icons8.com/color/48/mastercard.png" 
-              alt="Mastercard" 
-              className="h-7 w-auto object-contain sm:h-8" 
-            />
+            <div className="flex h-7 items-center justify-center">
+              <img 
+                src="https://img.icons8.com/color/48/mastercard.png" 
+                alt="Mastercard" 
+                className="h-full w-auto object-contain" 
+              />
+            </div>
             
             {/* Elo */}
-            <img 
-              src="/elo-logo.jpg" 
-              alt="Elo" 
-              className="h-5 w-auto object-contain sm:h-6" 
-            />
-
+            <div className="flex h-6 items-center justify-center">
+              <img 
+                src="https://sonoliftbr.lovable.app/elo-logo.jpg" 
+                alt="Elo" 
+                className="h-full w-auto object-contain" 
+              />
+            </div>
+            
             {/* Pix */}
-            <img 
-              src="/pix-logo.png" 
-              alt="Pix" 
-              className="h-5 w-auto object-contain sm:h-6" 
-            />
+            <div className="flex h-6 items-center justify-center">
+              <img 
+                src="https://sonoliftbr.lovable.app/pix-logo.png" 
+                alt="Pix" 
+                className="h-full w-auto object-contain" 
+              />
+            </div>
 
             <div className="h-4 w-px bg-border hidden sm:block"></div>
-            <div className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-widest text-midnight-deep">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4 text-emerald-600">
+            <div className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-widest text-emerald-700">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4">
                 <path d="M12 2C9.243 2 7 4.243 7 7V10H6C4.895 10 4 10.895 4 12V20C4 21.105 4.895 22 6 22H18C19.105 22 20 21.105 20 20V12C20 10.895 19.105 10 18 10H17V7C17 4.243 14.757 2 12 2ZM9 7C9 5.346 10.346 4 12 4C13.654 4 15 5.346 15 7V10H9V7ZM12 17C11.172 17 10.5 16.328 10.5 15.5C10.5 14.672 11.172 14 12 14C12.828 14 13.5 14.672 13.5 15.5C13.5 16.328 12.828 17 12 17Z" />
               </svg>
               Seguro
