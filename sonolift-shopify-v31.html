@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --cream: #FDFCF9; --gold: #C5A059; --midnight: #1A1A1A; }
+        body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--midnight); overflow-x: hidden; padding-bottom: 80px; }
+        @media (min-width: 768px) { body { padding-bottom: 0; } }
+        .font-display { font-family: 'Instrument Serif', serif; }
+        .bg-gold-gradient { background: linear-gradient(135deg, #D4AF37 0%, #C5A059 100%); }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .shadow-up { box-shadow: 0 -4px 10px rgba(0,0,0,0.08); }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="sticky top-0 z-50 bg-black text-white py-2 text-center text-sm font-bold">
+        ⚠️ ATENÇÃO: KIT COLO GRÁTIS RESERVADO POR: <span id="timer">10:00</span>
+    </div>
+
+    <!-- Nav -->
+    <nav class="bg-white border-b px-4 py-4 flex justify-between items-center">
+        <div class="w-10"></div>
+        <div class="font-display text-3xl">SonoLift<span class="text-[#C5A059]">™</span></div>
+        <div class="w-10"></div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="px-4 py-6 max-w-6xl mx-auto">
+        <div class="flex flex-col md:flex-row gap-8">
+            <div class="w-full md:w-1/2">
+                <div class="relative aspect-square bg-white rounded-2xl shadow-sm overflow-hidden max-h-[50vh] md:max-h-none">
+                    <img id="main-img" src="https://id-preview--8e2875b6-88f6-4189-acb8-98d3a3a05914.lovable.app/assets/1_imagem_um_pro_carrosel.webp" class="w-full h-full object-contain p-4">
+                </div>
+                <div class="flex gap-2 mt-4 overflow-x-auto no-scrollbar pb-2">
+                    <button onclick="changeImg(0)" class="w-20 aspect-square flex-shrink-0 border-2 rounded-lg overflow-hidden bg-white"><img src="https://id-preview--8e2875b6-88f6-4189-acb8-98d3a3a05914.lovable.app/assets/1_imagem_um_pro_carrosel.webp" class="w-full h-full object-cover"></button><button onclick="changeImg(1)" class="w-20 aspect-square flex-shrink-0 border-2 rounded-lg overflow-hidden bg-white"><img src="https://id-preview--8e2875b6-88f6-4189-acb8-98d3a3a05914.lovable.app/assets/61Gwf0eAogL._AC_SL1024_.jpg" class="w-full h-full object-cover"></button><button onclick="changeImg(2)" class="w-20 aspect-square flex-shrink-0 border-2 rounded-lg overflow-hidden bg-white"><img src="https://id-preview--8e2875b6-88f6-4189-acb8-98d3a3a05914.lovable.app/assets/31Llvy0XlML._AC_.jpg" class="w-full h-full object-cover"></button><button onclick="changeImg(3)" class="w-20 aspect-square flex-shrink-0 border-2 rounded-lg overflow-hidden bg-white"><img src="https://id-preview--8e2875b6-88f6-4189-acb8-98d3a3a05914.lovable.app/assets/61ODU3qW6OL._AC_SL1024_.jpg" class="w-full h-full object-cover"></button><button onclick="changeImg(4)" class="w-20 aspect-square flex-shrink-0 border-2 rounded-lg overflow-hidden bg-white"><img src="https://id-preview--8e2875b6-88f6-4189-acb8-98d3a3a05914.lovable.app/assets/2_imagem.webp" class="w-full h-full object-cover"></button><button onclick="changeImg(5)" class="w-20 aspect-square flex-shrink-0 border-2 rounded-lg overflow-hidden bg-white"><img src="https://id-preview--8e2875b6-88f6-4189-acb8-98d3a3a05914.lovable.app/assets/51ABNwxk9HL._AC_SL1200_.jpg" class="w-full h-full object-cover"></button>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 flex flex-col">
+                <div class="flex items-center gap-2 text-gold">★★★★★ <span class="text-xs text-midnight font-bold">(12.480+ avaliações)</span></div>
+                <h1 class="font-display text-4xl mt-2">Kit SonoLift™ Facial + Colo</h1>
+                <div class="mt-4">
+                    <div class="text-sm text-gray-500">De <span class="line-through text-red-600">R$ 397,00</span></div>
+                    <div class="flex items-baseline gap-2">
+                        <span class="text-5xl font-extrabold text-red-600">R$ 197</span>
+                        <span class="bg-red-600 text-white text-[10px] px-2 py-0.5 rounded-full font-black">50% OFF</span>
+                    </div>
+                </div>
+                <div class="mt-4 bg-amber-50 border border-amber-200 rounded-xl py-2 text-center text-sm font-bold text-amber-900">
+                    🎁 OFERTA: Kit Rosto + Kit Colo GRÁTIS
+                </div>
+                <a href="/checkout" class="mt-4 bg-[#FFD700] hover:bg-[#FFC800] text-black font-black py-5 rounded-full text-center text-lg shadow-lg transform active:scale-95 transition-all">
+                    GARANTIR MEU KIT →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sticky Mobile CTA -->
+    <div id="sticky-bar" class="fixed bottom-0 left-0 z-[999] w-full bg-white/95 p-3 shadow-up backdrop-blur-sm md:hidden hidden">
+        <a href="/checkout" class="block w-full bg-[#FFD700] text-black font-black py-4 rounded-full text-center text-md shadow-md">
+            GARANTIR MEU KIT
+        </a>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        const imgs = ['https://id-preview--8e2875b6-88f6-4189-acb8-98d3a3a05914.lovable.app/assets/1_imagem_um_pro_carrosel.webp', 'https://id-preview--8e2875b6-88f6-4189-acb8-98d3a3a05914.lovable.app/assets/61Gwf0eAogL._AC_SL1024_.jpg', 'https://id-preview--8e2875b6-88f6-4189-acb8-98d3a3a05914.lovable.app/assets/31Llvy0XlML._AC_.jpg', 'https://id-preview--8e2875b6-88f6-4189-acb8-98d3a3a05914.lovable.app/assets/61ODU3qW6OL._AC_SL1024_.jpg', 'https://id-preview--8e2875b6-88f6-4189-acb8-98d3a3a05914.lovable.app/assets/2_imagem.webp', 'https://id-preview--8e2875b6-88f6-4189-acb8-98d3a3a05914.lovable.app/assets/51ABNwxk9HL._AC_SL1200_.jpg'];
+        function changeImg(i) { document.getElementById('main-img').src = imgs[i]; }
+        
+        let time = 600;
+        setInterval(() => {
+            if (time > 0) time--;
+            let m = Math.floor(time / 60);
+            let s = time % 60;
+            document.getElementById('timer').innerText = `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+        }, 1000);
+
+        window.addEventListener('scroll', () => {
+            const bar = document.getElementById('sticky-bar');
+            if (window.scrollY > 600) {
+                bar.classList.remove('hidden');
+            } else {
+                bar.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>

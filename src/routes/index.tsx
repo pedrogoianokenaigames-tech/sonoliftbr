@@ -76,7 +76,7 @@ export const Route = createFileRoute("/")({
 function Index() {
   useCartSync();
   return (
-    <div className="min-h-screen bg-cream text-midnight-deep">
+    <div className="min-h-screen bg-cream text-midnight-deep pb-[80px] md:pb-0">
       <TopBar />
       <Nav />
       <HeroSection />
@@ -93,6 +93,33 @@ function Index() {
       <Reveal><FAQSection /></Reveal>
       <FooterSection />
       <WhatsAppFloat />
+      <StickyCTA />
+    </div>
+  );
+}
+
+/* ============================================================
+ *  Sticky CTA Bar (Mobile only)
+ * ============================================================ */
+function StickyCTA() {
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Show sticky CTA after scrolling past the hero section (approx 600px)
+      setShow(window.scrollY > 600);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  if (!show) return null;
+
+  return (
+    <div className="fixed bottom-0 left-0 z-[999] w-full bg-white/95 p-3 shadow-[0_-4px_10px_rgba(0,0,0,0.08)] backdrop-blur-sm md:hidden animate-in fade-in slide-in-from-bottom-5 duration-300">
+      <div className="mx-auto max-w-md">
+        <CTAButton block label="GARANTIR MEU KIT" />
+      </div>
     </div>
   );
 }
