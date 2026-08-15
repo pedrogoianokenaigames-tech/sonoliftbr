@@ -229,7 +229,7 @@ function Nav() {
     <header className="border-b border-border/40 bg-white">
       <div className="mx-auto grid max-w-6xl grid-cols-3 items-center px-4 py-3">
         {/* Left slot */}
-        <div className="justify-self-start">
+        <div className="flex items-center">
           {/* Hamburger (mobile) */}
           <button
             type="button"
@@ -244,32 +244,35 @@ function Nav() {
             </svg>
           </button>
           {/* Left links (desktop) */}
-          <nav className="hidden gap-6 text-sm font-semibold uppercase tracking-widest text-midnight-deep md:flex">
-            <a href="#oferta" className="hover:text-gold">Loja</a>
-            <a href="#ciencia" className="hover:text-gold">Ciência</a>
+          <nav className="hidden gap-8 text-[13px] font-bold uppercase tracking-widest text-midnight-deep md:flex">
+            <a href="#oferta" className="transition hover:text-gold">Loja</a>
+            <a href="#ciencia" className="transition hover:text-gold">Ciência</a>
           </nav>
         </div>
 
         {/* Centered logo */}
-        <a
-          href="#top"
-          className="justify-self-center font-display text-2xl tracking-tight text-midnight-deep sm:text-3xl"
-        >
-          SonoLift<sup className="text-gold">™</sup>
-        </a>
+        <div className="flex justify-center">
+          <a
+            href="#top"
+            className="font-display text-2xl tracking-tighter text-midnight-deep sm:text-3xl"
+          >
+            SonoLift<sup className="text-gold font-sans text-xs">™</sup>
+          </a>
+        </div>
 
         {/* Right slot */}
-        <div className="justify-self-end">
-          <nav className="hidden gap-6 text-sm font-semibold uppercase tracking-widest text-midnight-deep md:flex">
-            <a href="#resultados" className="hover:text-gold">Avaliações</a>
-            <a href="#oferta" className="hover:text-gold">Comprar</a>
+        <div className="flex items-center justify-end">
+          <nav className="hidden gap-8 text-[13px] font-bold uppercase tracking-widest text-midnight-deep md:flex">
+            <a href="#resultados" className="transition hover:text-gold">Avaliações</a>
+            <a href="#oferta" className="transition hover:text-gold">Comprar</a>
           </nav>
+          {/* Cart placeholder or Search icon could go here for symmetry on mobile if needed */}
         </div>
       </div>
 
       {/* Mobile menu */}
       {open && (
-        <nav className="flex flex-col items-center gap-3 border-t border-border/40 bg-white py-4 text-sm font-semibold uppercase tracking-widest text-midnight-deep md:hidden">
+        <nav className="flex flex-col items-center gap-5 border-t border-border/40 bg-white py-8 text-[14px] font-bold uppercase tracking-[0.2em] text-midnight-deep md:hidden animate-in fade-in slide-in-from-top-2 duration-200">
           <a href="#oferta" onClick={() => setOpen(false)}>Loja</a>
           <a href="#ciencia" onClick={() => setOpen(false)}>Ciência</a>
           <a href="#resultados" onClick={() => setOpen(false)}>Avaliações</a>
@@ -302,20 +305,20 @@ function HeroSection() {
       <div className="mx-auto flex max-w-6xl flex-col px-4 py-6 md:flex-row md:gap-12 md:py-12">
         {/* 1. Galeria de Imagens */}
         <div className="w-full md:w-1/2">
-          <div className="relative aspect-square w-full overflow-hidden rounded-2xl bg-white shadow-soft max-h-[50vh] sm:max-h-none">
+          <div className="relative aspect-square w-full overflow-hidden rounded-2xl bg-white shadow-soft max-h-[50vh] sm:max-h-[550px] md:max-h-none">
             <img
               src={images[activeImage]}
               alt="Produto SonoLift"
-              className="h-full w-full object-contain sm:object-contain p-4 sm:p-4 object-center"
+              className="h-full w-full object-contain p-2 sm:p-4 object-center"
             />
           </div>
-          <div className="mt-4 flex gap-3 overflow-x-auto pb-2">
+          <div className="mt-4 flex gap-2.5 overflow-x-auto pb-2 scrollbar-hide sm:grid sm:grid-cols-6 sm:overflow-visible">
             {images.map((img, i) => (
               <button
                 key={i}
                 onClick={() => setActiveImage(i)}
-                className={`relative aspect-square w-20 shrink-0 overflow-hidden rounded-lg border-2 bg-white transition ${
-                  activeImage === i ? "border-gold shadow-md" : "border-transparent opacity-70 hover:opacity-100"
+                className={`relative aspect-square w-16 min-w-[64px] shrink-0 overflow-hidden rounded-lg border-2 bg-white transition sm:w-full ${
+                  activeImage === i ? "border-gold shadow-md" : "border-transparent opacity-60 hover:opacity-100"
                 }`}
               >
                 <img src={img} alt={`Miniatura ${i + 1}`} className="h-full w-full object-cover" />
@@ -377,36 +380,44 @@ function HeroSection() {
           {/* Gatilhos de confiança com ícones fiéis às referências */}
           <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-4 border-t border-border pt-6 opacity-95">
             {/* Visa */}
-            <img 
-              src="https://img.icons8.com/color/48/visa.png" 
-              alt="Visa" 
-              className="h-5 w-auto object-contain sm:h-6" 
-            />
+            <div className="flex h-6 items-center justify-center">
+              <img 
+                src="https://img.icons8.com/color/48/visa.png" 
+                alt="Visa" 
+                className="h-full w-auto object-contain" 
+              />
+            </div>
             
             {/* Mastercard */}
-            <img 
-              src="https://img.icons8.com/color/48/mastercard.png" 
-              alt="Mastercard" 
-              className="h-7 w-auto object-contain sm:h-8" 
-            />
+            <div className="flex h-7 items-center justify-center">
+              <img 
+                src="https://img.icons8.com/color/48/mastercard.png" 
+                alt="Mastercard" 
+                className="h-full w-auto object-contain" 
+              />
+            </div>
             
             {/* Elo */}
-            <img 
-              src="/elo-logo.jpg" 
-              alt="Elo" 
-              className="h-5 w-auto object-contain sm:h-6" 
-            />
-
+            <div className="flex h-6 items-center justify-center">
+              <img 
+                src="https://sonoliftbr.lovable.app/elo-logo.jpg" 
+                alt="Elo" 
+                className="h-full w-auto object-contain" 
+              />
+            </div>
+            
             {/* Pix */}
-            <img 
-              src="/pix-logo.png" 
-              alt="Pix" 
-              className="h-5 w-auto object-contain sm:h-6" 
-            />
+            <div className="flex h-6 items-center justify-center">
+              <img 
+                src="https://sonoliftbr.lovable.app/pix-logo.png" 
+                alt="Pix" 
+                className="h-full w-auto object-contain" 
+              />
+            </div>
 
             <div className="h-4 w-px bg-border hidden sm:block"></div>
-            <div className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-widest text-midnight-deep">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4 text-emerald-600">
+            <div className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-widest text-emerald-700">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4">
                 <path d="M12 2C9.243 2 7 4.243 7 7V10H6C4.895 10 4 10.895 4 12V20C4 21.105 4.895 22 6 22H18C19.105 22 20 21.105 20 20V12C20 10.895 19.105 10 18 10H17V7C17 4.243 14.757 2 12 2ZM9 7C9 5.346 10.346 4 12 4C13.654 4 15 5.346 15 7V10H9V7ZM12 17C11.172 17 10.5 16.328 10.5 15.5C10.5 14.672 11.172 14 12 14C12.828 14 13.5 14.672 13.5 15.5C13.5 16.328 12.828 17 12 17Z" />
               </svg>
               Seguro
@@ -1013,7 +1024,7 @@ function OfferSection() {
           </article>
 
           {/* Card 2 — Bônus */}
-          <article className="relative mt-4 flex flex-col rounded-3xl border-2 border-gold bg-cream p-8 pt-9 shadow-luxe md:mt-0">
+          <article className="relative mt-8 flex flex-col rounded-3xl border-2 border-gold bg-cream p-8 pt-9 shadow-luxe md:mt-0">
             <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-gold-gradient px-4 py-1.5 text-[10px] font-bold uppercase leading-none tracking-[0.2em] text-midnight-deep shadow-soft md:left-6 md:translate-x-0">
               Bônus grátis
             </span>
@@ -1045,12 +1056,14 @@ function OfferSection() {
           <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-gold">
             Você recebe hoje
           </p>
-          <p className="mt-3 flex flex-wrap items-center justify-center gap-x-2 text-center font-display text-2xl leading-tight md:text-3xl">
+          <div className="mt-3 flex flex-wrap items-center justify-center gap-x-2 text-center font-display text-2xl leading-tight md:text-3xl">
             <span>Sistema Facial</span>
             <span className="text-white/60">+</span>
             <span>Colo</span>
-            <span className="text-gold">GRÁTIS</span>
-          </p>
+            <span className="inline-block rounded-md bg-gold-gradient px-2 py-0.5 text-midnight-deep text-lg font-black uppercase leading-none shadow-soft">
+              GRÁTIS
+            </span>
+          </div>
 
           <div className="mt-6 text-center">
             <p className="text-sm text-white/60">
@@ -1074,14 +1087,42 @@ function OfferSection() {
             </svg>
             Compra 100% Segura
           </div>
-          <div className="mt-3 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[11px] uppercase tracking-[0.15em] text-white/70">
-            <span>VISA</span>
-            <span>·</span>
-            <span>Mastercard</span>
-            <span>·</span>
-            <span>ELO</span>
-            <span>·</span>
-            <span>PIX</span>
+          <div className="mt-5 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 border-t border-white/10 pt-5 opacity-90">
+            {/* Visa */}
+            <div className="flex h-5 items-center justify-center filter brightness-0 invert">
+              <img 
+                src="https://img.icons8.com/color/48/visa.png" 
+                alt="Visa" 
+                className="h-full w-auto object-contain" 
+              />
+            </div>
+            
+            {/* Mastercard */}
+            <div className="flex h-6 items-center justify-center filter brightness-0 invert">
+              <img 
+                src="https://img.icons8.com/color/48/mastercard.png" 
+                alt="Mastercard" 
+                className="h-full w-auto object-contain" 
+              />
+            </div>
+            
+            {/* Elo */}
+            <div className="flex h-5 items-center justify-center filter brightness-0 invert">
+              <img 
+                src="https://sonoliftbr.lovable.app/elo-logo.jpg" 
+                alt="Elo" 
+                className="h-full w-auto object-contain" 
+              />
+            </div>
+            
+            {/* Pix */}
+            <div className="flex h-5 items-center justify-center filter brightness-0 invert">
+              <img 
+                src="https://sonoliftbr.lovable.app/pix-logo.png" 
+                alt="Pix" 
+                className="h-full w-auto object-contain" 
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -1222,9 +1263,15 @@ function FooterSection() {
         </div>
       </div>
       <div className="border-t border-white/10">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-4 py-6 text-xs text-cream/60 md:flex-row">
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 py-8 text-xs text-cream/60 md:flex-row">
           <span>© 2026 SonoLift Beauty LTDA · CNPJ 76.047.876/0001-90</span>
-          <span>Visa · Mastercard · ELO · Pix</span>
+          
+          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 opacity-60 filter brightness-0 invert">
+            <img src="https://img.icons8.com/color/48/visa.png" alt="Visa" className="h-4 w-auto object-contain" />
+            <img src="https://img.icons8.com/color/48/mastercard.png" alt="Mastercard" className="h-5 w-auto object-contain" />
+            <img src="https://sonoliftbr.lovable.app/elo-logo.jpg" alt="Elo" className="h-4 w-auto object-contain" />
+            <img src="https://sonoliftbr.lovable.app/pix-logo.png" alt="Pix" className="h-4 w-auto object-contain" />
+          </div>
         </div>
       </div>
     </footer>
