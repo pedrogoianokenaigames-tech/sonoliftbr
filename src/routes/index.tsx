@@ -262,9 +262,12 @@ function HeroSection() {
 
   // Fallback images if Shopify fetch fails
   const images = product?.images?.edges.map((e) => e.node.url) || [
-    "https://images.unsplash.com/photo-1520206183501-b80df61043c2?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1512316609839-ce289d3eba0a?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80",
+    heroImg1.url,
+    heroImg2.url,
+    heroImg3.url,
+    heroImg4.url,
+    heroImg5.url,
+    heroImg6.url,
   ];
 
   return (
