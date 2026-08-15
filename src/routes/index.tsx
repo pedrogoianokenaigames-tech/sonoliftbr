@@ -374,40 +374,35 @@ function HeroSection() {
             <div className="flex items-center gap-2"><span className="text-emerald-600">✓</span> +1 Colo Grátis</div>
           </div>
 
-          {/* Gatilhos de confiança com SVGs inline para máxima compatibilidade */}
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-4 border-t border-border pt-6 opacity-90">
+          {/* Gatilhos de confiança com ícones fiéis às referências */}
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-4 border-t border-border pt-6 opacity-95">
             {/* Visa */}
-            <svg className="h-4 w-auto sm:h-5" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="48" height="48" rx="4" fill="#1A1F71"/>
-              <path d="M18.8 33h-2.5l1.6-9.6h2.5L18.8 33zm11.3-9.4c-.5-.2-1.2-.5-2.1-.5-2.1 0-3.5 1.1-3.6 2.7-.1 1.2 1.1 1.8 1.9 2.2.8.4 1.1.7 1.1 1 0 .6-.7.8-1.3.8-.9 0-1.5-.1-2.3-.5l-.3-.1-.4 2.5c.7.3 2 .6 3.3.6 2.2 0 3.7-1.1 3.7-2.8.1-1-.6-1.7-1.8-2.3-.7-.4-1.2-.6-1.2-1 0-.3.4-.7 1.2-.7.7 0 1.2.1 1.6.3l.2.1.4-2.5zm7.3 9.4h2.4L37.7 23.6h-2.3c-.5 0-.9.3-1.1.8l-3.9 9.3h2.6l.5-1.4h3.1l.3 1.4zm-2.8-3.7l1 2.7h1.7l-1.5-3.8-1.2 1.1zm-18.4 3.7l-2.4-9.6h-2.6L20.8 33h2.6z" fill="white"/>
-            </svg>
+            <img 
+              src="https://img.icons8.com/color/48/visa.png" 
+              alt="Visa" 
+              className="h-5 w-auto object-contain sm:h-6" 
+            />
             
             {/* Mastercard */}
-            <svg className="h-6 w-auto sm:h-7" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="18" cy="24" r="14" fill="#EB001B"/>
-              <circle cx="30" cy="24" r="14" fill="#F79E1B" fillOpacity="0.8"/>
-            </svg>
+            <img 
+              src="https://img.icons8.com/color/48/mastercard.png" 
+              alt="Mastercard" 
+              className="h-7 w-auto object-contain sm:h-8" 
+            />
             
             {/* Elo */}
-            <svg className="h-5 w-auto sm:h-6" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="48" height="48" rx="4" fill="black"/>
-              <path d="M12 24c0-6.6 5.4-12 12-12s12 5.4 12 12-5.4 12-12 12-12-5.4-12-12z" fill="white" fillOpacity="0.2"/>
-              <path d="M34 24a10 10 0 1 1-20 0 10 10 0 0 1 20 0z" fill="#00AEEF"/>
-              <path d="M32 24a8 8 0 1 1-16 0 8 8 0 0 1 16 0z" fill="#EF3C34"/>
-              <path d="M30 24a6 6 0 1 1-12 0 6 6 0 0 1 12 0z" fill="#FFC20E"/>
-            </svg>
+            <img 
+              src="https://id-preview--8e2875b6-88f6-4189-acb8-98d3a3a05914.lovable.app/assets/elo-logo.jpg" 
+              alt="Elo" 
+              className="h-5 w-auto object-contain sm:h-6" 
+            />
 
             {/* Pix */}
-            <svg className="h-5 w-auto sm:h-6" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M24 8l-4 4 4 4 4-4-4-4z" fill="#32BCAD"/>
-              <path d="M12 20l4-4 4 4-4 4-4-4z" fill="#32BCAD"/>
-              <path d="M36 20l-4-4-4 4 4 4 4-4z" fill="#32BCAD"/>
-              <path d="M24 32l-4-4 4-4 4 4-4 4z" fill="#32BCAD"/>
-              <path d="M24 40l-8-8 8-8 8 8-8 8z" fill="#32BCAD"/>
-              <path d="M12 28l-4-4 4-4 4 4-4 4z" fill="#32BCAD"/>
-              <path d="M36 28l4-4-4-4-4 4 4 4z" fill="#32BCAD"/>
-              <path d="M24 16l-8 8 8 8 8-8-8-8z" fill="#32BCAD"/>
-            </svg>
+            <img 
+              src="https://id-preview--8e2875b6-88f6-4189-acb8-98d3a3a05914.lovable.app/assets/pix-logo.png" 
+              alt="Pix" 
+              className="h-5 w-auto object-contain sm:h-6" 
+            />
 
             <div className="h-4 w-px bg-border hidden sm:block"></div>
             <div className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-widest text-midnight-deep">
