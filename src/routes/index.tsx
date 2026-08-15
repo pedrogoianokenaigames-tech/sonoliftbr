@@ -1082,14 +1082,42 @@ function OfferSection() {
             </svg>
             Compra 100% Segura
           </div>
-          <div className="mt-3 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[11px] uppercase tracking-[0.15em] text-white/70">
-            <span>VISA</span>
-            <span>·</span>
-            <span>Mastercard</span>
-            <span>·</span>
-            <span>ELO</span>
-            <span>·</span>
-            <span>PIX</span>
+          <div className="mt-5 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 border-t border-white/10 pt-5 opacity-90">
+            {/* Visa */}
+            <div className="flex h-5 items-center justify-center filter brightness-0 invert">
+              <img 
+                src="https://img.icons8.com/color/48/visa.png" 
+                alt="Visa" 
+                className="h-full w-auto object-contain" 
+              />
+            </div>
+            
+            {/* Mastercard */}
+            <div className="flex h-6 items-center justify-center filter brightness-0 invert">
+              <img 
+                src="https://img.icons8.com/color/48/mastercard.png" 
+                alt="Mastercard" 
+                className="h-full w-auto object-contain" 
+              />
+            </div>
+            
+            {/* Elo */}
+            <div className="flex h-5 items-center justify-center filter brightness-0 invert">
+              <img 
+                src="https://sonoliftbr.lovable.app/elo-logo.jpg" 
+                alt="Elo" 
+                className="h-full w-auto object-contain" 
+              />
+            </div>
+            
+            {/* Pix */}
+            <div className="flex h-5 items-center justify-center filter brightness-0 invert">
+              <img 
+                src="https://sonoliftbr.lovable.app/pix-logo.png" 
+                alt="Pix" 
+                className="h-full w-auto object-contain" 
+              />
+            </div>
           </div>
         </div>
       </div>
