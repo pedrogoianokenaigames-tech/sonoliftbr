@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
+        .reveal-in { opacity: 1; transform: translateY(0); }
+        .gold-gradient { background: linear-gradient(135deg, #e3c480, #bf953f); }
+    </style>
+</head>
+<body class="bg-[#fdfaf5] text-[#1a1a1a]">
+    <!-- TopBar -->
+    <div class="bg-black text-white p-3 text-center text-sm font-bold">
+        ⚠️ ATENÇÃO: Seu Kit Colo GRÁTIS está reservado por: <span id="timer" class="text-red-500">10:00</span>
+    </div>
+    
+    <!-- Hero (with Video + Gallery) -->
+    <div class="max-w-xl mx-auto p-4">
+        <video src="https://8e2875b6-88f6-4189-acb8-98d3a3a05914.lovableproject.com/__l5e/assets-v1/ffe73f55-6f15-44c5-ba81-1e8528f04917/hero-video-2.mp4" autoplay loop muted playsinline class="w-full rounded-2xl"></video>
+        <h1 class="text-3xl font-bold mt-4 text-center">Kit SonoLift™ Facial + Colo</h1>
+        <div class="mt-6">
+            <a href="https://sono-lift.pay.yampi.com.br/r/R558X0P2M5" class="block w-full bg-amber-500 text-white font-bold text-center py-4 rounded-full text-xl shadow-lg">GARANTIR MEU KIT + BRINDE →</a>
+        </div>
+    </div>
+
+    <!-- Before/After Slider -->
+    <div class="max-w-md mx-auto p-4">
+        <div class="relative overflow-hidden rounded-2xl">
+            <img src="https://8e2875b6-88f6-4189-acb8-98d3a3a05914.lovableproject.com/__l5e/assets-v1/ee13a90a-ef08-4fdf-b1a8-10d2d2e9e3f3/depois.png" class="w-full">
+            <img src="https://8e2875b6-88f6-4189-acb8-98d3a3a05914.lovableproject.com/__l5e/assets-v1/636add08-96df-44c6-a92b-64e913b9e48f/antes.png" class="absolute inset-0 w-full" style="clip-path: inset(0 50% 0 0);">
+        </div>
+    </div>
+
+    <!-- Sticky CTA -->
+    <div class="fixed bottom-0 w-full p-4 bg-white shadow-2xl md:hidden z-[9999]">
+        <a href="https://sono-lift.pay.yampi.com.br/r/R558X0P2M5" class="block w-full bg-amber-500 text-white font-bold text-center py-4 rounded-full">GARANTIR MEU KIT</a>
+    </div>
+
+    <script>
+        // Timer
+        let time = 600;
+        setInterval(() => {
+            time--;
+            const m = Math.floor(time/60);
+            const s = time%60;
+            document.getElementById('timer').innerText = m + ":" + (s<10?'0':'')+s;
+        }, 1000);
+
+        // Reveal observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('reveal-in'); });
+        }, {threshold: 0.1});
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
