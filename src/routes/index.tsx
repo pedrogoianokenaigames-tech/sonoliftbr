@@ -229,7 +229,7 @@ function Nav() {
     <header className="border-b border-border/40 bg-white">
       <div className="mx-auto grid max-w-6xl grid-cols-3 items-center px-4 py-3">
         {/* Left slot */}
-        <div className="justify-self-start">
+        <div className="flex items-center">
           {/* Hamburger (mobile) */}
           <button
             type="button"
@@ -244,32 +244,35 @@ function Nav() {
             </svg>
           </button>
           {/* Left links (desktop) */}
-          <nav className="hidden gap-6 text-sm font-semibold uppercase tracking-widest text-midnight-deep md:flex">
-            <a href="#oferta" className="hover:text-gold">Loja</a>
-            <a href="#ciencia" className="hover:text-gold">Ciência</a>
+          <nav className="hidden gap-8 text-[13px] font-bold uppercase tracking-widest text-midnight-deep md:flex">
+            <a href="#oferta" className="transition hover:text-gold">Loja</a>
+            <a href="#ciencia" className="transition hover:text-gold">Ciência</a>
           </nav>
         </div>
 
         {/* Centered logo */}
-        <a
-          href="#top"
-          className="justify-self-center font-display text-2xl tracking-tight text-midnight-deep sm:text-3xl"
-        >
-          SonoLift<sup className="text-gold">™</sup>
-        </a>
+        <div className="flex justify-center">
+          <a
+            href="#top"
+            className="font-display text-2xl tracking-tighter text-midnight-deep sm:text-3xl"
+          >
+            SonoLift<sup className="text-gold font-sans text-xs">™</sup>
+          </a>
+        </div>
 
         {/* Right slot */}
-        <div className="justify-self-end">
-          <nav className="hidden gap-6 text-sm font-semibold uppercase tracking-widest text-midnight-deep md:flex">
-            <a href="#resultados" className="hover:text-gold">Avaliações</a>
-            <a href="#oferta" className="hover:text-gold">Comprar</a>
+        <div className="flex items-center justify-end">
+          <nav className="hidden gap-8 text-[13px] font-bold uppercase tracking-widest text-midnight-deep md:flex">
+            <a href="#resultados" className="transition hover:text-gold">Avaliações</a>
+            <a href="#oferta" className="transition hover:text-gold">Comprar</a>
           </nav>
+          {/* Cart placeholder or Search icon could go here for symmetry on mobile if needed */}
         </div>
       </div>
 
       {/* Mobile menu */}
       {open && (
-        <nav className="flex flex-col items-center gap-3 border-t border-border/40 bg-white py-4 text-sm font-semibold uppercase tracking-widest text-midnight-deep md:hidden">
+        <nav className="flex flex-col items-center gap-5 border-t border-border/40 bg-white py-8 text-[14px] font-bold uppercase tracking-[0.2em] text-midnight-deep md:hidden animate-in fade-in slide-in-from-top-2 duration-200">
           <a href="#oferta" onClick={() => setOpen(false)}>Loja</a>
           <a href="#ciencia" onClick={() => setOpen(false)}>Ciência</a>
           <a href="#resultados" onClick={() => setOpen(false)}>Avaliações</a>
