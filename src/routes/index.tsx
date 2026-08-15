@@ -302,20 +302,20 @@ function HeroSection() {
       <div className="mx-auto flex max-w-6xl flex-col px-4 py-6 md:flex-row md:gap-12 md:py-12">
         {/* 1. Galeria de Imagens */}
         <div className="w-full md:w-1/2">
-          <div className="relative aspect-square w-full overflow-hidden rounded-2xl bg-white shadow-soft max-h-[50vh] sm:max-h-none">
+          <div className="relative aspect-square w-full overflow-hidden rounded-2xl bg-white shadow-soft max-h-[50vh] sm:max-h-[550px] md:max-h-none">
             <img
               src={images[activeImage]}
               alt="Produto SonoLift"
-              className="h-full w-full object-contain sm:object-contain p-4 sm:p-4 object-center"
+              className="h-full w-full object-contain p-2 sm:p-4 object-center"
             />
           </div>
-          <div className="mt-4 flex gap-3 overflow-x-auto pb-2">
+          <div className="mt-4 flex gap-2.5 overflow-x-auto pb-2 scrollbar-hide sm:grid sm:grid-cols-6 sm:overflow-visible">
             {images.map((img, i) => (
               <button
                 key={i}
                 onClick={() => setActiveImage(i)}
-                className={`relative aspect-square w-20 shrink-0 overflow-hidden rounded-lg border-2 bg-white transition ${
-                  activeImage === i ? "border-gold shadow-md" : "border-transparent opacity-70 hover:opacity-100"
+                className={`relative aspect-square w-16 min-w-[64px] shrink-0 overflow-hidden rounded-lg border-2 bg-white transition sm:w-full ${
+                  activeImage === i ? "border-gold shadow-md" : "border-transparent opacity-60 hover:opacity-100"
                 }`}
               >
                 <img src={img} alt={`Miniatura ${i + 1}`} className="h-full w-full object-cover" />
