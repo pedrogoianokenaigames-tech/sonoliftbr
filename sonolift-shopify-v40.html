@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --cream: #FDFCF9; --gold: #C5A059; --midnight: #1A1A1A; }
+        body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--midnight); overflow-x: hidden; padding-bottom: 80px; }
+        @media (min-width: 768px) { body { padding-bottom: 0; } }
+        .font-display { font-family: 'Instrument Serif', serif; }
+        .bg-gold-gradient { background: linear-gradient(135deg, #D4AF37 0%, #C5A059 100%); }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .shadow-up { box-shadow: 0 -4px 10px rgba(0,0,0,0.08); }
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="sticky top-0 z-50 bg-black text-white py-2.5 px-4 text-center">
+        <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-center gap-2 text-[13px] font-semibold tracking-wide sm:text-base">
+            <span>⚠️ <strong class="text-[#ff3b3b]">Atenção:</strong> <strong class="text-[#ff3b3b]">Kit Pescoço e Colo GRÁTIS</strong> reservado por:</span>
+            <span id="timer" class="bg-[#c8102e] px-3 py-1 rounded-md font-mono text-lg font-extrabold tabular-nums">10:00</span>
+        </div>
+    </div>
+
+    <!-- Nav -->
+    <header class="bg-white border-b border-gray-100">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center text-center">
+            <div class="hidden md:flex gap-6 text-[10px] font-bold uppercase tracking-widest">
+                <a href="#oferta" class="hover:text-gold">Loja</a>
+                <a href="#ciencia" class="hover:text-gold">Ciência</a>
+            </div>
+            <div class="w-full md:w-auto font-display text-3xl text-midnight">SonoLift<span class="text-gold">™</span></div>
+            <div class="hidden md:flex gap-6 text-[10px] font-bold uppercase tracking-widest text-right">
+                <a href="#resultados" class="hover:text-gold">Avaliações</a>
+                <a href="#oferta" class="hover:text-gold">Comprar</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="top" class="px-4 py-6 max-w-6xl mx-auto md:py-12">
+        <div class="flex flex-col md:flex-row gap-8 md:gap-12">
+            <!-- Galeria -->
+            <div class="w-full md:w-1/2">
+                <div class="relative aspect-square bg-white rounded-2xl shadow-sm overflow-hidden max-h-[50vh] md:max-h-none border border-gray-50">
+                    <img id="main-img" src="https://sonoliftbr.lovable.app/assets/1_imagem_um_pro_carrosel.webp" class="w-full h-full object-contain p-4" alt="Produto SonoLift">
+                </div>
+                <div class="flex gap-3 mt-4 overflow-x-auto no-scrollbar pb-2">
+                    <button onclick="changeImg(0)" class="w-20 aspect-square flex-shrink-0 border-2 rounded-lg overflow-hidden bg-white border-gold shadow-md"><img src="https://sonoliftbr.lovable.app/assets/1_imagem_um_pro_carrosel.webp" class="w-full h-full object-cover"></button>
+                    <button onclick="changeImg(1)" class="w-20 aspect-square flex-shrink-0 border-2 rounded-lg overflow-hidden bg-white opacity-70 hover:opacity-100"><img src="https://sonoliftbr.lovable.app/assets/61Gwf0eAogL._AC_SL1024_.jpg" class="w-full h-full object-cover"></button>
+                    <button onclick="changeImg(2)" class="w-20 aspect-square flex-shrink-0 border-2 rounded-lg overflow-hidden bg-white opacity-70 hover:opacity-100"><img src="https://sonoliftbr.lovable.app/assets/31Llvy0XlML._AC_.jpg" class="w-full h-full object-cover"></button>
+                    <button onclick="changeImg(3)" class="w-20 aspect-square flex-shrink-0 border-2 rounded-lg overflow-hidden bg-white opacity-70 hover:opacity-100"><img src="https://sonoliftbr.lovable.app/assets/61ODU3qW6OL._AC_SL1024_.jpg" class="w-full h-full object-cover"></button>
+                    <button onclick="changeImg(4)" class="w-20 aspect-square flex-shrink-0 border-2 rounded-lg overflow-hidden bg-white opacity-70 hover:opacity-100"><img src="https://sonoliftbr.lovable.app/assets/2_imagem.webp" class="w-full h-full object-cover"></button>
+                    <button onclick="changeImg(5)" class="w-20 aspect-square flex-shrink-0 border-2 rounded-lg overflow-hidden bg-white opacity-70 hover:opacity-100"><img src="https://sonoliftbr.lovable.app/assets/51ABNwxk9HL._AC_SL1200_.jpg" class="w-full h-full object-cover"></button>
+                </div>
+            </div>
+            
+            <!-- Info -->
+            <div class="w-full md:w-1/2 flex flex-col">
+                <div class="flex items-center gap-2">
+                    <div class="text-xl text-gold tracking-widest">★★★★★</div>
+                    <span class="text-sm font-semibold text-midnight">(12.480+ avaliações)</span>
+                </div>
+                <h1 class="font-display text-3xl md:text-4xl mt-3 leading-tight text-midnight">Kit SonoLift™ Facial + Colo</h1>
+                
+                <div class="mt-6">
+                    <div class="text-sm text-gray-500">De <span class="line-through decoration-[#c8102e] decoration-2">R$ 397,00</span></div>
+                    <div class="flex items-baseline gap-3 mt-1">
+                        <span class="font-display text-5xl font-extrabold text-[#c8102e]">R$ 197</span>
+                        <span class="bg-[#c8102e] text-white text-[10px] px-3 py-0.5 rounded-full font-black uppercase tracking-widest">50% OFF</span>
+                    </div>
+                    <div class="text-emerald-700 font-bold mt-2 text-base">ou R$ 187,15 no Pix</div>
+                    <div class="text-sm mt-0.5">Em até <strong>12x de R$ 16,42</strong> sem juros</div>
+                </div>
+
+                <div class="mt-6 bg-amber-50 border border-amber-200 rounded-xl py-2.5 text-center text-[13px] font-bold text-amber-900">
+                    🎁 OFERTA: Kit Rosto + Kit Colo GRÁTIS
+                </div>
+
+                <a href="https://sono-lift.pay.yampi.com.br/r/R558X0P2M5" class="mt-6 block w-full bg-gold-gradient text-midnight font-bold py-5 rounded-full text-center text-lg shadow-lg hover:brightness-105 transition-all">
+                    GARANTIR MEU KIT →
+                </a>
+
+                <div class="mt-6 grid grid-cols-2 gap-3 text-[13px] font-semibold text-midnight">
+                    <div><span class="text-emerald-600">✓</span> Frete Grátis Brasil</div>
+                    <div><span class="text-emerald-600">✓</span> Garantia 30 Dias</div>
+                    <div><span class="text-emerald-600">✓</span> 16 Adesivos Rosto</div>
+                    <div><span class="text-emerald-600">✓</span> +1 Colo Grátis</div>
+                </div>
+
+                <!-- Gatilhos de pagamento -->
+                <div class="mt-8 pt-6 border-t flex flex-wrap items-center justify-center gap-x-6 gap-y-4 opacity-95">
+                    <img src="https://img.icons8.com/color/48/visa.png" alt="Visa" style="height:20px;width:auto">
+                    <img src="https://img.icons8.com/color/48/mastercard.png" alt="Mastercard" style="height:28px;width:auto">
+                    <img src="https://sonoliftbr.lovable.app/elo-logo.jpg" alt="Elo" style="height:20px;width:auto">
+                    <img src="https://sonoliftbr.lovable.app/pix-logo.png" alt="Pix" style="height:20px;width:auto">
+                    <div class="h-4 w-px bg-gray-200 hidden sm:block"></div>
+                    <div class="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-widest text-emerald-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4"><path d="M12 2C9.243 2 7 4.243 7 7V10H6C4.895 10 4 10.895 4 12V20C4 21.105 4.895 22 6 22H18C19.105 22 20 21.105 20 20V12C20 10.895 19.105 10 18 10H17V7C17 4.243 14.757 2 12 2ZM9 7C9 5.346 10.346 4 12 4C13.654 4 15 5.346 15 7V10H9V7ZM12 17C11.172 17 10.5 16.328 10.5 15.5C10.5 14.672 11.172 14 12 14C12.828 14 13.5 14.672 13.5 15.5C13.5 16.328 12.828 17 12 17Z" /></svg>
+                        Seguro
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advertorial Section -->
+    <section class="bg-cream pt-10 pb-20 md:pt-16 md:pb-32 reveal">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <div class="inline-block mb-6 bg-gold-gradient px-6 py-1 rounded-full text-[11px] font-black uppercase tracking-[0.25em] shadow-sm">Você dorme de lado?</div>
+            <h2 class="font-display text-4xl md:text-6xl max-w-2xl mx-auto leading-tight">Acorde sem as <em class="italic text-gold">marcas</em> que o travesseiro deixa.</h2>
+            <p class="mt-6 text-lg text-gray-500 max-w-xl mx-auto">Uma barreira invisível de silicone médico que protege sua pele durante as 8 horas mais decisivas do seu dia.</p>
+            <div class="mt-12 relative aspect-[9/16] w-full max-w-[350px] mx-auto rounded-[2.5rem] bg-black overflow-hidden shadow-2xl">
+                <video id="hero-vid" src="https://sonoliftbr.lovable.app/assets/hero-video-2.mp4" autoplay loop muted playsinline class="w-full h-full object-contain"></video>
+                <button onclick="toggleVid()" id="vid-btn" class="absolute top-6 left-1/2 -translate-x-1/2 bg-black/80 text-white px-5 py-3 rounded-full text-sm font-bold backdrop-blur-md">🔊 Toque para ativar o som</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Invisible Enemy -->
+    <section class="bg-cream py-20 md:py-32 reveal">
+        <div class="max-w-3xl mx-auto px-4 text-center">
+            <p class="text-xs font-semibold text-gold uppercase tracking-[0.2em]">O inimigo invisível</p>
+            <h2 class="mt-4 font-display text-3xl md:text-5xl leading-tight">Enquanto você descansa, algo invisível <em class="italic text-gold">marca</em> a sua pele.</h2>
+            <p class="mt-6 text-lg text-gray-500">No começo, são apenas <strong>marcas</strong> de travesseiro que somem no banho. Mas com o tempo, a perda de colágeno transforma essas marcas em <em class="italic">rugas permanentes</em>.</p>
+        </div>
+    </section>
+
+    <!-- Clinical Study -->
+    <section class="bg-cream py-20 reveal">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm text-center">
+                    <div class="font-display text-6xl text-midnight">87<span class="text-gold">%</span></div>
+                    <p class="mt-4 text-gray-500">reduziram as marcas matinais em 14 dias</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm text-center">
+                    <div class="font-display text-6xl text-midnight">92<span class="text-gold">%</span></div>
+                    <p class="mt-4 text-gray-500">relatam pele mais lisa ao acordar</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm text-center">
+                    <div class="font-display text-6xl text-midnight">78<span class="text-gold">%</span></div>
+                    <p class="mt-4 text-gray-500">atenuação visível de linhas finas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/5511941942267" target="_blank" class="fixed bottom-5 right-5 z-[999] bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-9.715A9.944 9.944 0 0 0 12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2.546 22l4.915-1.375A9.944 9.944 0 0 0 12 22c5.523 0 10-4.477 10-10a9.943 9.943 0 0 0-4.949-8.333Z" /></svg>
+    </a>
+
+    <!-- Sticky Mobile CTA -->
+    <div id="sticky-bar" class="fixed bottom-0 left-0 z-[99] w-full bg-white/95 p-3 shadow-up backdrop-blur-sm md:hidden hidden transition-all">
+        <a href="https://sono-lift.pay.yampi.com.br/r/R558X0P2M5" class="block w-full bg-gold-gradient text-midnight font-bold py-4 rounded-full text-center text-md shadow-md">GARANTIR MEU KIT</a>
+    </div>
+
+    <script>
+        const imgs = ['https://sonoliftbr.lovable.app/assets/1_imagem_um_pro_carrosel.webp', 'https://sonoliftbr.lovable.app/assets/61Gwf0eAogL._AC_SL1024_.jpg', 'https://sonoliftbr.lovable.app/assets/31Llvy0XlML._AC_.jpg', 'https://sonoliftbr.lovable.app/assets/61ODU3qW6OL._AC_SL1024_.jpg', 'https://sonoliftbr.lovable.app/assets/2_imagem.webp', 'https://sonoliftbr.lovable.app/assets/51ABNwxk9HL._AC_SL1200_.jpg'];
+        function changeImg(i) {
+            document.getElementById('main-img').src = imgs[i];
+            const btns = document.querySelectorAll('button[onclick^="changeImg"]');
+            btns.forEach((b, idx) => {
+                if(i === idx) {
+                    b.classList.add('border-gold', 'shadow-md');
+                    b.classList.remove('opacity-70', 'border-transparent');
+                } else {
+                    b.classList.remove('border-gold', 'shadow-md');
+                    b.classList.add('opacity-70', 'border-transparent');
+                }
+            });
+        }
+        
+        function toggleVid() {
+            const v = document.getElementById('hero-vid');
+            const b = document.getElementById('vid-btn');
+            v.muted = !v.muted;
+            b.innerText = v.muted ? "🔊 Toque para ativar o som" : "🔇 Desativar som";
+        }
+
+        let time = 600;
+        setInterval(() => {
+            if (time > 0) time--;
+            let m = Math.floor(time / 60);
+            let s = time % 60;
+            document.getElementById('timer').innerText = `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+        }, 1000);
+
+        window.addEventListener('scroll', () => {
+            const bar = document.getElementById('sticky-bar');
+            if (window.scrollY > 600) bar.classList.remove('hidden');
+            else bar.classList.add('hidden');
+            
+            document.querySelectorAll('.reveal').forEach(el => {
+                if(el.getBoundingClientRect().top < window.innerHeight * 0.9) el.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
