@@ -89,15 +89,15 @@
           <!-- Gallery -->
           <div class="w-full md:w-1/2">
             <div class="relative aspect-square w-full overflow-hidden rounded-2xl bg-white shadow-soft max-h-[50vh] sm:max-h-[550px] md:max-h-none">
-              <img src="${DOMAIN}/hero1.webp" alt="Produto" class="h-full w-full object-contain p-2 sm:p-4">
+              <img src="https://sonoliftbr.lovable.app/1_imagem_um_pro_carrosel.webp" alt="Produto" class="h-full w-full object-contain p-2 sm:p-4">
             </div>
             <div class="mt-4 flex gap-2.5 overflow-x-auto pb-2 scrollbar-hide sm:grid sm:grid-cols-6 sm:overflow-visible">
-              <div class="relative aspect-square w-16 min-w-[64px] rounded-lg border-2 border-[#d4af37] bg-white"><img src="${DOMAIN}/hero1.webp" class="h-full w-full object-cover rounded-lg"></div>
-              <div class="relative aspect-square w-16 min-w-[64px] rounded-lg border-2 border-transparent bg-white opacity-60"><img src="${DOMAIN}/hero2.jpg" class="h-full w-full object-cover rounded-lg"></div>
-              <div class="relative aspect-square w-16 min-w-[64px] rounded-lg border-2 border-transparent bg-white opacity-60"><img src="${DOMAIN}/hero3.jpg" class="h-full w-full object-cover rounded-lg"></div>
-              <div class="relative aspect-square w-16 min-w-[64px] rounded-lg border-2 border-transparent bg-white opacity-60"><img src="${DOMAIN}/hero4.jpg" class="h-full w-full object-cover rounded-lg"></div>
-              <div class="relative aspect-square w-16 min-w-[64px] rounded-lg border-2 border-transparent bg-white opacity-60"><img src="${DOMAIN}/hero5.webp" class="h-full w-full object-cover rounded-lg"></div>
-              <div class="relative aspect-square w-16 min-w-[64px] rounded-lg border-2 border-transparent bg-white opacity-60"><img src="${DOMAIN}/hero6.jpg" class="h-full w-full object-cover rounded-lg"></div>
+              <div class="relative aspect-square w-16 min-w-[64px] rounded-lg border-2 border-[#d4af37] bg-white"><img src="https://sonoliftbr.lovable.app/1_imagem_um_pro_carrosel.webp" class="h-full w-full object-cover rounded-lg"></div>
+              <div class="relative aspect-square w-16 min-w-[64px] rounded-lg border-2 border-transparent bg-white opacity-60"><img src="https://sonoliftbr.lovable.app/2_imagem.webp" class="h-full w-full object-cover rounded-lg"></div>
+              <div class="relative aspect-square w-16 min-w-[64px] rounded-lg border-2 border-transparent bg-white opacity-60"><img src="https://sonoliftbr.lovable.app/31Llvy0XlML._AC_.jpg" class="h-full w-full object-cover rounded-lg"></div>
+              <div class="relative aspect-square w-16 min-w-[64px] rounded-lg border-2 border-transparent bg-white opacity-60"><img src="https://sonoliftbr.lovable.app/51ABNwxk9HL._AC_SL1200.jpg" class="h-full w-full object-cover rounded-lg"></div>
+              <div class="relative aspect-square w-16 min-w-[64px] rounded-lg border-2 border-transparent bg-white opacity-60"><img src="https://sonoliftbr.lovable.app/Imagem_01.webp" class="h-full w-full object-cover rounded-lg"></div>
+              <div class="relative aspect-square w-16 min-w-[64px] rounded-lg border-2 border-transparent bg-white opacity-60"><img src="https://sonoliftbr.lovable.app/61Gwf0eAogL._AC_SL1024.jpg" class="h-full w-full object-cover rounded-lg"></div>
             </div>
           </div>
           <!-- Content -->
@@ -152,7 +152,7 @@
           <h2 class="font-display text-4xl text-[#1a1a2e] sm:text-5xl md:text-6xl">Acorde sem as <em class="italic text-[#d4af37]">marcas</em> que o travesseiro deixa.</h2>
           <p class="mt-6 text-lg text-gray-500 max-w-xl mx-auto">Uma barreira invisível de silicone médico que protege sua pele durante as 8 horas mais decisivas do seu dia.</p>
           <div class="relative mt-12 aspect-[9/16] w-full max-w-[380px] mx-auto rounded-[2.5rem] bg-black shadow-luxe overflow-hidden">
-             <video src="${DOMAIN}/hero-video-2.mp4" autoplay loop muted playsinline class="h-full w-full object-contain"></video>
+             <video src="https://sonoliftbr.lovable.app/video5186417616897444079.mp4" autoplay loop muted playsinline class="h-full w-full object-contain"></video>
           </div>
         </div>
       </section>
