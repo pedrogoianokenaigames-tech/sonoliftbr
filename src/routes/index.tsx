@@ -20,6 +20,12 @@ import stepPeelAsset from "@/assets/ritual-pos.webp.asset.json";
 import stepNightAsset from "@/assets/ritual-noite.webp.asset.json";
 import stepStoreAsset from "@/assets/step-store.webp.asset.json";
 import heroVideo from "@/assets/hero-video-2.mp4.asset.json";
+import heroImg1 from "@/assets/hero1.webp.asset.json";
+import heroImg2 from "@/assets/hero2.jpg.asset.json";
+import heroImg3 from "@/assets/hero3.jpg.asset.json";
+import heroImg4 from "@/assets/hero4.jpg.asset.json";
+import heroImg5 from "@/assets/hero5.webp.asset.json";
+import heroImg6 from "@/assets/hero6.jpg.asset.json";
 
 const CTA_LABEL = "QUERO MEU KIT FACIAL + COLO GRÁTIS";
 
