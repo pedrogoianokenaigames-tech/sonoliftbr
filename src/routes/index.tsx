@@ -1111,7 +1111,7 @@ function OfferSection() {
             {/* Elo */}
             <div className="flex h-5 items-center justify-center filter brightness-0 invert">
               <img 
-                src="https://sonoliftbr.lovable.app/elo-logo.jpg" 
+                src={eloLogo.url} 
                 alt="Elo" 
                 className="h-full w-auto object-contain" 
               />
@@ -1120,7 +1120,7 @@ function OfferSection() {
             {/* Pix */}
             <div className="flex h-5 items-center justify-center filter brightness-0 invert">
               <img 
-                src="https://sonoliftbr.lovable.app/pix-logo.png" 
+                src={pixLogo.url} 
                 alt="Pix" 
                 className="h-full w-auto object-contain" 
               />
