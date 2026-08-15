@@ -1,16 +1,85 @@
-const DOMAIN = 'https://sonoliftbr.lovable.app';
-const GALLERY = [
-  "https://8e2875b6-88f6-4189-acb8-98d3a3a05914.lovableproject.com/__l5e/assets-v1/d2ac6e58-2eb5-4be3-ab66-d4313d953980/1_imagem_um_pro_carrosel.webp",
-  "https://8e2875b6-88f6-4189-acb8-98d3a3a05914.lovableproject.com/__l5e/assets-v1/37398a2a-9049-4158-9aaf-200fd60474d5/61Gwf0eAogL._AC_SL1024.jpg",
-  "https://8e2875b6-88f6-4189-acb8-98d3a3a05914.lovableproject.com/__l5e/assets-v1/533aa605-08a3-4b90-9cf1-e437390e8190/31Llvy0XlML._AC_.jpg",
-  "https://8e2875b6-88f6-4189-acb8-98d3a3a05914.lovableproject.com/__l5e/assets-v1/479bdfe6-6a43-4926-8239-f6fc60509891/61ODU3qW6OL._AC_SL1024.jpg",
-  "https://8e2875b6-88f6-4189-acb8-98d3a3a05914.lovableproject.com/__l5e/assets-v1/48ae66d3-8f16-474e-b6d0-8c014e61044c/2_imagem.webp",
-  "https://8e2875b6-88f6-4189-acb8-98d3a3a05914.lovableproject.com/__l5e/assets-v1/ce3110de-e365-423e-9a19-31040066ccd9/51ABNwxk9HL._AC_SL1200.jpg"
-];
-const VIDEO = "https://8e2875b6-88f6-4189-acb8-98d3a3a05914.lovableproject.com/__l5e/assets-v1/ffe73f55-6f15-44c5-ba81-1e8528f04917/hero-video-2.mp4";
-const ELO = "https://8e2875b6-88f6-4189-acb8-98d3a3a05914.lovableproject.com/__l5e/assets-v1/1f918b71-1da4-4f35-8aaf-16ff26ae674f/elo-logo.jpg";
-const PIX = "https://8e2875b6-88f6-4189-acb8-98d3a3a05914.lovableproject.com/__l5e/assets-v1/09b47fe5-b917-4ff3-876c-927e5539a1e8/pix-logo.png";
-const ANTES = "https://8e2875b6-88f6-4189-acb8-98d3a3a05914.lovableproject.com/__l5e/assets-v1/636add08-96df-44c6-a92b-64e913b9e48f/antes.png";
-const DEPOIS = "https://8e2875b6-88f6-4189-acb8-98d3a3a05914.lovableproject.com/__l5e/assets-v1/ee13a90a-ef08-4fdf-b1a8-10d2d2e9e3f3/depois.png";
+import { write } from "bun";
 
-// Construct the full HTML... (omitted for brevity, will produce full source)
+const finalHtml = `<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; background: #fdfaf5; color: #1a1a2e; margin: 0; }
+    .font-display { font-family: 'Playfair Display', serif; }
+    .bg-gold-gradient { background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%); }
+    .bg-midnight-gradient { background: linear-gradient(140deg, #1a1a2e 0%, #242445 100%); }
+    .shadow-luxe { box-shadow: 0 30px 60px -20px rgba(26,26,46,0.35); }
+    .shadow-soft { box-shadow: 0 10px 30px -12px rgba(26,26,46,0.18); }
+    .scrollbar-hide::-webkit-scrollbar { display: none; }
+    .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+  <div class="min-h-screen pb-[80px] md:pb-0">
+    <!-- TopBar -->
+    <div class="sticky top-0 z-50 bg-black text-[#fdfaf5]">
+      <div class="mx-auto flex max-w-6xl items-center justify-center gap-x-2 px-4 py-2.5 text-center text-[13px] font-semibold sm:text-base">
+        <span>⚠️ <strong class="text-[#ff3b3b]">Kit Pescoço e Colo GRÁTIS</strong> reservado por:</span>
+        <span id="promo-timer" class="rounded-md bg-[#c8102e] px-3 py-1 font-mono text-lg font-extrabold text-white">10:00</span>
+      </div>
+    </div>
+    <!-- Hero Section -->
+    <section class="bg-[#fdfaf5] py-6 px-4">
+      <div class="mx-auto max-w-6xl flex flex-col md:flex-row md:gap-12">
+        <div class="w-full md:w-1/2">
+          <div class="relative aspect-square w-full overflow-hidden rounded-2xl bg-white shadow-soft max-h-[50vh] sm:max-h-[550px] md:max-h-none">
+            <img src="https://sonoliftbr.lovable.app/__l5e/assets-v1/2566ecb8-15cf-4d9e-9d22-6b5e09f58356/hero1.webp" alt="Produto" class="h-full w-full object-contain p-2">
+          </div>
+        </div>
+        <div class="mt-8 md:mt-0 md:w-1/2">
+          <h1 class="font-display text-3xl leading-tight text-[#1a1a2e] sm:text-4xl">Kit SonoLift™ Facial + Colo</h1>
+          <div class="mt-6">
+            <div class="mt-1 flex items-baseline gap-3">
+              <span class="font-display text-5xl font-extrabold text-[#c8102e]">R$ 197</span>
+              <span class="rounded-full bg-[#c8102e] px-3 py-0.5 text-[10px] font-black text-white">50% OFF</span>
+            </div>
+            <p class="mt-2 text-base font-semibold text-emerald-700">ou R$ 187,15 no Pix</p>
+          </div>
+          <div class="mt-6">
+            <a href="https://sono-lift.pay.yampi.com.br/r/R558X0P2M5" class="flex h-[64px] items-center justify-center rounded-full bg-gold-gradient text-lg font-bold uppercase tracking-wider text-[#1a1a2e] w-full text-center">
+              GARANTIR MEU KIT + COLO GRÁTIS →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Ad Section -->
+    <section class="py-20 px-4 reveal">
+      <div class="mx-auto max-w-6xl text-center">
+        <h2 class="font-display text-4xl text-[#1a1a2e] md:text-6xl">Acorde sem as <em class="italic text-[#d4af37]">marcas</em> do travesseiro.</h2>
+        <div class="relative mt-12 aspect-[9/16] w-full max-w-[380px] mx-auto rounded-[2.5rem] bg-black shadow-luxe overflow-hidden">
+          <video src="https://sonoliftbr.lovable.app/__l5e/assets-v1/ffe73f55-6f15-44c5-ba81-1e8528f04917/hero-video-2.mp4" autoplay loop muted playsinline class="h-full w-full object-contain"></video>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      let timeLeft = 600;
+      const timerEl = document.getElementById('promo-timer');
+      setInterval(() => {
+        if(timeLeft > 0) timeLeft--;
+        const m = Math.floor(timeLeft / 60).toString().padStart(2, '0');
+        const s = (timeLeft % 60).toString().padStart(2, '0');
+        timerEl.innerText = m + ':' + s;
+      }, 1000);
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('active'); });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    });
+  </script>
+</body>
+</html>`;
+
+await Bun.write('sonolift-shopify-v45.html', finalHtml);
