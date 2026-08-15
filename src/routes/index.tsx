@@ -374,17 +374,34 @@ function HeroSection() {
             <div className="flex items-center gap-2"><span className="text-emerald-600">✓</span> +1 Colo Grátis</div>
           </div>
 
-          {/* Gatilhos de confiança simples */}
-          <div className="mt-6 flex items-center justify-center gap-4 border-t border-border pt-6 grayscale opacity-60">
-            <span className="text-[10px] font-bold uppercase tracking-widest">VISA</span>
-            <span className="text-[10px] font-bold uppercase tracking-widest">Master</span>
-            <span className="text-[10px] font-bold uppercase tracking-widest">Elo</span>
-            <span className="text-[10px] font-bold uppercase tracking-widest">Pix</span>
-            <div className="h-4 w-px bg-border"></div>
-            <div className="flex items-center gap-1 text-[10px] font-bold uppercase tracking-widest">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" className="h-3 w-3">
-                <rect x="4" y="11" width="16" height="9" rx="2" />
-                <path d="M8 11V7a4 4 0 0 1 8 0v4" />
+          {/* Gatilhos de confiança com ícones visuais */}
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-5 gap-y-3 border-t border-border pt-6 grayscale opacity-50 transition-opacity hover:opacity-100">
+            <img 
+              src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" 
+              alt="Visa" 
+              className="h-4 w-auto object-contain sm:h-5" 
+            />
+            <img 
+              src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" 
+              alt="Mastercard" 
+              className="h-5 w-auto object-contain sm:h-6" 
+            />
+            <img 
+              src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Elo_logo.svg" 
+              alt="Elo" 
+              className="h-4 w-auto object-contain sm:h-5" 
+            />
+            <img 
+              src="https://upload.wikimedia.org/wikipedia/commons/a/a2/Logo%E2%80%94Pix.svg" 
+              alt="Pix" 
+              className="h-4 w-auto object-contain sm:h-5" 
+            />
+            <div className="h-4 w-px bg-border hidden sm:block"></div>
+            <div className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-widest text-midnight-deep">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-3.5 w-3.5">
+                <path d="M12 1L8 5H11V14H13V5H16L12 1Z" className="hidden" />
+                <rect x="5" y="10" width="14" height="11" rx="2" />
+                <path d="M7 10V7a5 5 0 0 1 10 0v3h-2V7a3 3 0 0 0-6 0v3H7Z" />
               </svg>
               Seguro
             </div>
