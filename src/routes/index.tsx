@@ -1024,7 +1024,7 @@ function OfferSection() {
           </article>
 
           {/* Card 2 — Bônus */}
-          <article className="relative mt-4 flex flex-col rounded-3xl border-2 border-gold bg-cream p-8 pt-9 shadow-luxe md:mt-0">
+          <article className="relative mt-8 flex flex-col rounded-3xl border-2 border-gold bg-cream p-8 pt-9 shadow-luxe md:mt-0">
             <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-gold-gradient px-4 py-1.5 text-[10px] font-bold uppercase leading-none tracking-[0.2em] text-midnight-deep shadow-soft md:left-6 md:translate-x-0">
               Bônus grátis
             </span>
