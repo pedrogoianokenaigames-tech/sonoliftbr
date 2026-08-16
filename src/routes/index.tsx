@@ -1,11 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type ReactNode, type CSSProperties } from "react";
-import { useQuery } from "@tanstack/react-query";
 import { toast } from "sonner";
-import { fetchFeaturedProduct, type ProductNode } from "@/lib/shopify";
-import { useCartStore } from "@/stores/cartStore";
-import { useCartSync } from "@/hooks/useCartSync";
 import ugc1 from "@/assets/ugc1.mp4.asset.json";
 import ugc2 from "@/assets/ugc2.mp4.asset.json";
 import ugc3 from "@/assets/ugc3.mp4.asset.json";
@@ -31,7 +27,7 @@ import eloLogo from "@/assets/elo-logo.jpg.asset.json";
 
 const CTA_LABEL = "QUERO MEU KIT FACIAL + COLO GRÁTIS";
 
-/* Placeholder media (Unsplash / Pexels). Swap for brand assets in Shopify. */
+/* Placeholder media (Unsplash / Pexels). */
 const HERO_IMG =
   "https://images.unsplash.com/photo-1520206183501-b80df61043c2?auto=format&fit=crop&w=1600&q=80";
 const BEFORE_AFTER_VIDEO =
@@ -76,7 +72,6 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
-  useCartSync();
   return (
     <div className="min-h-screen bg-cream text-midnight-deep pb-[80px] md:pb-0">
       <TopBar />
@@ -194,7 +189,7 @@ function Reveal({
 }
 
 /* ============================================================
- *  Sticky top bar (Shopify announcement bar)
+ *  Sticky top bar
  * ============================================================ */
 function TopBar() {
   const [secondsLeft, setSecondsLeft] = useState(10 * 60);
@@ -289,10 +284,9 @@ function Nav() {
  *  Hero
  * ============================================================ */
 function HeroSection() {
-  const { data: product } = useFeaturedProduct();
   const [activeImage, setActiveImage] = useState(0);
 
-  // Fallback images - prioritizing local assets to ensure they appear even if Shopify fails
+  // Fallback images - prioritizing local assets
   const images = [
     heroImg1.url,
     heroImg2.url,
@@ -339,7 +333,7 @@ function HeroSection() {
 
           {/* Título */}
           <h1 className="mt-3 font-display text-3xl leading-tight text-midnight-deep sm:text-4xl">
-            {product?.title || "Kit SonoLift™ Facial + Colo"}
+            Kit SonoLift™ Facial + Colo
           </h1>
 
           {/* Preço */}
@@ -485,14 +479,6 @@ function AdvertorialSection() {
   );
 }
 
-function useFeaturedProduct() {
-  return useQuery({
-    queryKey: ["sonolift-featured-product"],
-    queryFn: fetchFeaturedProduct,
-    staleTime: 5 * 60 * 1000,
-  });
-}
-
 function CTAButton({ block = false, label = CTA_LABEL }: { block?: boolean; label?: string }) {
   return (
     <a
@@ -506,9 +492,6 @@ function CTAButton({ block = false, label = CTA_LABEL }: { block?: boolean; labe
     </a>
   );
 }
-
-// Keep the type reachable so the module tree-shakes cleanly.
-export type _P = ProductNode;
 
 /* ============================================================
  *  Before & After (vertical video)
@@ -1258,8 +1241,8 @@ function FooterSection() {
               <li><Link to="/quem-somos" className="hover:text-gold">Quem somos</Link></li>
               <li><Link to="/politica-de-privacidade" className="hover:text-gold">Política de privacidade</Link></li>
               <li><Link to="/termos-de-uso" className="hover:text-gold">Termos de uso</Link></li>
-              <li><a href="https://zggech-4a.myshopify.com/pages/reembolso-trocas-e-devolucoes" className="hover:text-gold">Reembolso e trocas</a></li>
-              <li><a href="https://zggech-4a.myshopify.com/pages/frete-e-entrega" className="hover:text-gold">Frete e entrega</a></li>
+              <li><Link to="/politica-de-reembolso" className="hover:text-gold">Reembolso e trocas</Link></li>
+              <li><Link to="/politica-de-frete" className="hover:text-gold">Frete e entrega</Link></li>
             </ul>
           </div>
         </div>
