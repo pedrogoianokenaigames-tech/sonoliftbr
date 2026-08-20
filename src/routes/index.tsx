@@ -347,6 +347,11 @@ function HeroSection() {
                 50% OFF
               </span>
             </div>
+            <div className="mt-2 flex items-center gap-2">
+              <span className="rounded bg-emerald-100 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-emerald-800">
+                Sistema Facial + Colo GRÁTIS
+              </span>
+            </div>
             <p className="mt-2 text-base font-semibold text-emerald-700">
               ou R$ 187,15 no Pix
             </p>
