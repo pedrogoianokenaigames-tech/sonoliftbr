@@ -102,6 +102,10 @@ async function generate() {
         <a href="https://sono-lift.pay.yampi.com.br/r/R558X0P2M5" class="block mt-6 bg-gold-gradient text-midnight-deep text-center py-5 rounded-full font-black text-lg shadow-xl hover:scale-105 transition">
           GARANTIR MEU KIT + COLO GRÁTIS →
         </a>
+        <div class="mt-3 text-center text-[13px] font-bold text-midnight-deep leading-snug">
+          Leve 2 Kits pelo preço de 1 por apenas <span class="text-red-600">R$ 187,15 no Pix</span><br/>
+          (ou 12x de R$ 19,78 no cartão)
+        </div>
 
         <div class="mt-8 grid grid-cols-2 gap-4 text-xs font-bold uppercase opacity-80">
           <div>✓ Frete Grátis Brasil</div>
@@ -110,11 +114,11 @@ async function generate() {
           <div>✓ +1 Colo Grátis</div>
         </div>
 
-        <div class="mt-8 flex gap-4 grayscale opacity-70 justify-center border-t pt-6">
+        <div class="mt-8 flex gap-4 opacity-100 justify-center border-t pt-6 sm:justify-start">
           <img src="https://img.icons8.com/color/48/visa.png" class="h-6">
           <img src="https://img.icons8.com/color/48/mastercard.png" class="h-6">
-          <img src="${resolveAsset('/lovable-uploads/c1334645-12cf-46d5-a33e-1081a292d37c.png')}" class="h-6">
-          <img src="${resolveAsset('/lovable-uploads/489f6631-01cd-4c8d-852b-7c42767df88e.png')}" class="h-6">
+          <img src="${resolveAsset('/lovable-uploads/c1334645-12cf-46d5-a33e-1081a292d37c.png')}" class="h-6 filter-none">
+          <img src="${resolveAsset('/lovable-uploads/489f6631-01cd-4c8d-852b-7c42767df88e.png')}" class="h-6 filter-none">
         </div>
       </div>
     </section>

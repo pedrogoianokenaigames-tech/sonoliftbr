@@ -362,7 +362,11 @@ function HeroSection() {
 
           {/* CTA Principal */}
           <div className="mt-6">
-            <CTAButton block label="GARANTIR MEU KIT →" />
+            <CTAButton block label="GARANTIR MEU KIT + COLO GRÁTIS →" />
+            <div className="mt-3 text-center text-[13px] font-bold text-midnight-deep leading-snug">
+              Leve 2 Kits pelo preço de 1 por apenas <span className="text-[#c8102e]">R$ 187,15 no Pix</span><br/>
+              (ou 12x de R$ 19,78 no cartão)
+            </div>
           </div>
 
           {/* Benefícios rápidos centralizados/icones */}
