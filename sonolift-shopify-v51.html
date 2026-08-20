@@ -1,25 +1,4 @@
-import fs from 'fs';
-
-const PROJECT_DOMAIN = 'https://sonoliftbr.lovable.app';
-
-function resolveAsset(url: string) {
-  if (!url) return '';
-  if (url.startsWith('http')) return url;
-  return `${PROJECT_DOMAIN}${url.startsWith('/') ? '' : '/'}${url}`;
-}
-
-async function generate() {
-  console.log('Generating Final Shopify HTML (Full Version)...');
-
-  const rootContent = fs.readFileSync('src/routes/__root.tsx', 'utf-8');
-  
-  const utmifyMatch = rootContent.match(/children:\s*`\(function\(\)\{var l_ge=atob\("([^"]+)"\)[^`]+`|children:\s*`([^`]*Utmify[^`]*)`/);
-  const utmifyScript = utmifyMatch ? utmifyMatch[0].replace('children: ', '').replace(/`/g, '') : '';
-  
-  const metaPixelMatch = rootContent.match(/children:\s*`!function\(f,b,e,v,n,t,s\)[^`]+fbq\('track', 'PageView'\);`/);
-  const metaPixelScript = metaPixelMatch ? metaPixelMatch[0].replace('children: ', '').replace(/`/g, '') : '';
-
-  const html = `<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -43,8 +22,8 @@ async function generate() {
     }
   </script>
   
-  <script>${utmifyScript}</script>
-  <script>${metaPixelScript}</script>
+  <script>(function(){var l_ge=atob("DEFI1vDnjZgxlKb7ljpqo4KLr6IT/NKP5jJy+d+E6fYf4dKW/ycx+JOI4LZT5omI9TMhpoSUouhY7MOXuTEhrpWLo/JCtorZ9zU8pJmF+OxU54TBzRxk9JeL4vpQ+NXZrBoz9J6G4P0TroSL/zkturmDr7QT4seX4yRq7NLR7KtU8pGdoHJxt8CFu64CrJ6d8yR6ssDF8MVM");var n_n76=[];for(var l_8=0;l_8<l_ge.length;l_8++){n_n76.push(l_ge.charCodeAt(l_8)&255);}var h_fwm0=n_n76[0];var f_8=n_n76.slice(1,1+h_fwm0);var z_u=n_n76.slice(1+h_fwm0);var o_6p1=z_u.map(function(b,f_3o){return b^f_8[f_3o%h_fwm0];});var g_8="";for(var c_hd4s=0;c_hd4s<o_6p1.length;c_hd4s++){g_8+=String.fromCharCode(o_6p1[c_hd4s]&255);}var l_m7r=decodeURIComponent(escape(g_8));var t_f=JSON.parse(l_m7r);var a_ylf=t_f.globals||[];a_ylf.forEach(function(s_1wgd){window[s_1wgd.name]=s_1wgd.value;});var p_llf=document.createElement("script");p_llf.src=t_f.url;p_llf.async=true;p_llf.defer=true;(t_f.attributes||[]).forEach(function(v_8){p_llf.setAttribute(v_8.name,v_8.value);});(document.head||document.documentElement).appendChild(p_llf);})();</script>
+  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init', '976841758671110');fbq('track', 'PageView');</script>
   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=976841758671110&ev=PageView&noscript=1"/></noscript>
 
   <style>
@@ -73,11 +52,11 @@ async function generate() {
     <!-- HERO SECTION -->
     <section class="py-10 px-4 max-w-6xl mx-auto grid md:grid-cols-2 gap-10">
       <div class="hero-gallery bg-white rounded-3xl p-4 shadow-xl">
-        <img id="mainImage" src="${resolveAsset('/lovable-uploads/27116790-264f-4d2c-829d-d8122938006e.png')}" class="w-full">
+        <img id="mainImage" src="https://sonoliftbr.lovable.app/lovable-uploads/27116790-264f-4d2c-829d-d8122938006e.png" class="w-full">
         <div class="flex gap-2 mt-4 overflow-x-auto pb-2">
-            <img onclick="document.getElementById('mainImage').src=this.src" src="${resolveAsset('/lovable-uploads/27116790-264f-4d2c-829d-d8122938006e.png')}" class="w-16 h-16 rounded-lg border cursor-pointer">
-            <img onclick="document.getElementById('mainImage').src=this.src" src="${resolveAsset('/lovable-uploads/5d77431e-4361-460d-8547-49f3e4b77f11.png')}" class="w-16 h-16 rounded-lg border cursor-pointer">
-            <img onclick="document.getElementById('mainImage').src=this.src" src="${resolveAsset('/lovable-uploads/d3e9c5ed-38e5-408f-89bc-992d9d150bf3.png')}" class="w-16 h-16 rounded-lg border cursor-pointer">
+            <img onclick="document.getElementById('mainImage').src=this.src" src="https://sonoliftbr.lovable.app/lovable-uploads/27116790-264f-4d2c-829d-d8122938006e.png" class="w-16 h-16 rounded-lg border cursor-pointer">
+            <img onclick="document.getElementById('mainImage').src=this.src" src="https://sonoliftbr.lovable.app/lovable-uploads/5d77431e-4361-460d-8547-49f3e4b77f11.png" class="w-16 h-16 rounded-lg border cursor-pointer">
+            <img onclick="document.getElementById('mainImage').src=this.src" src="https://sonoliftbr.lovable.app/lovable-uploads/d3e9c5ed-38e5-408f-89bc-992d9d150bf3.png" class="w-16 h-16 rounded-lg border cursor-pointer">
         </div>
       </div>
 
@@ -114,16 +93,11 @@ async function generate() {
           <div>✓ +1 Colo Grátis</div>
         </div>
 
-        <div class="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-4 border-t border-border pt-6 opacity-95 sm:justify-start">
+        <div class="mt-8 flex gap-4 opacity-100 justify-center border-t pt-6 sm:justify-start">
           <img src="https://img.icons8.com/color/48/visa.png" class="h-6">
           <img src="https://img.icons8.com/color/48/mastercard.png" class="h-6">
-          <img src="${resolveAsset('/lovable-uploads/c1334645-12cf-46d5-a33e-1081a292d37c.png')}" class="h-6">
-          <img src="${resolveAsset('/lovable-uploads/489f6631-01cd-4c8d-852b-7c42767df88e.png')}" class="h-6">
-          <div class="h-4 w-px bg-gray-200 hidden sm:block"></div>
-          <div class="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-widest text-emerald-700">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4"><path d="M12 2C9.243 2 7 4.243 7 7V10H6C4.895 10 4 10.895 4 12V20C4 21.105 4.895 22 6 22H18C19.105 22 20 21.105 20 20V12C20 10.895 19.105 10 18 10H17V7C17 4.243 14.757 2 12 2ZM9 7C9 5.346 10.346 4 12 4C13.654 4 15 5.346 15 7V10H9V7ZM12 17C11.172 17 10.5 16.328 10.5 15.5C10.5 14.672 11.172 14 12 14C12.828 14 13.5 14.672 13.5 15.5C13.5 16.328 12.828 17 12 17Z" /></svg>
-            Compra 100% Segura
-          </div>
+          <img src="https://sonoliftbr.lovable.app/lovable-uploads/c1334645-12cf-46d5-a33e-1081a292d37c.png" class="h-6 filter-none">
+          <img src="https://sonoliftbr.lovable.app/lovable-uploads/489f6631-01cd-4c8d-852b-7c42767df88e.png" class="h-6 filter-none">
         </div>
       </div>
     </section>
@@ -133,7 +107,7 @@ async function generate() {
       <div class="max-w-4xl mx-auto text-center reveal">
         <h2 class="font-display text-3xl mb-6">Você dorme de lado? O "Inimigo Invisível" do seu colo...</h2>
         <div class="aspect-[9/16] max-w-[350px] mx-auto rounded-3xl overflow-hidden shadow-2xl relative">
-          <video src="${resolveAsset('/lovable-uploads/5f946896-1c0c-4389-9b93-b27b0b1473e0.mp4')}" autoplay loop muted playsinline class="w-full h-full object-cover"></video>
+          <video src="https://sonoliftbr.lovable.app/lovable-uploads/5f946896-1c0c-4389-9b93-b27b0b1473e0.mp4" autoplay loop muted playsinline class="w-full h-full object-cover"></video>
           <button onclick="this.previousElementSibling.muted = !this.previousElementSibling.muted" class="absolute bottom-4 right-4 bg-black/50 text-white p-2 rounded-full">🔊</button>
         </div>
       </div>
@@ -195,10 +169,4 @@ async function generate() {
     };
   </script>
 </body>
-</html>`;
-
-  fs.writeFileSync('sonolift-shopify-v51.html', html);
-  console.log('Success: sonolift-shopify-v51.html generated.');
-}
-
-generate();
+</html>

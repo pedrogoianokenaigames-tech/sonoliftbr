@@ -362,7 +362,11 @@ function HeroSection() {
 
           {/* CTA Principal */}
           <div className="mt-6">
-            <CTAButton block label="GARANTIR MEU KIT →" />
+            <CTAButton block label="GARANTIR MEU KIT + COLO GRÁTIS →" />
+            <div className="mt-3 text-center text-[13px] font-bold text-midnight-deep leading-snug">
+              Leve 2 Kits pelo preço de 1 por apenas <span className="text-[#c8102e]">R$ 187,15 no Pix</span><br/>
+              (ou 12x de R$ 19,78 no cartão)
+            </div>
           </div>
 
           {/* Benefícios rápidos centralizados/icones */}
@@ -374,7 +378,7 @@ function HeroSection() {
           </div>
 
           {/* Gatilhos de confiança com ícones fiéis às referências */}
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-4 border-t border-border pt-6 opacity-95">
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-4 border-t border-border pt-6 opacity-95 sm:justify-start">
             {/* Visa */}
             <div className="flex h-6 items-center justify-center">
               <img 
@@ -409,6 +413,15 @@ function HeroSection() {
                 alt="Pix" 
                 className="h-full w-auto object-contain" 
               />
+            </div>
+            
+            {/* Boleto/Checklist alternative logo? User image-40 shows specific icons */}
+            <div className="h-4 w-px bg-border hidden sm:block"></div>
+            <div className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-widest text-emerald-700">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4">
+                <path d="M12 2C9.243 2 7 4.243 7 7V10H6C4.895 10 4 10.895 4 12V20C4 21.105 4.895 22 6 22H18C19.105 22 20 21.105 20 20V12C20 10.895 19.105 10 18 10H17V7C17 4.243 14.757 2 12 2ZM9 7C9 5.346 10.346 4 12 4C13.654 4 15 5.346 15 7V10H9V7ZM12 17C11.172 17 10.5 16.328 10.5 15.5C10.5 14.672 11.172 14 12 14C12.828 14 13.5 14.672 13.5 15.5C13.5 16.328 12.828 17 12 17Z" />
+              </svg>
+              Compra 100% Segura
             </div>
 
             <div className="h-4 w-px bg-border hidden sm:block"></div>
@@ -1041,11 +1054,9 @@ function OfferSection() {
           <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-gold">
             Você recebe hoje
           </p>
-          <div className="mt-3 flex flex-wrap items-center justify-center gap-x-2 text-center font-display text-2xl leading-tight md:text-3xl">
-            <span>Sistema Facial</span>
-            <span className="text-white/60">+</span>
-            <span>Colo</span>
-            <span className="inline-block rounded-md bg-gold-gradient px-2 py-0.5 text-midnight-deep text-lg font-black uppercase leading-none shadow-soft">
+          <div className="mt-3 flex items-center justify-center gap-2 text-center font-display text-2xl leading-tight md:text-3xl">
+            <span className="shrink-0">Sistema Facial + Colo</span>
+            <span className="shrink-0 rounded-md bg-gold-gradient px-2 py-0.5 text-lg font-black uppercase leading-none text-midnight-deep shadow-soft">
               GRÁTIS
             </span>
           </div>
