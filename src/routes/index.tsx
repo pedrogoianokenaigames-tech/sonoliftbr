@@ -1080,9 +1080,9 @@ function OfferSection() {
             </svg>
             Compra 100% Segura
           </div>
-          <div className="mt-5 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 border-t border-white/10 pt-5 opacity-90">
+          <div className="mt-5 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 border-t border-white/10 pt-5">
             {/* Visa */}
-            <div className="flex h-5 items-center justify-center filter brightness-0 invert">
+            <div className="flex h-5 items-center justify-center">
               <img 
                 src="https://img.icons8.com/color/48/visa.png" 
                 alt="Visa" 
@@ -1091,7 +1091,7 @@ function OfferSection() {
             </div>
             
             {/* Mastercard */}
-            <div className="flex h-6 items-center justify-center filter brightness-0 invert">
+            <div className="flex h-6 items-center justify-center">
               <img 
                 src="https://img.icons8.com/color/48/mastercard.png" 
                 alt="Mastercard" 
@@ -1100,7 +1100,7 @@ function OfferSection() {
             </div>
             
             {/* Elo */}
-            <div className="flex h-5 items-center justify-center filter brightness-0 invert">
+            <div className="flex h-5 items-center justify-center">
               <img 
                 src={eloLogo.url} 
                 alt="Elo" 
@@ -1109,7 +1109,7 @@ function OfferSection() {
             </div>
             
             {/* Pix */}
-            <div className="flex h-5 items-center justify-center filter brightness-0 invert">
+            <div className="flex h-5 items-center justify-center">
               <img 
                 src={pixLogo.url} 
                 alt="Pix" 
