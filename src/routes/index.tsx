@@ -337,27 +337,27 @@ function HeroSection() {
           </h1>
 
           {/* Preço */}
-          <div className="mt-6">
-            <p className="text-sm text-muted-foreground">
-              De <span className="line-through decoration-[#c8102e] decoration-2">R$ 397,00</span>
-            </p>
-            <div className="mt-1 flex items-baseline gap-3">
-              <span className="font-display text-5xl font-extrabold text-[#c8102e]">R$ 197</span>
-              <span className="rounded-full bg-[#c8102e] px-3 py-0.5 text-[10px] font-black uppercase tracking-widest text-white">
-                50% OFF
+          <div className="mt-6 flex flex-col items-center sm:items-start">
+            <p className="text-xs font-medium uppercase tracking-widest text-gold mb-1">VOCÊ RECEBE HOJE</p>
+            <div className="flex items-center gap-3">
+              <h2 className="font-display text-2xl text-midnight-deep sm:text-3xl">Sistema Facial + Colo</h2>
+              <span className="rounded bg-gold px-2 py-0.5 text-[10px] font-black uppercase tracking-widest text-midnight-deep shadow-sm">
+                GRÁTIS
               </span>
             </div>
-            <div className="mt-2 flex items-center gap-2">
-              <span className="rounded bg-emerald-100 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-emerald-800">
-                Sistema Facial + Colo GRÁTIS
-              </span>
+            
+            <div className="mt-4 flex flex-col items-center sm:items-start">
+              <p className="text-[13px] text-muted-foreground font-medium">
+                Valor total: <span className="line-through decoration-[#c8102e] decoration-1 opacity-70">R$ 397</span>
+              </p>
+              <p className="mt-1 text-[11px] font-black uppercase tracking-[0.2em] text-gold">OFERTA ESPECIAL</p>
+              <div className="mt-0 flex items-baseline gap-2">
+                <span className="font-display text-6xl font-extrabold text-gold leading-tight drop-shadow-sm">R$ 197</span>
+              </div>
+              <p className="mt-1 text-[13px] text-midnight-deep font-medium opacity-90">
+                Em até <strong className="text-gold">12x de R$ 16,42</strong> sem juros
+              </p>
             </div>
-            <p className="mt-2 text-base font-semibold text-emerald-700">
-              ou R$ 187,15 no Pix
-            </p>
-            <p className="text-sm text-midnight-deep">
-              Em até <strong>12x de R$ 16,42</strong> sem juros
-            </p>
           </div>
 
           {/* Caixa de oferta curta */}
