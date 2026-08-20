@@ -242,7 +242,7 @@ function Nav() {
           </button>
           {/* Left links (desktop) */}
           <nav className="hidden gap-8 text-[13px] font-bold uppercase tracking-widest text-midnight-deep md:flex">
-            <a href="#oferta" className="transition hover:text-gold">Loja</a>
+            <a href="/" className="transition hover:text-gold">Loja</a>
             <a href="#ciencia" className="transition hover:text-gold">Ciência</a>
           </nav>
         </div>
@@ -250,7 +250,7 @@ function Nav() {
         {/* Centered logo */}
         <div className="flex justify-center">
           <a
-            href="#top"
+            href="/"
             className="font-display text-2xl tracking-tighter text-midnight-deep sm:text-3xl"
           >
             SonoLift<sup className="text-gold font-sans text-xs">™</sup>
@@ -270,7 +270,7 @@ function Nav() {
       {/* Mobile menu */}
       {open && (
         <nav className="flex flex-col items-center gap-5 border-t border-border/40 bg-white py-8 text-[14px] font-bold uppercase tracking-[0.2em] text-midnight-deep md:hidden animate-in fade-in slide-in-from-top-2 duration-200">
-          <a href="#oferta" onClick={() => setOpen(false)}>Loja</a>
+          <a href="/" onClick={() => setOpen(false)}>Loja</a>
           <a href="#ciencia" onClick={() => setOpen(false)}>Ciência</a>
           <a href="#resultados" onClick={() => setOpen(false)}>Avaliações</a>
           <a href="#oferta" onClick={() => setOpen(false)}>Comprar</a>
