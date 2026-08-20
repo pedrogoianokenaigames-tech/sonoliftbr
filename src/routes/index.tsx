@@ -1041,11 +1041,9 @@ function OfferSection() {
           <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-gold">
             Você recebe hoje
           </p>
-          <div className="mt-3 flex flex-wrap items-center justify-center gap-x-2 text-center font-display text-2xl leading-tight md:text-3xl">
-            <span>Sistema Facial</span>
-            <span className="text-white/60">+</span>
-            <span>Colo</span>
-            <span className="inline-block rounded-md bg-gold-gradient px-2 py-0.5 text-midnight-deep text-lg font-black uppercase leading-none shadow-soft">
+          <div className="mt-3 flex items-center justify-center gap-2 text-center font-display text-2xl leading-tight md:text-3xl">
+            <span className="shrink-0">Sistema Facial + Colo</span>
+            <span className="shrink-0 rounded-md bg-gold-gradient px-2 py-0.5 text-lg font-black uppercase leading-none text-midnight-deep shadow-soft">
               GRÁTIS
             </span>
           </div>
