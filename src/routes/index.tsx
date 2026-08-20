@@ -337,27 +337,27 @@ function HeroSection() {
           </h1>
 
           {/* Preço */}
-          <div className="mt-6">
-            <p className="text-sm text-muted-foreground">
-              De <span className="line-through decoration-[#c8102e] decoration-2">R$ 397,00</span>
-            </p>
-            <div className="mt-1 flex items-baseline gap-3">
-              <span className="font-display text-5xl font-extrabold text-[#c8102e]">R$ 197</span>
-              <span className="rounded-full bg-[#c8102e] px-3 py-0.5 text-[10px] font-black uppercase tracking-widest text-white">
-                50% OFF
+          <div className="mt-6 flex flex-col items-center sm:items-start">
+            <p className="text-xs font-medium uppercase tracking-widest text-gold mb-1">VOCÊ RECEBE HOJE</p>
+            <div className="flex items-center gap-3">
+              <h2 className="font-display text-2xl text-midnight-deep sm:text-3xl">Sistema Facial + Colo</h2>
+              <span className="rounded bg-gold px-2 py-0.5 text-[10px] font-black uppercase tracking-widest text-midnight-deep shadow-sm">
+                GRÁTIS
               </span>
             </div>
-            <div className="mt-2 flex items-center gap-2">
-              <span className="rounded bg-emerald-100 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-emerald-800">
-                Sistema Facial + Colo GRÁTIS
-              </span>
+            
+            <div className="mt-4 flex flex-col items-center sm:items-start">
+              <p className="text-[13px] text-muted-foreground font-medium">
+                Valor total: <span className="line-through decoration-[#c8102e] decoration-1 opacity-70">R$ 397</span>
+              </p>
+              <p className="mt-1 text-[11px] font-black uppercase tracking-[0.2em] text-gold">OFERTA ESPECIAL</p>
+              <div className="mt-0 flex items-baseline gap-2">
+                <span className="font-display text-6xl font-extrabold text-gold leading-tight drop-shadow-sm">R$ 197</span>
+              </div>
+              <p className="mt-1 text-[13px] text-midnight-deep font-medium opacity-90">
+                Em até <strong className="text-gold">12x de R$ 16,42</strong> sem juros
+              </p>
             </div>
-            <p className="mt-2 text-base font-semibold text-emerald-700">
-              ou R$ 187,15 no Pix
-            </p>
-            <p className="text-sm text-midnight-deep">
-              Em até <strong>12x de R$ 16,42</strong> sem juros
-            </p>
           </div>
 
           {/* Caixa de oferta curta */}
@@ -366,69 +366,42 @@ function HeroSection() {
           </div>
 
           {/* CTA Principal */}
-          <div className="mt-6">
-            <CTAButton block label="GARANTIR MEU KIT + COLO GRÁTIS →" />
-            <div className="mt-3 text-center text-[13px] font-bold text-midnight-deep leading-snug">
-              Leve 2 Kits pelo preço de 1 por apenas <span className="text-[#c8102e]">R$ 187,15 no Pix</span><br/>
-              (ou 12x de R$ 19,78 no cartão)
+          <div className="mt-8">
+            <CTAButton block label="GARANTIR MEU KIT + COLO GRÁTIS → →" />
+            
+            <div className="mt-6 flex flex-col items-center justify-center gap-4 sm:flex-row sm:justify-start">
+              <div className="flex items-center gap-2 text-[13px] font-bold uppercase tracking-wider text-midnight-deep opacity-90">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4 text-gold">
+                  <path d="M12 2C9.243 2 7 4.243 7 7V10H6C4.895 10 4 10.895 4 12V20C4 21.105 4.895 22 6 22H18C19.105 22 20 21.105 20 20V12C20 10.895 19.105 10 18 10H17V7C17 4.243 14.757 2 12 2ZM9 7C9 5.346 10.346 4 12 4C13.654 4 15 5.346 15 7V10H9V7ZM12 17C11.172 17 10.5 16.328 10.5 15.5C10.5 14.672 11.172 14 12 14C12.828 14 13.5 14.672 13.5 15.5C13.5 16.328 12.828 17 12 17Z" />
+                </svg>
+                Compra 100% Segura
+              </div>
+            </div>
+
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-4 border-t border-midnight-deep/10 pt-6 sm:justify-start">
+              <div className="flex h-5 items-center grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition">
+                <img src="https://img.icons8.com/color/48/visa.png" alt="Visa" className="h-full w-auto" />
+              </div>
+              <div className="flex h-6 items-center grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition">
+                <img src="https://img.icons8.com/color/48/mastercard.png" alt="Mastercard" className="h-full w-auto" />
+              </div>
+              <div className="flex h-5 items-center grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition">
+                <img src={eloLogo.url} alt="Elo" className="h-full w-auto" />
+              </div>
+              <div className="flex h-5 items-center grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition">
+                <img src={pixLogo.url} alt="Pix" className="h-full w-auto" />
+              </div>
+            </div>
+
+            {/* Pagination dots from reference */}
+            <div className="mt-8 flex items-center justify-center gap-2 sm:justify-start">
+              <div className="h-2 w-2 rounded-sm bg-midnight-deep/20"></div>
+              <div className="h-2 w-2 rounded-sm bg-midnight-deep/20"></div>
+              <div className="h-2 w-4 rounded-sm bg-gold"></div>
+              <div className="h-2 w-2 rounded-sm bg-midnight-deep/20"></div>
             </div>
           </div>
 
-          {/* Benefícios rápidos centralizados/icones */}
-          <div className="mt-6 grid grid-cols-2 gap-3 text-[13px] font-semibold text-midnight-deep">
-            <div className="flex items-center gap-2"><span className="text-emerald-600">✓</span> Frete Grátis Brasil</div>
-            <div className="flex items-center gap-2"><span className="text-emerald-600">✓</span> Garantia 30 Dias</div>
-            <div className="flex items-center gap-2"><span className="text-emerald-600">✓</span> 16 Adesivos Rosto</div>
-            <div className="flex items-center gap-2"><span className="text-emerald-600">✓</span> +1 Colo Grátis</div>
-          </div>
-
-          {/* Gatilhos de confiança com ícones fiéis às referências */}
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-4 border-t border-border pt-6 opacity-95 sm:justify-start">
-            {/* Visa */}
-            <div className="flex h-6 items-center justify-center">
-              <img 
-                src="https://img.icons8.com/color/48/visa.png" 
-                alt="Visa" 
-                className="h-full w-auto object-contain" 
-              />
-            </div>
-            
-            {/* Mastercard */}
-            <div className="flex h-7 items-center justify-center">
-              <img 
-                src="https://img.icons8.com/color/48/mastercard.png" 
-                alt="Mastercard" 
-                className="h-full w-auto object-contain" 
-              />
-            </div>
-            
-            {/* Elo */}
-            <div className="flex h-6 items-center justify-center">
-              <img 
-                src={eloLogo.url} 
-                alt="Elo" 
-                className="h-full w-auto object-contain" 
-              />
-            </div>
-            
-            {/* Pix */}
-            <div className="flex h-6 items-center justify-center">
-              <img 
-                src={pixLogo.url} 
-                alt="Pix" 
-                className="h-full w-auto object-contain" 
-              />
-            </div>
-            
-            {/* Boleto/Checklist alternative logo? User image-40 shows specific icons */}
-            <div className="h-4 w-px bg-border hidden sm:block"></div>
-            <div className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-widest text-emerald-700">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4">
-                <path d="M12 2C9.243 2 7 4.243 7 7V10H6C4.895 10 4 10.895 4 12V20C4 21.105 4.895 22 6 22H18C19.105 22 20 21.105 20 20V12C20 10.895 19.105 10 18 10H17V7C17 4.243 14.757 2 12 2ZM9 7C9 5.346 10.346 4 12 4C13.654 4 15 5.346 15 7V10H9V7ZM12 17C11.172 17 10.5 16.328 10.5 15.5C10.5 14.672 11.172 14 12 14C12.828 14 13.5 14.672 13.5 15.5C13.5 16.328 12.828 17 12 17Z" />
-              </svg>
-              Compra 100% Segura
-            </div>
-          </div>
         </div>
       </div>
     </section>
