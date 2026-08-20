@@ -392,6 +392,14 @@ function HeroSection() {
                 <img src={pixLogo.url} alt="Pix" className="h-full w-auto" />
               </div>
             </div>
+
+            {/* Pagination dots from reference */}
+            <div className="mt-8 flex items-center justify-center gap-2 sm:justify-start">
+              <div className="h-2 w-2 rounded-sm bg-midnight-deep/20"></div>
+              <div className="h-2 w-2 rounded-sm bg-midnight-deep/20"></div>
+              <div className="h-2 w-4 rounded-sm bg-gold"></div>
+              <div className="h-2 w-2 rounded-sm bg-midnight-deep/20"></div>
+            </div>
           </div>
 
         </div>
