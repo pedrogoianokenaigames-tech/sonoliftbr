@@ -374,7 +374,7 @@ function HeroSection() {
           </div>
 
           {/* Gatilhos de confiança com ícones fiéis às referências */}
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-4 border-t border-border pt-6 opacity-95">
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-4 border-t border-border pt-6 opacity-95 sm:justify-start">
             {/* Visa */}
             <div className="flex h-6 items-center justify-center">
               <img 
