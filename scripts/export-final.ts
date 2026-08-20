@@ -91,6 +91,11 @@ async function generate() {
             <span class="text-red-600 text-5xl font-black">R$ 197</span>
             <span class="bg-red-600 text-white text-[10px] px-2 py-1 rounded font-bold">50% OFF</span>
           </div>
+          <div class="mt-2 flex items-center gap-2">
+            <span class="rounded bg-emerald-100 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-emerald-800">
+              Sistema Facial + Colo GRÁTIS
+            </span>
+          </div>
           <p class="text-emerald-700 font-bold mt-1">ou R$ 187,15 no Pix</p>
           <p class="text-sm">Em até 12x de R$ 16,42</p>
         </div>
