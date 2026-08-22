@@ -367,7 +367,7 @@ function HeroSection() {
 
           {/* CTA Principal */}
           <div className="mt-8">
-            <CTAButton block label="GARANTIR MEU KIT + COLO GRÁTIS → →" />
+            <CTAButton block label="GARANTIR MEU KIT + COLO GRÁTIS →" />
             
             <div className="mt-6 flex flex-col items-center justify-center gap-4 sm:flex-row sm:justify-start">
               <div className="flex items-center gap-2 text-[13px] font-bold uppercase tracking-wider text-midnight-deep opacity-90">
