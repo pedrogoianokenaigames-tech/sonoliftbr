@@ -1193,9 +1193,9 @@ function FooterSection() {
       <div className="mx-auto max-w-6xl px-4 py-16">
         <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-4">
           {badges.map((b) => (
-            <div key={b.label} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-5 py-4">
-              <span className="text-2xl">{b.icon}</span>
-              <span className="text-sm font-medium">{b.label}</span>
+            <div key={b.label} className="flex flex-col items-center justify-center text-center gap-2 rounded-2xl border border-white/5 bg-white/[0.03] p-4 transition hover:bg-white/[0.06]">
+              <span className="text-3xl filter drop-shadow-[0_0_8px_rgba(255,255,255,0.2)]">{b.icon}</span>
+              <span className="text-xs font-bold uppercase tracking-widest text-cream/90">{b.label}</span>
             </div>
           ))}
         </div>
