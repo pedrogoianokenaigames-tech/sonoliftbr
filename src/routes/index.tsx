@@ -744,7 +744,7 @@ function HowToUseSection() {
                         {String(i + 1).padStart(2, "0")}
                       </span>
                     </div>
-                    <h3 className="mt-6 font-display text-4xl leading-tight text-midnight-deep md:text-6xl">
+                    <h3 className="mt-6 font-display text-5xl leading-tight text-midnight-deep md:text-8xl">
                       {s.title}
                     </h3>
                     <p className="mt-5 max-w-md text-base leading-relaxed text-muted-foreground">
