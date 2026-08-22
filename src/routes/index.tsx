@@ -421,9 +421,7 @@ function AdvertorialSection() {
   return (
     <section className="bg-cream pt-10 pb-20 md:pt-16 md:pb-32">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-center px-4 text-center">
-        {/* Banner Antigo 'VOCÊ DORME DE LADO?' logic - can be re-added if user wants specific text, 
-            but prompt says "Acorde sem as marcas..." is the core text here. */}
-        <div className="mb-6 rounded-full bg-gold-gradient px-6 py-1 text-[11px] font-black uppercase tracking-[0.25em] text-midnight-deep shadow-soft">
+        <div className="mb-8 rounded-full bg-gold-gradient px-8 py-2 text-[11px] font-black uppercase tracking-[0.3em] text-midnight-deep shadow-luxe">
           Você dorme de lado?
         </div>
 
