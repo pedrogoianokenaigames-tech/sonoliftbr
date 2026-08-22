@@ -327,8 +327,8 @@ function HeroSection() {
         <div className="mt-8 flex flex-col md:mt-0 md:w-1/2">
           {/* Avaliações */}
           <div className="flex items-center gap-2">
-            <div className="text-2xl tracking-[0.1em] text-gold">★★★★★</div>
-            <span className="text-lg font-semibold text-midnight-deep">(12.480+ avaliações)</span>
+            <div className="text-xl tracking-[0.1em] text-gold">★★★★★</div>
+            <span className="text-base font-semibold text-midnight-deep">(12.480+ avaliações)</span>
           </div>
 
           {/* Título */}
