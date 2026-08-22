@@ -395,10 +395,10 @@ function HeroSection() {
 
             {/* Pagination dots from reference */}
             <div className="mt-8 flex items-center justify-center gap-2 sm:justify-start">
-              <div className="h-2 w-2 rounded-sm bg-midnight-deep/20"></div>
-              <div className="h-2 w-2 rounded-sm bg-midnight-deep/20"></div>
-              <div className="h-2 w-4 rounded-sm bg-gold"></div>
-              <div className="h-2 w-2 rounded-sm bg-midnight-deep/20"></div>
+              <div className="h-1.5 w-1.5 rounded-full bg-midnight-deep/20"></div>
+              <div className="h-1.5 w-1.5 rounded-full bg-midnight-deep/20"></div>
+              <div className="h-1.5 w-3 rounded-full bg-gold"></div>
+              <div className="h-1.5 w-1.5 rounded-full bg-midnight-deep/20"></div>
             </div>
           </div>
 
@@ -1233,10 +1233,10 @@ function FooterSection() {
           <span>© 2026 SonoLift Beauty LTDA · CNPJ 76.047.876/0001-90</span>
           
           <div className="flex items-center justify-center gap-2">
-            <div className="h-2 w-2 rounded-sm bg-white/20"></div>
-            <div className="h-2 w-2 rounded-sm bg-white/20"></div>
-            <div className="h-2 w-4 rounded-sm bg-gold"></div>
-            <div className="h-2 w-2 rounded-sm bg-white/20"></div>
+            <div className="h-1.5 w-1.5 rounded-full bg-white/20"></div>
+            <div className="h-1.5 w-1.5 rounded-full bg-white/20"></div>
+            <div className="h-1.5 w-3 rounded-full bg-gold"></div>
+            <div className="h-1.5 w-1.5 rounded-full bg-white/20"></div>
           </div>
         </div>
       </div>
