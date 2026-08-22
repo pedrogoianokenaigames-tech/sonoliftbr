@@ -25,7 +25,7 @@ import heroImg6 from "@/assets/hero6.jpg.asset.json";
 import pixLogo from "@/assets/pix-logo.png.asset.json";
 import eloLogo from "@/assets/elo-logo.jpg.asset.json";
 
-const CTA_LABEL = "QUERO MEU KIT FACIAL + COLO GRÁTIS";
+const CTA_LABEL = "GARANTIR MEU KIT + COLO GRÁTIS";
 
 /* Placeholder media (Unsplash / Pexels). */
 const HERO_IMG =
