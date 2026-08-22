@@ -203,13 +203,12 @@ function TopBar() {
   const ss = String(secondsLeft % 60).padStart(2, "0");
   return (
     <div className="sticky top-0 z-50 bg-black text-cream">
-      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-2 gap-y-1 px-4 py-2.5 text-center text-[13px] font-semibold tracking-wide sm:text-base">
-        <span className="text-lg leading-none">⚠️</span>
-        <span>
-          <strong className="text-[#ff3b3b]">Atenção:</strong>{" "}
-          <strong className="text-[#ff3b3b]">Kit Pescoço e Colo GRÁTIS</strong> reservado por:
+      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-4 gap-y-2 px-4 py-3 text-center text-sm font-bold tracking-wide sm:text-lg">
+        <span className="text-xl leading-none">⚠️</span>
+        <span className="uppercase tracking-tighter">
+          <strong className="text-[#ff3b3b]">OFERTA TERMINA EM:</strong>
         </span>
-        <span className="rounded-md bg-[#c8102e] px-3 py-1 font-mono text-lg font-extrabold tabular-nums text-white shadow-md sm:text-2xl">
+        <span className="inline-flex min-w-[80px] justify-center rounded-lg bg-[#c8102e] px-4 py-1.5 font-mono text-xl font-black tabular-nums text-white shadow-[0_4px_12px_rgba(200,16,46,0.3)] sm:text-3xl">
           {mm}:{ss}
         </span>
       </div>
