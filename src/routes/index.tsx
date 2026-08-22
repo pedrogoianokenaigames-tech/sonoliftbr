@@ -1126,25 +1126,25 @@ function FAQSection() {
     { q: "Quanto tempo leva o envio?", a: "Envio em até 24h úteis com frete grátis para todo o Brasil." },
   ];
   return (
-    <section className="bg-white py-24 md:py-32">
-      <div className="mx-auto max-w-3xl px-4">
+    <section className="bg-white py-24 md:py-40">
+      <div className="mx-auto max-w-4xl px-4">
         <div className="text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">Dúvidas frequentes</p>
-          <h2 className="mt-3 font-display text-3xl leading-tight text-midnight-deep md:text-5xl">
+          <p className="text-xs font-black uppercase tracking-[0.3em] text-gold">Dúvidas frequentes</p>
+          <h2 className="mt-4 font-display text-4xl leading-tight text-midnight-deep md:text-7xl">
             Tudo que você precisa saber.
           </h2>
         </div>
-        <div className="mt-12 space-y-3">
+        <div className="mt-16 space-y-4">
           {items.map((i) => (
             <details
               key={i.q}
-              className="group rounded-2xl border border-border bg-cream p-5 shadow-soft transition open:shadow-luxe"
+              className="group rounded-[2rem] border border-border bg-cream p-7 shadow-soft transition-all duration-300 open:shadow-luxe"
             >
-              <summary className="flex cursor-pointer list-none items-center justify-between text-left font-medium text-midnight-deep">
+              <summary className="flex cursor-pointer list-none items-center justify-between text-left text-lg font-bold tracking-tight text-midnight-deep md:text-xl">
                 {i.q}
-                <span className="ml-4 text-gold text-xl transition group-open:rotate-45">+</span>
+                <span className="ml-4 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-gold/30 text-gold transition-transform duration-300 group-open:rotate-45">+</span>
               </summary>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{i.a}</p>
+              <p className="mt-5 text-base leading-relaxed text-muted-foreground md:text-lg">{i.a}</p>
             </details>
           ))}
         </div>
