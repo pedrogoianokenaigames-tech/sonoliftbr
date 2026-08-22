@@ -107,9 +107,12 @@ async function generate() {
   html += '\n';
   html += '        <a href="https://sono-lift.pay.yampi.com.br/r/R558X0P2M5" class="block mt-8 bg-gold-gradient text-midnight-deep text-center py-6 px-4 rounded-full font-black text-xl shadow-2xl hover:scale-105 transition animate-cta-pulse sm:text-2xl">GARANTIR MEU KIT + COLO GRÁTIS →</a>\n';
   html += '        \n';
-  html += '        <div class="mt-6 flex flex-col items-center justify-center gap-4 sm:flex-row sm:justify-start">\n';
-  html += '            <div class="flex items-center gap-2 text-[13px] font-bold uppercase tracking-wider text-midnight-deep opacity-90">\n';
-  html += '                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4 text-gold"><path d="M12 2C9.243 2 7 4.243 7 7V10H6C4.895 10 4 10.895 4 12V20C4 21.105 4.895 22 6 22H18C19.105 22 20 21.105 20 20V12C20 10.895 19.105 10 18 10H17V7C17 4.243 14.757 2 12 2ZM9 7C9 5.346 10.346 4 12 4C13.654 4 15 5.346 15 7V10H9V7ZM12 17C11.172 17 10.5 16.328 10.5 15.5C10.5 14.672 11.172 14 12 14C12.828 14 13.5 14.672 13.5 15.5C13.5 16.328 12.828 17 12 17Z" /></svg>Compra 100% Segura\n';
+  html += '        <div class="mt-8 flex flex-col items-center justify-center gap-6 sm:flex-row sm:justify-start">\n';
+  html += '            <div class="flex items-center gap-2 text-base font-black uppercase tracking-[0.2em] text-midnight-deep opacity-90">\n';
+  html += '                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="h-6 w-6 text-gold"><rect x="4" y="11" width="16" height="9" rx="2" /><path d="M8 11V7a4 4 0 0 1 8 0v4" /></svg>Compra 100% Segura\n';
+  html += '            </div>\n';
+  html += '            <div class="flex items-center gap-2 text-base font-black uppercase tracking-[0.2em] text-gold">\n';
+  html += '              <span>🚚</span> Frete Grátis Brasil\n';
   html += '            </div>\n';
   html += '        </div>\n';
   html += '\n';
