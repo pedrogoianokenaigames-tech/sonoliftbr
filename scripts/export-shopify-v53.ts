@@ -41,7 +41,9 @@ async function generate() {
   html += '        extend: {\n';
   html += '          colors: { gold: \'#D4AF37\', \'midnight-deep\': \'#0B1B3B\', cream: \'#FCF9F2\', border: \'#e8e2d2\' },\n';
   html += '          fontFamily: { sans: [\'Inter\', \'sans-serif\'], display: [\'Playfair Display\', \'serif\'] },\n';
-  html += '          backgroundImage: { \'gold-gradient\': \'linear-gradient(135deg, #D4AF37 0%, #F4D03F 50%, #D4AF37 100%)\' }\n';
+  html += '          backgroundImage: { \'gold-gradient\': \'linear-gradient(135deg, #D4AF37 0%, #F4D03F 50%, #D4AF37 100%)\' },\n';
+  html += '          animation: { \'cta-pulse\': \'cta-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite\' },\n';
+  html += '          keyframes: { \'cta-pulse\': { \'0%, 100%\': { transform: \'scale(1)\' }, \'50%\': { transform: \'scale(1.05)\' } } }\n';
   html += '        }\n';
   html += '      }\n';
   html += '    }\n';
