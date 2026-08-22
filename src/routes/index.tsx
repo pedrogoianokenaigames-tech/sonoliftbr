@@ -113,9 +113,9 @@ function StickyCTA() {
   if (!show) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 z-[999] w-full bg-white/95 p-3 shadow-[0_-4px_10px_rgba(0,0,0,0.08)] backdrop-blur-sm md:hidden animate-in fade-in slide-in-from-bottom-5 duration-300">
-      <div className="mx-auto max-w-md">
-        <CTAButton block label="GARANTIR MEU KIT" />
+    <div className="fixed bottom-0 left-0 z-[999] w-full bg-white p-3 shadow-[0_-8px_30px_rgba(0,0,0,0.12)] border-t border-border/20 md:hidden animate-in fade-in slide-in-from-bottom-5 duration-300">
+      <div className="mx-auto max-w-md px-2">
+        <CTAButton block label="GARANTIR MEU KIT + COLO GRÁTIS →" />
       </div>
     </div>
   );
