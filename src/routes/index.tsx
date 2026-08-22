@@ -1158,10 +1158,10 @@ function FAQSection() {
  * ============================================================ */
 function FooterSection() {
   const badges = [
-    { icon: "🧴", label: "Hipoalergênico" },
-    { icon: "🚚", label: "Frete Grátis Brasil" },
-    { icon: "🔒", label: "Compra 100% Segura" },
-    { icon: "🛡️", label: "Garantia 30 noites" },
+    { icon: "🧪", label: "Dermatologicamente Testado" },
+    { icon: "🚚", label: "Frete Grátis Todo Brasil" },
+    { icon: "🔒", label: "Pagamento 100% Seguro" },
+    { icon: "✨", label: "Garantia Incondicional" },
   ];
   return (
     <footer className="bg-midnight-deep text-cream">
