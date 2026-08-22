@@ -990,14 +990,14 @@ function OfferSection() {
           </article>
 
           {/* Card 2 — Bônus */}
-          <article className="relative mt-8 flex flex-col rounded-3xl border-2 border-gold bg-cream p-8 pt-9 shadow-luxe md:mt-0">
-            <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-gold-gradient px-4 py-1.5 text-[10px] font-bold uppercase leading-none tracking-[0.2em] text-midnight-deep shadow-soft md:left-6 md:translate-x-0">
+          <article className="relative mt-8 flex flex-col rounded-[2.5rem] border-2 border-gold bg-white p-8 pt-10 shadow-luxe md:mt-0 md:p-10 md:pt-12">
+            <span className="absolute -top-4 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-gold-gradient px-6 py-2.5 text-[11px] font-black uppercase leading-none tracking-[0.25em] text-midnight-deep shadow-luxe transition-transform hover:scale-105 md:left-10 md:translate-x-0">
               Bônus grátis
             </span>
-            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-gold">
+            <p className="text-[11px] font-black uppercase tracking-[0.25em] text-gold">
               Bônus exclusivo
             </p>
-            <h3 className="mt-2 font-display text-2xl text-midnight-deep md:text-3xl">
+            <h3 className="mt-2 font-display text-3xl text-midnight-deep md:text-4xl">
               SonoLift™ Colo
             </h3>
             <ul className="mt-5 flex-1 space-y-2 text-sm text-midnight">
