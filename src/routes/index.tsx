@@ -1053,40 +1053,17 @@ function OfferSection() {
             Compra 100% Segura
           </div>
           <div className="mt-5 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 border-t border-white/10 pt-5">
-            {/* Visa */}
-            <div className="flex h-5 items-center justify-center">
-              <img 
-                src="https://img.icons8.com/color/48/visa.png" 
-                alt="Visa" 
-                className="h-full w-auto object-contain" 
-              />
+            <div className="flex h-5 items-center justify-center grayscale brightness-[5] opacity-80">
+              <img src="https://img.icons8.com/color/48/visa.png" alt="Visa" className="h-full w-auto object-contain" />
             </div>
-            
-            {/* Mastercard */}
-            <div className="flex h-6 items-center justify-center">
-              <img 
-                src="https://img.icons8.com/color/48/mastercard.png" 
-                alt="Mastercard" 
-                className="h-full w-auto object-contain" 
-              />
+            <div className="flex h-6 items-center justify-center grayscale brightness-[5] opacity-80">
+              <img src="https://img.icons8.com/color/48/mastercard.png" alt="Mastercard" className="h-full w-auto object-contain" />
             </div>
-            
-            {/* Elo */}
-            <div className="flex h-5 items-center justify-center">
-              <img 
-                src={eloLogo.url} 
-                alt="Elo" 
-                className="h-full w-auto object-contain" 
-              />
+            <div className="flex h-5 items-center justify-center grayscale brightness-[5] opacity-80">
+              <img src={eloLogo.url} alt="Elo" className="h-full w-auto object-contain" />
             </div>
-            
-            {/* Pix */}
-            <div className="flex h-5 items-center justify-center">
-              <img 
-                src={pixLogo.url} 
-                alt="Pix" 
-                className="h-full w-auto object-contain" 
-              />
+            <div className="flex h-5 items-center justify-center grayscale brightness-[5] opacity-80">
+              <img src={pixLogo.url} alt="Pix" className="h-full w-auto object-contain" />
             </div>
           </div>
         </div>
