@@ -888,8 +888,8 @@ function UGCSection() {
             {UGC_VIDEOS.map((v) => (
               <figure
                 key={v.name}
-                className="relative shrink-0 snap-start overflow-hidden rounded-[1.75rem] shadow-luxe"
-                style={{ width: "260px" }}
+                className="relative shrink-0 snap-start overflow-hidden rounded-[2rem] shadow-luxe transition-transform hover:scale-[1.02]"
+                style={{ width: "290px" }}
               >
                 <video
                   src={v.src}
