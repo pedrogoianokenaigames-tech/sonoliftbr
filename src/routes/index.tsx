@@ -347,15 +347,14 @@ function HeroSection() {
             </div>
             
             <div className="mt-4 flex flex-col items-center sm:items-start">
-              <p className="text-[13px] text-muted-foreground font-medium">
-                Valor total: <span className="line-through decoration-[#c8102e] decoration-1 opacity-70">R$ 397</span>
+              <p className="text-[15px] text-muted-foreground font-medium">
+                De <span className="line-through decoration-[#c8102e] decoration-1 opacity-70">R$ 397</span> por
               </p>
-              <p className="mt-1 text-[11px] font-black uppercase tracking-[0.2em] text-gold">OFERTA ESPECIAL</p>
               <div className="mt-0 flex items-baseline gap-2">
-                <span className="font-display text-6xl font-extrabold text-gold leading-tight drop-shadow-sm">R$ 197</span>
+                <span className="font-display text-7xl font-extrabold text-gold leading-none drop-shadow-sm">R$ 197</span>
               </div>
               <p className="mt-1 text-[13px] text-midnight-deep font-medium opacity-90">
-                Em até <strong className="text-gold">12x de R$ 16,42</strong> sem juros
+                Ou <strong className="text-gold">12x de R$ 16,42</strong> sem juros
               </p>
             </div>
           </div>
