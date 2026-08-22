@@ -1018,13 +1018,13 @@ function OfferSection() {
         </div>
 
         {/* Final summary */}
-        <div className="mx-auto mt-12 max-w-3xl rounded-3xl bg-midnight-gradient p-8 text-white shadow-luxe md:p-12">
-          <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-gold">
+        <div className="mx-auto mt-12 max-w-3xl rounded-[2.5rem] bg-midnight-gradient p-8 text-white shadow-luxe md:p-14">
+          <p className="text-center text-xs font-black uppercase tracking-[0.25em] text-gold">
             Você recebe hoje
           </p>
-          <div className="mt-3 flex items-center justify-center gap-2 text-center font-display text-2xl leading-tight md:text-3xl">
-            <span className="shrink-0">Sistema Facial + Colo</span>
-            <span className="shrink-0 rounded-md bg-gold-gradient px-2 py-0.5 text-lg font-black uppercase leading-none text-midnight-deep shadow-soft">
+          <div className="mt-4 flex flex-col items-center justify-center gap-3 text-center sm:flex-row">
+            <span className="font-display text-3xl leading-tight md:text-5xl">Sistema Facial + Colo</span>
+            <span className="shrink-0 rounded-lg bg-gold-gradient px-4 py-1.5 text-xl font-black uppercase leading-none text-midnight-deep shadow-luxe">
               GRÁTIS
             </span>
           </div>
