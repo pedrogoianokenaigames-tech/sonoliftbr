@@ -25,7 +25,7 @@ import heroImg6 from "@/assets/hero6.jpg.asset.json";
 import pixLogo from "@/assets/pix-logo.png.asset.json";
 import eloLogo from "@/assets/elo-logo.jpg.asset.json";
 
-const CTA_LABEL = "QUERO MEU KIT FACIAL + COLO GRÁTIS";
+const CTA_LABEL = "GARANTIR MEU KIT + COLO GRÁTIS";
 
 /* Placeholder media (Unsplash / Pexels). */
 const HERO_IMG =
@@ -113,7 +113,7 @@ function StickyCTA() {
   if (!show) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 z-[999] w-full bg-white p-3 shadow-[0_-8px_30px_rgba(0,0,0,0.12)] border-t border-border/20 md:hidden animate-in fade-in slide-in-from-bottom-5 duration-300">
+    <div className="fixed bottom-0 left-0 z-[999] w-full bg-white p-4 shadow-[0_-12px_40px_rgba(0,0,0,0.15)] border-t-2 border-gold/20 md:hidden animate-in fade-in slide-in-from-bottom-full duration-500">
       <div className="mx-auto max-w-md px-2">
         <CTAButton block label="GARANTIR MEU KIT + COLO GRÁTIS →" />
       </div>
@@ -134,9 +134,9 @@ function WhatsAppFloat() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Fale conosco pelo WhatsApp"
-      className="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-luxe transition-transform hover:scale-110"
+      className="fixed bottom-24 right-5 z-50 flex h-16 w-16 items-center justify-center rounded-full bg-[#25D366] text-white shadow-luxe transition-transform hover:scale-110 sm:bottom-6"
     >
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-7 w-7">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-9 w-9">
         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-9.715A9.944 9.944 0 0 0 12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2.546 22l4.915-1.375A9.944 9.944 0 0 0 12 22c5.523 0 10-4.477 10-10a9.943 9.943 0 0 0-4.949-8.333Z" />
       </svg>
     </a>
@@ -203,13 +203,12 @@ function TopBar() {
   const ss = String(secondsLeft % 60).padStart(2, "0");
   return (
     <div className="sticky top-0 z-50 bg-black text-cream">
-      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-2 gap-y-1 px-4 py-2.5 text-center text-[13px] font-semibold tracking-wide sm:text-base">
-        <span className="text-lg leading-none">⚠️</span>
-        <span>
-          <strong className="text-[#ff3b3b]">Atenção:</strong>{" "}
-          <strong className="text-[#ff3b3b]">Kit Pescoço e Colo GRÁTIS</strong> reservado por:
+      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-4 gap-y-2 px-4 py-3 text-center text-sm font-bold tracking-wide sm:text-lg">
+        <span className="text-xl leading-none">⚠️</span>
+        <span className="uppercase tracking-tighter">
+          <strong className="text-[#ff3b3b]">OFERTA TERMINA EM:</strong>
         </span>
-        <span className="rounded-md bg-[#c8102e] px-3 py-1 font-mono text-lg font-extrabold tabular-nums text-white shadow-md sm:text-2xl">
+        <span className="inline-flex min-w-[80px] justify-center rounded-lg bg-[#c8102e] px-4 py-1.5 font-mono text-xl font-black tabular-nums text-white shadow-[0_4px_12px_rgba(200,16,46,0.3)] sm:text-3xl">
           {mm}:{ss}
         </span>
       </div>
@@ -224,7 +223,7 @@ function Nav() {
   const [open, setOpen] = useState(false);
   return (
     <header className="border-b border-border/40 bg-white">
-      <div className="mx-auto grid max-w-6xl grid-cols-3 items-center px-4 py-3">
+      <div className="mx-auto grid max-w-6xl grid-cols-3 items-center px-4 py-4">
         {/* Left slot */}
         <div className="flex items-center">
           {/* Hamburger (mobile) */}
@@ -297,8 +296,8 @@ function HeroSection() {
   ];
 
   return (
-    <section id="top" className="bg-cream">
-      <div className="mx-auto flex max-w-6xl flex-col px-4 py-6 md:flex-row md:gap-12 md:py-12">
+    <section id="top" className="bg-cream pt-4">
+      <div className="mx-auto flex max-w-6xl flex-col px-4 py-8 md:flex-row md:gap-16 md:py-20">
         {/* 1. Galeria de Imagens */}
         <div className="w-full md:w-1/2">
           <div className="relative aspect-square w-full overflow-hidden rounded-2xl bg-white shadow-soft max-h-[50vh] sm:max-h-[550px] md:max-h-none">
@@ -328,7 +327,7 @@ function HeroSection() {
           {/* Avaliações */}
           <div className="flex items-center gap-2">
             <div className="text-xl tracking-[0.1em] text-gold">★★★★★</div>
-            <span className="text-sm font-semibold text-midnight-deep">(12.480+ avaliações)</span>
+            <span className="text-base font-semibold text-midnight-deep">(12.480+ avaliações)</span>
           </div>
 
           {/* Título */}
@@ -346,16 +345,15 @@ function HeroSection() {
               </span>
             </div>
             
-            <div className="mt-4 flex flex-col items-center sm:items-start">
-              <p className="text-[13px] text-muted-foreground font-medium">
-                Valor total: <span className="line-through decoration-[#c8102e] decoration-1 opacity-70">R$ 397</span>
+            <div className="mt-6 flex flex-col items-center sm:items-start">
+              <p className="text-base text-muted-foreground font-semibold">
+                De <span className="line-through decoration-[#c8102e] decoration-2 opacity-60">R$ 397</span> por
               </p>
-              <p className="mt-1 text-[11px] font-black uppercase tracking-[0.2em] text-gold">OFERTA ESPECIAL</p>
-              <div className="mt-0 flex items-baseline gap-2">
-                <span className="font-display text-6xl font-extrabold text-gold leading-tight drop-shadow-sm">R$ 197</span>
+              <div className="mt-1 flex items-baseline gap-2">
+                <span className="font-display text-8xl font-black text-gold leading-none drop-shadow-md sm:text-9xl">R$ 197</span>
               </div>
-              <p className="mt-1 text-[13px] text-midnight-deep font-medium opacity-90">
-                Em até <strong className="text-gold">12x de R$ 16,42</strong> sem juros
+              <p className="mt-2 text-base text-midnight-deep font-bold opacity-90">
+                Ou <strong className="text-gold text-xl">12x de R$ 16,42</strong> sem juros
               </p>
             </div>
           </div>
@@ -367,14 +365,14 @@ function HeroSection() {
 
           {/* CTA Principal */}
           <div className="mt-8">
-            <CTAButton block label="GARANTIR MEU KIT + COLO GRÁTIS → →" />
+            <CTAButton block label="GARANTIR MEU KIT + COLO GRÁTIS →" />
             
             <div className="mt-6 flex flex-col items-center justify-center gap-4 sm:flex-row sm:justify-start">
-              <div className="flex items-center gap-2 text-[13px] font-bold uppercase tracking-wider text-midnight-deep opacity-90">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4 text-gold">
+              <div className="flex items-center gap-2 rounded-full border border-emerald-300 bg-emerald-50 px-4 py-1.5 text-[11px] font-bold uppercase tracking-wider text-emerald-900 shadow-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4">
                   <path d="M12 2C9.243 2 7 4.243 7 7V10H6C4.895 10 4 10.895 4 12V20C4 21.105 4.895 22 6 22H18C19.105 22 20 21.105 20 20V12C20 10.895 19.105 10 18 10H17V7C17 4.243 14.757 2 12 2ZM9 7C9 5.346 10.346 4 12 4C13.654 4 15 5.346 15 7V10H9V7ZM12 17C11.172 17 10.5 16.328 10.5 15.5C10.5 14.672 11.172 14 12 14C12.828 14 13.5 14.672 13.5 15.5C13.5 16.328 12.828 17 12 17Z" />
                 </svg>
-                Compra 100% Segura
+                Frete Grátis Brasil
               </div>
             </div>
 
@@ -423,9 +421,7 @@ function AdvertorialSection() {
   return (
     <section className="bg-cream pt-10 pb-20 md:pt-16 md:pb-32">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-center px-4 text-center">
-        {/* Banner Antigo 'VOCÊ DORME DE LADO?' logic - can be re-added if user wants specific text, 
-            but prompt says "Acorde sem as marcas..." is the core text here. */}
-        <div className="mb-6 rounded-full bg-gold-gradient px-6 py-1 text-[11px] font-black uppercase tracking-[0.25em] text-midnight-deep shadow-soft">
+        <div className="mb-8 rounded-full bg-gold-gradient px-8 py-2 text-[11px] font-black uppercase tracking-[0.3em] text-midnight-deep shadow-luxe">
           Você dorme de lado?
         </div>
 
@@ -437,7 +433,7 @@ function AdvertorialSection() {
         </p>
 
         {/* Vídeo vertical (formato Reels) */}
-        <div className="relative mt-12 aspect-[9/16] w-full max-w-[380px] overflow-hidden rounded-[2.5rem] bg-black shadow-luxe transition-transform hover:scale-[1.01]">
+        <div className="relative mt-16 aspect-[9/16] w-full max-w-[420px] overflow-hidden rounded-[3rem] bg-black shadow-luxe transition-transform hover:scale-[1.01] md:mt-0">
           <video
             ref={videoRef}
             src={heroVideo.url}
@@ -452,9 +448,9 @@ function AdvertorialSection() {
             type="button"
             onClick={toggleSound}
             aria-label={muted ? "Ativar som do vídeo" : "Desativar som do vídeo"}
-            className="absolute top-6 left-1/2 flex -translate-x-1/2 items-center gap-2 rounded-full bg-black/80 px-5 py-3 text-sm font-bold text-white backdrop-blur-md transition hover:bg-black"
+            className="absolute bottom-10 left-1/2 flex -translate-x-1/2 items-center gap-2 rounded-full bg-black/80 px-8 py-4 text-base font-black text-white backdrop-blur-md transition hover:bg-black"
           >
-            {muted ? "🔊 Toque para ativar o som" : "🔇 Desativar som"}
+            {muted ? "🔊 ATIVAR SOM" : "🔇 DESATIVAR SOM"}
           </button>
         </div>
       </div>
@@ -468,7 +464,7 @@ function CTAButton({ block = false, label = CTA_LABEL }: { block?: boolean; labe
       href="https://sono-lift.pay.yampi.com.br/r/R558X0P2M5"
       target="_blank"
       rel="noopener noreferrer"
-      className={`group inline-flex min-h-[60px] items-center justify-center gap-2 rounded-full bg-gold-gradient px-8 py-[1.15rem] text-center text-base font-bold uppercase tracking-wider text-midnight-deep shadow-luxe animate-cta-pulse transition hover:scale-[1.02] hover:brightness-105 hover:shadow-xl sm:min-h-[64px] sm:text-lg ${block ? "w-full" : ""}`}
+      className={`group inline-flex min-h-[70px] items-center justify-center gap-2 rounded-full bg-gold-gradient px-10 py-5 text-center text-lg font-black uppercase tracking-[0.1em] text-midnight-deep shadow-luxe animate-cta-pulse transition hover:scale-[1.03] hover:brightness-105 hover:shadow-2xl sm:min-h-[80px] sm:text-2xl ${block ? "w-full" : ""}`}
     >
       {label}
       <span className="transition group-hover:translate-x-1">→</span>
@@ -545,13 +541,13 @@ function BeforeAfterSliderSection() {
   const [pos, setPos] = useState(50);
 
   return (
-    <section className="bg-white py-24 md:py-32">
-      <div className="mx-auto max-w-4xl px-4 text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">
+    <section className="bg-white py-24 md:py-40">
+      <div className="mx-auto max-w-6xl px-4 text-center">
+        <p className="text-xs font-black uppercase tracking-[0.3em] text-gold">
           Prova visual
         </p>
-        <h2 className="mt-3 font-display text-3xl leading-tight text-midnight-deep md:text-5xl">
-          Suavize as marcas desde a primeira noite.
+        <h2 className="mt-4 font-display text-5xl leading-tight text-midnight-deep md:text-8xl">
+          Suavize marcas <em className="italic text-gold">imediatamente</em>.
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
           Deslize para ver a recuperação da pele do colo.
@@ -637,10 +633,10 @@ function MechanismsSection() {
     <section className="bg-cream py-24 md:py-32">
       <div className="mx-auto grid max-w-6xl gap-12 px-4 md:grid-cols-2 md:items-center">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">
+          <p className="text-xs font-black uppercase tracking-[0.3em] text-gold">
             Como funciona
           </p>
-          <h2 className="mt-3 font-display text-3xl leading-tight text-midnight-deep md:text-5xl">
+          <h2 className="mt-4 font-display text-4xl leading-tight text-midnight-deep md:text-7xl">
             Por que os adesivos Sonolift funcionam tanto?
           </h2>
           <p className="mt-5 text-base leading-relaxed text-muted-foreground">
@@ -748,7 +744,7 @@ function HowToUseSection() {
                         {String(i + 1).padStart(2, "0")}
                       </span>
                     </div>
-                    <h3 className="mt-6 font-display text-3xl leading-tight text-midnight-deep md:text-5xl">
+                    <h3 className="mt-6 font-display text-5xl leading-tight text-midnight-deep md:text-8xl">
                       {s.title}
                     </h3>
                     <p className="mt-5 max-w-md text-base leading-relaxed text-muted-foreground">
@@ -826,11 +822,11 @@ function CountStat({ n, suffix = "%", label }: { n: number; suffix?: string; lab
   return (
     <div
       ref={ref}
-      className="rounded-2xl border border-gold/30 bg-white p-8 text-center shadow-soft"
+      className="rounded-[2rem] border border-gold/30 bg-white p-10 text-center shadow-soft"
     >
       <p
-        className="font-display font-semibold tabular-nums text-midnight-deep"
-        style={{ fontSize: "clamp(3.5rem,8vw,6rem)", lineHeight: 1, letterSpacing: "-.02em" }}
+        className="font-display font-black tabular-nums text-midnight-deep"
+        style={{ fontSize: "clamp(5rem,12vw,8rem)", lineHeight: 1, letterSpacing: "-.04em" }}
       >
         {value}
         <span className="text-gold">{suffix}</span>
@@ -848,11 +844,11 @@ function ClinicalStudySection() {
     { n: 100, label: "hipoalergênico e seguro para uso contínuo" },
   ];
   return (
-    <section id="ciencia" className="bg-white py-24 md:py-32">
-      <div className="mx-auto max-w-6xl px-4">
-        <div className="mx-auto max-w-2xl text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">Estudo clínico independente</p>
-          <h2 className="mt-3 font-display text-3xl leading-tight text-midnight-deep md:text-5xl">
+    <section id="ciencia" className="bg-white py-24 md:py-40">
+      <div className="mx-auto max-w-7xl px-4">
+        <div className="mx-auto max-w-4xl text-center">
+          <p className="text-xs font-black uppercase tracking-[0.3em] text-gold">Estudo clínico independente</p>
+          <h2 className="mt-4 font-display text-5xl leading-tight text-midnight-deep md:text-8xl">
             Eficácia comprovada.
           </h2>
           <p className="mt-4 text-muted-foreground">
@@ -877,21 +873,21 @@ function ClinicalStudySection() {
 function UGCSection() {
   return (
     <section id="resultados" className="bg-lavender py-24 md:py-32">
-      <div className="mx-auto max-w-6xl px-4">
-        <div className="mx-auto max-w-2xl text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">Resultados reais de manhã</p>
-          <h2 className="mt-3 font-display text-3xl leading-tight text-midnight-deep md:text-5xl">
-            Elas acordam com a pele que sempre quiseram.
+      <div className="mx-auto max-w-7xl px-4">
+        <div className="mx-auto max-w-4xl text-center">
+          <p className="text-xs font-black uppercase tracking-[0.3em] text-gold">Resultados reais de manhã</p>
+          <h2 className="mt-4 font-display text-5xl leading-tight text-midnight-deep md:text-8xl">
+            Elas acordam com a pele <em className="italic text-gold">revigorada</em>.
           </h2>
         </div>
 
-        <div className="mt-12 -mx-4 overflow-x-auto pb-4">
-          <div className="flex gap-5 px-4 snap-x snap-mandatory">
+        <div className="mt-16 -mx-4 overflow-x-auto pb-8">
+          <div className="flex gap-8 px-4 snap-x snap-mandatory">
             {UGC_VIDEOS.map((v) => (
               <figure
                 key={v.name}
-                className="relative shrink-0 snap-start overflow-hidden rounded-[1.75rem] shadow-luxe"
-                style={{ width: "260px" }}
+                className="relative shrink-0 snap-start overflow-hidden rounded-[2.5rem] shadow-luxe transition-all duration-500 hover:scale-[1.03] hover:shadow-2xl"
+                style={{ width: "320px" }}
               >
                 <video
                   src={v.src}
@@ -923,21 +919,21 @@ function UGCSection() {
  * ============================================================ */
 function TreatmentMapSection() {
   return (
-    <section className="bg-cream py-24 md:py-32">
-      <div className="mx-auto max-w-6xl px-4">
-        <div className="mx-auto max-w-2xl text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">Alvo · Tratamento · Transformação</p>
-          <h2 className="mt-3 font-display text-3xl leading-tight text-midnight-deep md:text-5xl">
+    <section className="bg-cream py-24 md:py-40">
+      <div className="mx-auto max-w-7xl px-4">
+        <div className="mx-auto max-w-4xl text-center">
+          <p className="text-xs font-black uppercase tracking-[0.3em] text-gold">Alvo · Tratamento · Transformação</p>
+          <h2 className="mt-4 font-display text-5xl leading-tight text-midnight-deep md:text-8xl">
             Cada patch, uma área estratégica.
           </h2>
           <p className="mt-4 text-muted-foreground">
             Do rosto ao colo — proteção completa contra as rugas do sono.
           </p>
         </div>
-        <div className="mt-14 grid grid-cols-2 gap-4 md:grid-cols-5 md:gap-5">
+        <div className="mt-14 grid grid-cols-2 gap-6 md:grid-cols-5 md:gap-8">
           {TREATMENT_MAP.map((t, i) => (
             <Reveal key={t.area} delay={i * 90}>
-            <div className="group relative overflow-hidden rounded-2xl shadow-soft bg-midnight-deep">
+            <div className="group relative overflow-hidden rounded-[2.5rem] shadow-luxe bg-midnight-deep">
               <img
                 src={t.img}
                 alt={`Área tratada: ${t.area}`}
@@ -969,11 +965,11 @@ function OfferSection() {
 
         <div className="mt-14 grid gap-6 md:grid-cols-2">
           {/* Card 1 */}
-          <article className="flex flex-col rounded-3xl border border-border bg-cream p-8 shadow-soft">
-            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-muted-foreground">
+          <article className="flex flex-col rounded-[2.5rem] border border-border bg-white p-8 shadow-soft md:p-10">
+            <p className="text-[11px] font-black uppercase tracking-[0.25em] text-muted-foreground">
               Produto principal
             </p>
-            <h3 className="mt-2 font-display text-2xl text-midnight-deep md:text-3xl">
+            <h3 className="mt-2 font-display text-3xl text-midnight-deep md:text-4xl">
               SonoLift™ Facial
             </h3>
             <ul className="mt-5 flex-1 space-y-2 text-sm text-midnight">
@@ -992,14 +988,14 @@ function OfferSection() {
           </article>
 
           {/* Card 2 — Bônus */}
-          <article className="relative mt-8 flex flex-col rounded-3xl border-2 border-gold bg-cream p-8 pt-9 shadow-luxe md:mt-0">
-            <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-gold-gradient px-4 py-1.5 text-[10px] font-bold uppercase leading-none tracking-[0.2em] text-midnight-deep shadow-soft md:left-6 md:translate-x-0">
+          <article className="relative mt-8 flex flex-col rounded-[2.5rem] border-2 border-gold bg-white p-8 pt-10 shadow-luxe md:mt-0 md:p-10 md:pt-12">
+            <span className="absolute -top-4 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-gold-gradient px-6 py-2.5 text-[11px] font-black uppercase leading-none tracking-[0.25em] text-midnight-deep shadow-luxe transition-transform hover:scale-105 md:left-10 md:translate-x-0">
               Bônus grátis
             </span>
-            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-gold">
+            <p className="text-[11px] font-black uppercase tracking-[0.25em] text-gold">
               Bônus exclusivo
             </p>
-            <h3 className="mt-2 font-display text-2xl text-midnight-deep md:text-3xl">
+            <h3 className="mt-2 font-display text-3xl text-midnight-deep md:text-4xl">
               SonoLift™ Colo
             </h3>
             <ul className="mt-5 flex-1 space-y-2 text-sm text-midnight">
@@ -1020,74 +1016,57 @@ function OfferSection() {
         </div>
 
         {/* Final summary */}
-        <div className="mx-auto mt-12 max-w-3xl rounded-3xl bg-midnight-gradient p-8 text-white shadow-luxe md:p-12">
-          <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-gold">
+        <div className="mx-auto mt-12 max-w-3xl rounded-[2.5rem] bg-midnight-gradient p-8 text-white shadow-luxe md:p-14">
+          <p className="text-center text-xs font-black uppercase tracking-[0.25em] text-gold">
             Você recebe hoje
           </p>
-          <div className="mt-3 flex items-center justify-center gap-2 text-center font-display text-2xl leading-tight md:text-3xl">
-            <span className="shrink-0">Sistema Facial + Colo</span>
-            <span className="shrink-0 rounded-md bg-gold-gradient px-2 py-0.5 text-lg font-black uppercase leading-none text-midnight-deep shadow-soft">
+          <div className="mt-4 flex flex-col items-center justify-center gap-3 text-center sm:flex-row">
+            <span className="font-display text-3xl leading-tight md:text-5xl">Sistema Facial + Colo</span>
+            <span className="shrink-0 rounded-lg bg-gold-gradient px-4 py-1.5 text-xl font-black uppercase leading-none text-midnight-deep shadow-luxe">
               GRÁTIS
             </span>
           </div>
 
           <div className="mt-6 text-center">
-            <p className="text-sm text-white/60">
-              Valor total: <span className="line-through">R$ 397</span>
+            <p className="text-base text-white/60">
+              De <span className="line-through">R$ 397</span> por
             </p>
-            <p className="mt-2 text-sm uppercase tracking-[0.2em] text-gold">Oferta especial</p>
-            <p className="font-display text-6xl font-semibold text-gold md:text-7xl">R$ 197</p>
-            <p className="mt-2 text-sm text-white/80">
-              Em até <strong className="text-gold">12x de R$ 16,42</strong> sem juros
+            <p className="font-display text-7xl font-extrabold text-gold leading-tight drop-shadow-sm">
+              R$ 197
+            </p>
+            <p className="mt-2 text-base text-white/90">
+              Ou <strong className="text-gold">12x de R$ 16,42</strong> sem juros
             </p>
           </div>
 
-          <div className="mt-8">
+          <div className="mt-10">
             <CTAButton block label="GARANTIR MEU KIT + COLO GRÁTIS →" />
           </div>
 
-          <div className="mt-4 flex items-center justify-center gap-2 text-sm font-semibold text-white">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-5 w-5 text-gold">
-              <rect x="4" y="11" width="16" height="9" rx="2" />
-              <path d="M8 11V7a4 4 0 0 1 8 0v4" />
-            </svg>
-            Compra 100% Segura
+          <div className="mt-6 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <div className="flex items-center gap-2 text-base font-black uppercase tracking-[0.2em] text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="h-6 w-6 text-gold">
+                <rect x="4" y="11" width="16" height="9" rx="2" />
+                <path d="M8 11V7a4 4 0 0 1 8 0v4" />
+              </svg>
+              Compra 100% Segura
+            </div>
+            <div className="flex items-center gap-2 text-base font-black uppercase tracking-[0.2em] text-gold">
+              <span className="text-xl">🚚</span> Frete Grátis Brasil
+            </div>
           </div>
           <div className="mt-5 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 border-t border-white/10 pt-5">
-            {/* Visa */}
-            <div className="flex h-5 items-center justify-center">
-              <img 
-                src="https://img.icons8.com/color/48/visa.png" 
-                alt="Visa" 
-                className="h-full w-auto object-contain" 
-              />
+            <div className="flex h-5 items-center justify-center grayscale brightness-[5] opacity-80">
+              <img src="https://img.icons8.com/color/48/visa.png" alt="Visa" className="h-full w-auto object-contain" />
             </div>
-            
-            {/* Mastercard */}
-            <div className="flex h-6 items-center justify-center">
-              <img 
-                src="https://img.icons8.com/color/48/mastercard.png" 
-                alt="Mastercard" 
-                className="h-full w-auto object-contain" 
-              />
+            <div className="flex h-6 items-center justify-center grayscale brightness-[5] opacity-80">
+              <img src="https://img.icons8.com/color/48/mastercard.png" alt="Mastercard" className="h-full w-auto object-contain" />
             </div>
-            
-            {/* Elo */}
-            <div className="flex h-5 items-center justify-center">
-              <img 
-                src={eloLogo.url} 
-                alt="Elo" 
-                className="h-full w-auto object-contain" 
-              />
+            <div className="flex h-5 items-center justify-center grayscale brightness-[5] opacity-80">
+              <img src={eloLogo.url} alt="Elo" className="h-full w-auto object-contain" />
             </div>
-            
-            {/* Pix */}
-            <div className="flex h-5 items-center justify-center">
-              <img 
-                src={pixLogo.url} 
-                alt="Pix" 
-                className="h-full w-auto object-contain" 
-              />
+            <div className="flex h-5 items-center justify-center grayscale brightness-[5] opacity-80">
+              <img src={pixLogo.url} alt="Pix" className="h-full w-auto object-contain" />
             </div>
           </div>
         </div>
@@ -1152,25 +1131,25 @@ function FAQSection() {
     { q: "Quanto tempo leva o envio?", a: "Envio em até 24h úteis com frete grátis para todo o Brasil." },
   ];
   return (
-    <section className="bg-white py-24 md:py-32">
-      <div className="mx-auto max-w-3xl px-4">
+    <section className="bg-white py-24 md:py-40">
+      <div className="mx-auto max-w-4xl px-4">
         <div className="text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">Dúvidas frequentes</p>
-          <h2 className="mt-3 font-display text-3xl leading-tight text-midnight-deep md:text-5xl">
+          <p className="text-xs font-black uppercase tracking-[0.3em] text-gold">Dúvidas frequentes</p>
+          <h2 className="mt-4 font-display text-4xl leading-tight text-midnight-deep md:text-7xl">
             Tudo que você precisa saber.
           </h2>
         </div>
-        <div className="mt-12 space-y-3">
+        <div className="mt-16 space-y-4">
           {items.map((i) => (
             <details
               key={i.q}
-              className="group rounded-2xl border border-border bg-cream p-5 shadow-soft transition open:shadow-luxe"
+              className="group rounded-[2rem] border border-border bg-cream p-7 shadow-soft transition-all duration-300 open:shadow-luxe"
             >
-              <summary className="flex cursor-pointer list-none items-center justify-between text-left font-medium text-midnight-deep">
+              <summary className="flex cursor-pointer list-none items-center justify-between text-left text-lg font-bold tracking-tight text-midnight-deep md:text-xl">
                 {i.q}
-                <span className="ml-4 text-gold text-xl transition group-open:rotate-45">+</span>
+                <span className="ml-4 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-gold/30 text-gold transition-transform duration-300 group-open:rotate-45">+</span>
               </summary>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{i.a}</p>
+              <p className="mt-5 text-base leading-relaxed text-muted-foreground md:text-lg">{i.a}</p>
             </details>
           ))}
         </div>
@@ -1184,19 +1163,19 @@ function FAQSection() {
  * ============================================================ */
 function FooterSection() {
   const badges = [
-    { icon: "🧴", label: "Hipoalergênico" },
-    { icon: "🚚", label: "Frete Grátis Brasil" },
-    { icon: "🔒", label: "Compra 100% Segura" },
-    { icon: "🛡️", label: "Garantia 30 noites" },
+    { icon: "🧪", label: "Dermatologicamente Testado" },
+    { icon: "🚚", label: "Frete Grátis Todo Brasil" },
+    { icon: "🔒", label: "Pagamento 100% Seguro" },
+    { icon: "✨", label: "Garantia Incondicional" },
   ];
   return (
     <footer className="bg-midnight-deep text-cream">
       <div className="mx-auto max-w-6xl px-4 py-16">
         <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-4">
           {badges.map((b) => (
-            <div key={b.label} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-5 py-4">
-              <span className="text-2xl">{b.icon}</span>
-              <span className="text-sm font-medium">{b.label}</span>
+            <div key={b.label} className="flex flex-col items-center justify-center text-center gap-2 rounded-2xl border border-white/5 bg-white/[0.03] p-4 transition hover:bg-white/[0.06]">
+              <span className="text-3xl filter drop-shadow-[0_0_8px_rgba(255,255,255,0.2)]">{b.icon}</span>
+              <span className="text-xs font-bold uppercase tracking-widest text-cream/90">{b.label}</span>
             </div>
           ))}
         </div>
@@ -1232,11 +1211,11 @@ function FooterSection() {
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 py-8 text-xs text-cream/60 md:flex-row">
           <span>© 2026 SonoLift Beauty LTDA · CNPJ 76.047.876/0001-90</span>
           
-          <div className="flex items-center justify-center gap-2">
-            <div className="h-1.5 w-1.5 rounded-full bg-white/20"></div>
-            <div className="h-1.5 w-1.5 rounded-full bg-white/20"></div>
-            <div className="h-1.5 w-3 rounded-full bg-gold"></div>
-            <div className="h-1.5 w-1.5 rounded-full bg-white/20"></div>
+          <div className="flex h-5 items-center justify-center gap-6 grayscale brightness-[5] opacity-60">
+            <img src="https://img.icons8.com/color/48/visa.png" alt="Visa" className="h-full w-auto object-contain" />
+            <img src="https://img.icons8.com/color/48/mastercard.png" alt="Mastercard" className="h-full w-auto object-contain" />
+            <img src={eloLogo.url} alt="Elo" className="h-full w-auto object-contain" />
+            <img src={pixLogo.url} alt="Pix" className="h-full w-auto object-contain" />
           </div>
         </div>
       </div>
