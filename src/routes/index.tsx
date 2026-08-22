@@ -822,11 +822,11 @@ function CountStat({ n, suffix = "%", label }: { n: number; suffix?: string; lab
   return (
     <div
       ref={ref}
-      className="rounded-2xl border border-gold/30 bg-white p-8 text-center shadow-soft"
+      className="rounded-[2rem] border border-gold/30 bg-white p-10 text-center shadow-soft"
     >
       <p
-        className="font-display font-semibold tabular-nums text-midnight-deep"
-        style={{ fontSize: "clamp(3.5rem,8vw,6rem)", lineHeight: 1, letterSpacing: "-.02em" }}
+        className="font-display font-black tabular-nums text-midnight-deep"
+        style={{ fontSize: "clamp(5rem,12vw,8rem)", lineHeight: 1, letterSpacing: "-.04em" }}
       >
         {value}
         <span className="text-gold">{suffix}</span>
