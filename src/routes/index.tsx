@@ -932,10 +932,10 @@ function TreatmentMapSection() {
             Do rosto ao colo — proteção completa contra as rugas do sono.
           </p>
         </div>
-        <div className="mt-14 grid grid-cols-2 gap-4 md:grid-cols-5 md:gap-5">
+        <div className="mt-14 grid grid-cols-2 gap-6 md:grid-cols-5 md:gap-8">
           {TREATMENT_MAP.map((t, i) => (
             <Reveal key={t.area} delay={i * 90}>
-            <div className="group relative overflow-hidden rounded-2xl shadow-soft bg-midnight-deep">
+            <div className="group relative overflow-hidden rounded-[2.5rem] shadow-luxe bg-midnight-deep">
               <img
                 src={t.img}
                 alt={`Área tratada: ${t.area}`}
