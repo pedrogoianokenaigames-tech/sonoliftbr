@@ -881,13 +881,13 @@ function UGCSection() {
           </h2>
         </div>
 
-        <div className="mt-12 -mx-4 overflow-x-auto pb-4">
-          <div className="flex gap-5 px-4 snap-x snap-mandatory">
+        <div className="mt-16 -mx-4 overflow-x-auto pb-8">
+          <div className="flex gap-8 px-4 snap-x snap-mandatory">
             {UGC_VIDEOS.map((v) => (
               <figure
                 key={v.name}
-                className="relative shrink-0 snap-start overflow-hidden rounded-[2rem] shadow-luxe transition-transform hover:scale-[1.02]"
-                style={{ width: "290px" }}
+                className="relative shrink-0 snap-start overflow-hidden rounded-[2.5rem] shadow-luxe transition-all duration-500 hover:scale-[1.03] hover:shadow-2xl"
+                style={{ width: "320px" }}
               >
                 <video
                   src={v.src}
