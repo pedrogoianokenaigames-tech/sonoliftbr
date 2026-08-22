@@ -1030,13 +1030,14 @@ function OfferSection() {
           </div>
 
           <div className="mt-6 text-center">
-            <p className="text-sm text-white/60">
-              Valor total: <span className="line-through">R$ 397</span>
+            <p className="text-base text-white/60">
+              De <span className="line-through">R$ 397</span> por
             </p>
-            <p className="mt-2 text-sm uppercase tracking-[0.2em] text-gold">Oferta especial</p>
-            <p className="font-display text-6xl font-semibold text-gold md:text-7xl">R$ 197</p>
-            <p className="mt-2 text-sm text-white/80">
-              Em até <strong className="text-gold">12x de R$ 16,42</strong> sem juros
+            <p className="font-display text-7xl font-extrabold text-gold leading-tight drop-shadow-sm">
+              R$ 197
+            </p>
+            <p className="mt-2 text-base text-white/90">
+              Ou <strong className="text-gold">12x de R$ 16,42</strong> sem juros
             </p>
           </div>
 
