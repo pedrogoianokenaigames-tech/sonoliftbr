@@ -464,7 +464,7 @@ function CTAButton({ block = false, label = CTA_LABEL }: { block?: boolean; labe
       href="https://sono-lift.pay.yampi.com.br/r/R558X0P2M5"
       target="_blank"
       rel="noopener noreferrer"
-      className={`group inline-flex min-h-[60px] items-center justify-center gap-2 rounded-full bg-gold-gradient px-8 py-[1.15rem] text-center text-base font-bold uppercase tracking-wider text-midnight-deep shadow-luxe animate-cta-pulse transition hover:scale-[1.02] hover:brightness-105 hover:shadow-xl sm:min-h-[64px] sm:text-lg ${block ? "w-full" : ""}`}
+      className={`group inline-flex min-h-[70px] items-center justify-center gap-2 rounded-full bg-gold-gradient px-10 py-5 text-center text-lg font-black uppercase tracking-[0.1em] text-midnight-deep shadow-luxe animate-cta-pulse transition hover:scale-[1.03] hover:brightness-105 hover:shadow-2xl sm:min-h-[80px] sm:text-2xl ${block ? "w-full" : ""}`}
     >
       {label}
       <span className="transition group-hover:translate-x-1">→</span>
