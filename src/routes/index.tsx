@@ -877,9 +877,9 @@ function UGCSection() {
     <section id="resultados" className="bg-lavender py-24 md:py-32">
       <div className="mx-auto max-w-6xl px-4">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">Resultados reais de manhã</p>
-          <h2 className="mt-3 font-display text-3xl leading-tight text-midnight-deep md:text-5xl">
-            Elas acordam com a pele que sempre quiseram.
+          <p className="text-sm font-black uppercase tracking-[0.25em] text-gold">Resultados reais de manhã</p>
+          <h2 className="mt-3 font-display text-4xl leading-tight text-midnight-deep md:text-6xl">
+            Elas acordam com a pele <em className="italic text-gold">revigorada</em>.
           </h2>
         </div>
 
