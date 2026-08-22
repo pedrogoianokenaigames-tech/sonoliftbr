@@ -223,7 +223,7 @@ function Nav() {
   const [open, setOpen] = useState(false);
   return (
     <header className="border-b border-border/40 bg-white">
-      <div className="mx-auto grid max-w-6xl grid-cols-3 items-center px-4 py-3">
+      <div className="mx-auto grid max-w-6xl grid-cols-3 items-center px-4 py-4">
         {/* Left slot */}
         <div className="flex items-center">
           {/* Hamburger (mobile) */}
