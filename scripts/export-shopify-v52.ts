@@ -161,7 +161,7 @@ async function generate() {
       <div class="max-w-4xl mx-auto text-center reveal">
         <h2 class="font-display text-3xl mb-6">Você dorme de lado? O "Inimigo Invisível" do seu colo...</h2>
         <div class="aspect-[9/16] max-w-[350px] mx-auto rounded-3xl overflow-hidden shadow-2xl relative">
-          <video src="${resolveAsset('/lovable-uploads/5f946896-1c0c-4389-9b93-b27b0b1473e0.mp4')}" autoplay loop muted playsinline class="w-full h-full object-cover"></video>
+          <video src="\${resolveAsset('/lovable-uploads/5f946896-1c0c-4389-9b93-b27b0b1473e0.mp4')}" autoplay loop muted playsinline class="w-full h-full object-cover"></video>
           <button onclick="this.previousElementSibling.muted = !this.previousElementSibling.muted" class="absolute bottom-4 right-4 bg-black/50 text-white p-2 rounded-full">🔊</button>
         </div>
       </div>
