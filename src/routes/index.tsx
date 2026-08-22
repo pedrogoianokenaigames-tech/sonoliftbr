@@ -844,10 +844,10 @@ function ClinicalStudySection() {
     { n: 100, label: "hipoalergênico e seguro para uso contínuo" },
   ];
   return (
-    <section id="ciencia" className="bg-white py-24 md:py-32">
-      <div className="mx-auto max-w-6xl px-4">
-        <div className="mx-auto max-w-2xl text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">Estudo clínico independente</p>
+    <section id="ciencia" className="bg-white py-24 md:py-40">
+      <div className="mx-auto max-w-7xl px-4">
+        <div className="mx-auto max-w-4xl text-center">
+          <p className="text-xs font-black uppercase tracking-[0.3em] text-gold">Estudo clínico independente</p>
           <h2 className="mt-3 font-display text-3xl leading-tight text-midnight-deep md:text-5xl">
             Eficácia comprovada.
           </h2>
