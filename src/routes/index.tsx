@@ -541,12 +541,12 @@ function BeforeAfterSliderSection() {
   const [pos, setPos] = useState(50);
 
   return (
-    <section className="bg-white py-24 md:py-32">
-      <div className="mx-auto max-w-4xl px-4 text-center">
-        <p className="text-sm font-black uppercase tracking-[0.25em] text-gold">
+    <section className="bg-white py-24 md:py-40">
+      <div className="mx-auto max-w-6xl px-4 text-center">
+        <p className="text-xs font-black uppercase tracking-[0.3em] text-gold">
           Prova visual
         </p>
-        <h2 className="mt-3 font-display text-4xl leading-tight text-midnight-deep md:text-6xl">
+        <h2 className="mt-4 font-display text-5xl leading-tight text-midnight-deep md:text-8xl">
           Suavize marcas <em className="italic text-gold">imediatamente</em>.
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
