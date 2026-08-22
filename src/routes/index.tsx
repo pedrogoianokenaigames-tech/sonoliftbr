@@ -433,7 +433,7 @@ function AdvertorialSection() {
         </p>
 
         {/* Vídeo vertical (formato Reels) */}
-        <div className="relative mt-12 aspect-[9/16] w-full max-w-[380px] overflow-hidden rounded-[2.5rem] bg-black shadow-luxe transition-transform hover:scale-[1.01]">
+        <div className="relative mt-16 aspect-[9/16] w-full max-w-[420px] overflow-hidden rounded-[3rem] bg-black shadow-luxe transition-transform hover:scale-[1.01] md:mt-0">
           <video
             ref={videoRef}
             src={heroVideo.url}
@@ -448,9 +448,9 @@ function AdvertorialSection() {
             type="button"
             onClick={toggleSound}
             aria-label={muted ? "Ativar som do vídeo" : "Desativar som do vídeo"}
-            className="absolute top-6 left-1/2 flex -translate-x-1/2 items-center gap-2 rounded-full bg-black/80 px-5 py-3 text-sm font-bold text-white backdrop-blur-md transition hover:bg-black"
+            className="absolute bottom-10 left-1/2 flex -translate-x-1/2 items-center gap-2 rounded-full bg-black/80 px-8 py-4 text-base font-black text-white backdrop-blur-md transition hover:bg-black"
           >
-            {muted ? "🔊 Toque para ativar o som" : "🔇 Desativar som"}
+            {muted ? "🔊 ATIVAR SOM" : "🔇 DESATIVAR SOM"}
           </button>
         </div>
       </div>
