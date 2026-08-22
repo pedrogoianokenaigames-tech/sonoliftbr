@@ -848,7 +848,7 @@ function ClinicalStudySection() {
       <div className="mx-auto max-w-7xl px-4">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-xs font-black uppercase tracking-[0.3em] text-gold">Estudo clínico independente</p>
-          <h2 className="mt-3 font-display text-3xl leading-tight text-midnight-deep md:text-5xl">
+          <h2 className="mt-4 font-display text-5xl leading-tight text-midnight-deep md:text-8xl">
             Eficácia comprovada.
           </h2>
           <p className="mt-4 text-muted-foreground">
