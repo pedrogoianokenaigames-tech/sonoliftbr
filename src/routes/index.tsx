@@ -919,11 +919,11 @@ function UGCSection() {
  * ============================================================ */
 function TreatmentMapSection() {
   return (
-    <section className="bg-cream py-24 md:py-32">
-      <div className="mx-auto max-w-6xl px-4">
-        <div className="mx-auto max-w-2xl text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">Alvo · Tratamento · Transformação</p>
-          <h2 className="mt-3 font-display text-3xl leading-tight text-midnight-deep md:text-5xl">
+    <section className="bg-cream py-24 md:py-40">
+      <div className="mx-auto max-w-7xl px-4">
+        <div className="mx-auto max-w-4xl text-center">
+          <p className="text-xs font-black uppercase tracking-[0.3em] text-gold">Alvo · Tratamento · Transformação</p>
+          <h2 className="mt-4 font-display text-5xl leading-tight text-midnight-deep md:text-8xl">
             Cada patch, uma área estratégica.
           </h2>
           <p className="mt-4 text-muted-foreground">
