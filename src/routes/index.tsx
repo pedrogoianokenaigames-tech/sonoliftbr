@@ -633,10 +633,10 @@ function MechanismsSection() {
     <section className="bg-cream py-24 md:py-32">
       <div className="mx-auto grid max-w-6xl gap-12 px-4 md:grid-cols-2 md:items-center">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">
+          <p className="text-xs font-black uppercase tracking-[0.3em] text-gold">
             Como funciona
           </p>
-          <h2 className="mt-3 font-display text-3xl leading-tight text-midnight-deep md:text-5xl">
+          <h2 className="mt-4 font-display text-4xl leading-tight text-midnight-deep md:text-7xl">
             Por que os adesivos Sonolift funcionam tanto?
           </h2>
           <p className="mt-5 text-base leading-relaxed text-muted-foreground">
