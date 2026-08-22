@@ -163,7 +163,7 @@ async function generate() {
   html += '              <li><a href="#oferta" class="hover:text-gold">Oferta</a></li>\n';
   html += '              <li><a href="#ciencia" class="hover:text-gold">Ciência</a></li>\n';
   html += '              <li><a href="#resultados" class="hover:text-gold">Resultados</a></li>\n';
-  ul += '            </ul>\n';
+  html += '            </ul>\n';
   html += '          </div>\n';
   html += '          <div>\n';
   html += '            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gold">Institucional</p>\n';
