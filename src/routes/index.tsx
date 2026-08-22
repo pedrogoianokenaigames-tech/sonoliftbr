@@ -1043,12 +1043,17 @@ function OfferSection() {
             <CTAButton block label="GARANTIR MEU KIT + COLO GRÁTIS →" />
           </div>
 
-          <div className="mt-4 flex items-center justify-center gap-2 text-sm font-semibold text-white">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-5 w-5 text-gold">
-              <rect x="4" y="11" width="16" height="9" rx="2" />
-              <path d="M8 11V7a4 4 0 0 1 8 0v4" />
-            </svg>
-            Compra 100% Segura
+          <div className="mt-6 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <div className="flex items-center gap-2 text-base font-black uppercase tracking-[0.2em] text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="h-6 w-6 text-gold">
+                <rect x="4" y="11" width="16" height="9" rx="2" />
+                <path d="M8 11V7a4 4 0 0 1 8 0v4" />
+              </svg>
+              Compra 100% Segura
+            </div>
+            <div className="flex items-center gap-2 text-base font-black uppercase tracking-[0.2em] text-gold">
+              <span className="text-xl">🚚</span> Frete Grátis Brasil
+            </div>
           </div>
           <div className="mt-5 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 border-t border-white/10 pt-5">
             <div className="flex h-5 items-center justify-center grayscale brightness-[5] opacity-80">
