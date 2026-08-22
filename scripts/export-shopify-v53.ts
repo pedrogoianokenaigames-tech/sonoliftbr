@@ -5,6 +5,10 @@ const PROJECT_DOMAIN = 'https://sonoliftbr.lovable.app';
 function resolveAsset(url: string) {
   if (!url) return '';
   if (url.startsWith('http')) return url;
+  // Use absolute URLs for all lovable-uploads to ensure they load in Shopify
+  if (url.includes('/lovable-uploads/')) {
+    return `https://sonoliftbr.lovable.app${url.startsWith('/') ? '' : '/'}${url}`;
+  }
   return PROJECT_DOMAIN + (url.startsWith('/') ? '' : '/') + url;
 }
 
