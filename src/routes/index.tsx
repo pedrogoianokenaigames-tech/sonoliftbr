@@ -1039,7 +1039,7 @@ function OfferSection() {
             </p>
           </div>
 
-          <div className="mt-8">
+          <div className="mt-10">
             <CTAButton block label="GARANTIR MEU KIT + COLO GRÁTIS →" />
           </div>
 
