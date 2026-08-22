@@ -113,7 +113,7 @@ function StickyCTA() {
   if (!show) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 z-[999] w-full bg-white p-3 shadow-[0_-8px_30px_rgba(0,0,0,0.12)] border-t border-border/20 md:hidden animate-in fade-in slide-in-from-bottom-5 duration-300">
+    <div className="fixed bottom-0 left-0 z-[999] w-full bg-white p-4 shadow-[0_-12px_40px_rgba(0,0,0,0.15)] border-t-2 border-gold/20 md:hidden animate-in fade-in slide-in-from-bottom-full duration-500">
       <div className="mx-auto max-w-md px-2">
         <CTAButton block label="GARANTIR MEU KIT + COLO GRÁTIS →" />
       </div>
