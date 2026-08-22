@@ -1231,11 +1231,10 @@ function FooterSection() {
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 py-8 text-xs text-cream/60 md:flex-row">
           <span>© 2026 SonoLift Beauty LTDA · CNPJ 76.047.876/0001-90</span>
           
-          <div className="flex items-center justify-center gap-2">
-            <div className="h-1.5 w-1.5 rounded-full bg-white/20"></div>
-            <div className="h-1.5 w-1.5 rounded-full bg-white/20"></div>
-            <div className="h-1.5 w-3 rounded-full bg-gold"></div>
-            <div className="h-1.5 w-1.5 rounded-full bg-white/20"></div>
+          <div className="flex items-center justify-center gap-6 opacity-80">
+            <span className="text-xl">🔒</span>
+            <span className="text-xl">🛡️</span>
+            <span className="text-xl">🧴</span>
           </div>
         </div>
       </div>
