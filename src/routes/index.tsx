@@ -967,11 +967,11 @@ function OfferSection() {
 
         <div className="mt-14 grid gap-6 md:grid-cols-2">
           {/* Card 1 */}
-          <article className="flex flex-col rounded-3xl border border-border bg-cream p-8 shadow-soft">
-            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-muted-foreground">
+          <article className="flex flex-col rounded-[2.5rem] border border-border bg-white p-8 shadow-soft md:p-10">
+            <p className="text-[11px] font-black uppercase tracking-[0.25em] text-muted-foreground">
               Produto principal
             </p>
-            <h3 className="mt-2 font-display text-2xl text-midnight-deep md:text-3xl">
+            <h3 className="mt-2 font-display text-3xl text-midnight-deep md:text-4xl">
               SonoLift™ Facial
             </h3>
             <ul className="mt-5 flex-1 space-y-2 text-sm text-midnight">
