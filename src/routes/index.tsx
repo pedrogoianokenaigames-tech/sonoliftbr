@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef } from "react";
-import sonoliftHtml from "../content/sonolift-v19.html?raw";
+import sonoliftHtml from "../content/sonolift-atual.html?raw";
 
 export const Route = createFileRoute("/")({
   component: Home,
