@@ -1,0 +1,2240 @@
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','976841758671110');fbq('track','PageView');
+</script>
+
+<noscript>
+  <img height="1" width="1" style="display:none"
+       src="https://www.facebook.com/tr?id=976841758671110&ev=PageView&noscript=1"
+       alt="">
+</noscript>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+#sonolift-root{
+  --cream:#fbf7ee;
+  --porcelain:#faf8f3;
+  --champagne:#f1e6cc;
+  --gold:#d4a24a;
+  --gold-dark:#c99340;
+  --gold-light:#fff8e1;
+  --midnight:#292d51;
+  --midnight-deep:#14162a;
+  --text:#1a1c33;
+  --muted:#68667a;
+  --border:#e8e2d2;
+  font-family:"Inter",system-ui,-apple-system,sans-serif;
+  color:var(--text);
+  background:var(--cream);
+  font-size:22px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  overflow:hidden
+}
+
+#sonolift-root *{
+  box-sizing:border-box
+}
+
+#sonolift-root img,
+#sonolift-root video{
+  max-width:100%
+}
+
+#sonolift-root a{
+  color:inherit;
+  text-decoration:none
+}
+
+#sonolift-root h1,
+#sonolift-root h2,
+#sonolift-root h3{
+  font-family:"Playfair Display",Georgia,serif;
+  letter-spacing:-.025em;
+  margin:0
+}
+
+#sonolift-root h1{
+  font-size:clamp(3.1rem,7vw,5.1rem);
+  line-height:1.03
+}
+
+#sonolift-root h2{
+  font-size:clamp(2.55rem,5.5vw,3.9rem);
+  line-height:1.08
+}
+
+#sonolift-root h3{
+  font-size:clamp(1.8rem,4vw,2.4rem);
+  line-height:1.15
+}
+
+#sonolift-root p{
+  margin:0
+}
+
+#sonolift-root .sl-container{
+  width:min(1120px,100% - 40px);
+  margin:0 auto
+}
+
+#sonolift-root .sl-narrow{
+  width:min(760px,100%);
+  margin:0 auto
+}
+
+#sonolift-root .sl-eyebrow{
+  color:var(--gold-dark);
+  font-size:.95rem;
+  font-weight:800;
+  letter-spacing:.22em;
+  text-transform:uppercase
+}
+
+#sonolift-root .sl-muted{
+  color:var(--muted)
+}
+
+#sonolift-root .sl-gold{
+  color:var(--gold)
+}
+
+#sonolift-root .sl-serif{
+  font-family:"Playfair Display",Georgia,serif
+}
+
+#sonolift-root .sl-section{
+  padding:88px 0
+}
+
+#sonolift-root .sl-card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:24px;
+  box-shadow:0 15px 40px -24px rgba(26,28,51,.28)
+}
+
+#sonolift-root .sl-dark{
+  background:
+    radial-gradient(circle at 85% 10%,rgba(212,162,74,.1) 0,transparent 28%),
+    linear-gradient(140deg,#14162a,#2e3260);
+  color:#fff
+}
+
+#sonolift-root .sl-urgency{
+  background:#050505;
+  color:#fff;
+  text-align:center;
+  padding:10px 16px;
+  font-size:.95rem;
+  font-weight:800;
+  letter-spacing:.07em;
+  text-transform:uppercase;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px
+}
+
+#sonolift-root .sl-header{
+  background:#fff;
+  border-bottom:1px solid var(--border)
+}
+
+#sonolift-root .sl-header-inner{
+  width:min(1152px,100% - 32px);
+  min-height:64px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative
+}
+
+#sonolift-root .sl-logo{
+  font-family:"Playfair Display",Georgia,serif;
+  font-size:1.95rem;
+  font-weight:600
+}
+
+#sonolift-root .sl-logo sup{
+  color:var(--gold);
+  font-family:Inter,sans-serif;
+  font-size:.45em
+}
+
+#sonolift-root .sl-header nav{
+  position:absolute;
+  right:0;
+  display:flex;
+  gap:24px;
+  align-items:center
+}
+
+#sonolift-root .sl-header nav a{
+  font-size:.9rem;
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase
+}
+
+#sonolift-root .sl-mobile-buy{
+  display:none
+}
+
+#sonolift-root .sl-cta{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  width:100%;
+  border-radius:999px;
+  padding:19px 26px;
+  background:linear-gradient(135deg,#e2b959,#c99340);
+  color:#1a1c33;
+  font-size:1.05rem;
+  font-weight:800;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+  box-shadow:0 18px 45px -18px rgba(26,28,51,.45);
+  transition:transform .2s ease,box-shadow .2s ease,filter .2s ease
+}
+
+#sonolift-root .sl-cta:hover{
+  transform:translateY(-2px);
+  filter:brightness(1.04);
+  box-shadow:0 22px 48px -18px rgba(26,28,51,.52)
+}
+
+/* ALINHAMENTO DO PREÇO */
+#sonolift-root .sl-price-old{
+  color:rgba(255,255,255,.42);
+  text-decoration:line-through;
+  font-size:1.15rem;
+  display:flex;
+  justify-content:center;
+  width:100%;
+  margin-bottom:5px
+}
+
+#sonolift-root .sl-price-old.dark-text{
+  color:rgba(26,28,51,.42)
+}
+
+#sonolift-root .sl-price{
+  font-family:"Playfair Display",Georgia,serif;
+  color:#c8102e;
+  font-weight:700;
+  font-size:clamp(3.6rem,10vw,5.5rem);
+  line-height:1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%
+}
+
+#sonolift-root .sl-price.gold-text{
+  color:#e2b959
+}
+
+#sonolift-root .sl-price-number{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center
+}
+
+#sonolift-root .sl-price-currency{
+  font-family:"Inter",sans-serif;
+  font-size:.42em;
+  font-weight:800;
+  position:absolute;
+  right:100%;
+  margin-right:8px;
+  top:50%;
+  transform:translateY(-50%);
+  line-height:1;
+  color:inherit
+}
+
+#sonolift-root .sl-offer-box p{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px
+}
+
+#sonolift-root .sl-offer-box p span{
+  display:flex;
+  align-items:center;
+  line-height:1
+}
+
+#sonolift-root .sl-offer-box{
+  border:1px solid #f0d68a;
+  background:var(--gold-light);
+  border-radius:18px;
+  padding:15px 18px
+}
+
+#sonolift-root .sl-video{
+  overflow:hidden;
+  border-radius:30px;
+  background:#000;
+  box-shadow:0 30px 60px -20px rgba(26,28,51,.35)
+}
+
+#sonolift-root .sl-video video{
+  display:block;
+  width:100%;
+  aspect-ratio:9/16;
+  object-fit:cover
+}
+
+#sonolift-root .sl-grid-2{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:56px;
+  align-items:center
+}
+
+#sonolift-root .sl-grid-4{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:18px
+}
+
+#sonolift-root .sl-grid-5{
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:16px
+}
+
+#sonolift-root .sl-center{
+  text-align:center
+}
+
+#sonolift-root .sl-img{
+  display:block;
+  width:100%;
+  object-fit:cover
+}
+
+#sonolift-root .sl-img-rounded{
+  border-radius:24px
+}
+
+#sonolift-root .sl-step{
+  overflow:hidden;
+  border:1px solid var(--border);
+  border-radius:24px;
+  background:var(--cream)
+}
+
+#sonolift-root .sl-step img{
+  aspect-ratio:4/5
+}
+
+#sonolift-root .sl-step-content{
+  padding:22px
+}
+
+#sonolift-root .sl-step-number{
+  color:var(--gold-dark);
+  font-size:.9rem;
+  font-weight:800;
+  letter-spacing:.18em
+}
+
+#sonolift-root .sl-step h3{
+  margin-top:7px
+}
+
+#sonolift-root .sl-step p{
+  margin-top:10px;
+  color:var(--muted);
+  font-size:1.15rem
+}
+
+#sonolift-root .sl-region-card{
+  position:relative;
+  overflow:hidden;
+  border-radius:20px;
+  box-shadow:0 15px 35px -22px rgba(26,28,51,.4)
+}
+
+#sonolift-root .sl-region-card img{
+  aspect-ratio:3/4
+}
+
+#sonolift-root .sl-region-label{
+  position:absolute;
+  left:12px;
+  right:12px;
+  bottom:12px;
+  padding:9px 10px;
+  border-radius:12px;
+  background:rgba(20,22,42,.82);
+  color:#fff;
+  font-size:.9rem;
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  text-align:center;
+  backdrop-filter:blur(8px)
+}
+
+#sonolift-root .sl-mechanism{
+  padding:30px;
+  border-radius:24px;
+  border:1px solid var(--border);
+  background:#fff
+}
+
+#sonolift-root .sl-mechanism-number{
+  color:var(--gold-dark);
+  font-family:"Playfair Display",Georgia,serif;
+  font-size:3.4rem;
+  line-height:1
+}
+
+#sonolift-root .sl-mechanism h3{
+  margin-top:18px
+}
+
+#sonolift-root .sl-mechanism p{
+  margin-top:12px;
+  color:var(--muted);
+  font-size:1.15rem
+}
+
+#sonolift-root .sl-quote{
+  border-left:2px solid var(--gold);
+  padding-left:20px;
+  margin-top:30px
+}
+
+#sonolift-root .sl-quote p{
+  font-family:"Playfair Display",Georgia,serif;
+  font-size:1.75rem;
+  line-height:1.4
+}
+
+#sonolift-root .sl-product-panel{
+  padding:38px;
+  border-radius:28px;
+  background:rgba(255,255,255,.055);
+  border:1px solid rgba(255,255,255,.1)
+}
+
+#sonolift-root .sl-tag{
+  display:inline-flex;
+  padding:8px 14px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.15);
+  color:rgba(255,255,255,.82);
+  font-size:.95rem;
+  font-weight:700
+}
+
+#sonolift-root .sl-offer-card{
+  border-radius:26px;
+  padding:32px;
+  border:1px solid rgba(255,255,255,.1);
+  background:rgba(255,255,255,.055)
+}
+
+#sonolift-root .sl-offer-card.bonus{
+  background:var(--gold-light);
+  color:var(--text);
+  border:2px solid var(--gold)
+}
+
+#sonolift-root .sl-bonus{
+  display:inline-flex;
+  padding:7px 13px;
+  border-radius:999px;
+  background:linear-gradient(135deg,#e2b959,#c99340);
+  color:#1a1c33;
+  font-size:.85rem;
+  font-weight:800;
+  letter-spacing:.13em;
+  text-transform:uppercase
+}
+
+#sonolift-root .sl-checklist{
+  list-style:none;
+  padding:0;
+  margin:22px 0 0
+}
+
+#sonolift-root .sl-check{
+  color:var(--gold);
+  font-weight:900
+}
+
+#sonolift-root .sl-dark .sl-check{
+  color:#e2b959
+}
+
+#sonolift-root .sl-dark .sl-muted{
+  color:rgba(255,255,255,.68)
+}
+
+#sonolift-root .sl-ugc{
+  overflow:hidden;
+  border-radius:24px;
+  background:#000;
+  box-shadow:0 20px 45px -24px rgba(26,28,51,.5)
+}
+
+#sonolift-root .sl-ugc video{
+  display:block;
+  width:100%;
+  aspect-ratio:9/16;
+  object-fit:cover
+}
+
+/* ÍCONES DA OFERTA */
+#sonolift-root .sl-trust-row{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:12px 22px;
+  color:var(--muted);
+  font-size:.85rem;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin-top:20px
+}
+
+#sonolift-root .sl-trust-row span{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  line-height:1
+}
+
+#sonolift-root .sl-trust-row.dark-bg{
+  color:rgba(255,255,255,.48)
+}
+
+#sonolift-root .sl-guarantee-icon{
+  width:82px;
+  height:82px;
+  border-radius:50%;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#fff;
+  box-shadow:0 12px 30px -15px rgba(26,28,51,.25);
+  font-size:30px
+}
+
+#sonolift-root details{
+  border:1px solid var(--border);
+  border-radius:18px;
+  background:var(--cream);
+  overflow:hidden
+}
+
+#sonolift-root details+details{
+  margin-top:10px
+}
+
+#sonolift-root summary{
+  list-style:none;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  padding:19px 20px;
+  font-weight:700;
+  font-size:1.15rem
+}
+
+#sonolift-root summary::-webkit-details-marker{
+  display:none
+}
+
+#sonolift-root summary span{
+  color:var(--gold-dark);
+  font-size:1.4rem;
+  font-weight:400;
+  transition:transform .2s ease
+}
+
+#sonolift-root details[open] summary span{
+  transform:rotate(45deg)
+}
+
+#sonolift-root details p{
+  padding:0 20px 20px;
+  color:var(--muted);
+  font-size:1.15rem
+}
+
+#sonolift-root .sl-footer{
+  background:#0e1020;
+  color:#fff
+}
+
+#sonolift-root .sl-footer-grid{
+  display:grid;
+  grid-template-columns:1.5fr 1fr 1fr;
+  gap:50px
+}
+
+#sonolift-root .sl-footer-title{
+  color:var(--gold);
+  font-size:.9rem;
+  font-weight:800;
+  letter-spacing:.18em;
+  text-transform:uppercase
+}
+
+#sonolift-root .sl-footer-links{
+  margin-top:15px;
+  display:grid;
+  gap:8px;
+  color:rgba(255,255,255,.58);
+  font-size:1.05rem
+}
+
+#sonolift-root .sl-footer-bottom{
+  margin-top:45px;
+  padding-top:22px;
+  border-top:1px solid rgba(255,255,255,.1);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  color:rgba(255,255,255,.38);
+  font-size:.9rem
+}
+
+#sonolift-root .sl-whatsapp{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  z-index:9999;
+  width:56px;
+  height:56px;
+  border-radius:50%;
+  background:#25D366;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  box-shadow:0 10px 30px rgba(37,211,102,.4)
+}
+
+#sonolift-root .sl-whatsapp svg{
+  width:29px;
+  height:29px
+}
+
+#sonolift-root .sl-reveal{
+  opacity:0;
+  transform:translateY(20px);
+  transition:opacity .7s ease,transform .7s ease
+}
+
+#sonolift-root .sl-reveal.in{
+  opacity:1;
+  transform:none
+}
+
+/* AJUSTES DE COR E ALINHAMENTO */
+#sonolift-root .fw{
+  color:#ffffff!important
+}
+
+#sonolift-root .fl{
+  color:rgba(255,255,255,.85)!important
+}
+
+#sonolift-root .sl-footer-links a{
+  color:rgba(255,255,255,.85)!important
+}
+
+#sonolift-root .sl-footer-bottom span{
+  color:rgba(255,255,255,.6)!important
+}
+
+#sonolift-root .sl-checklist li{
+  display:flex;
+  gap:10px;
+  margin-top:11px;
+  font-size:1.15rem;
+  align-items:flex-start;
+  text-align:left
+}
+
+#sonolift-root .sl-checklist span:not(.sl-check){
+  line-height:1.4;
+  margin-top:1px
+}
+
+@media(max-width:900px){
+  #sonolift-root .sl-grid-5{
+    grid-template-columns:repeat(3,minmax(0,1fr))
+  }
+
+  #sonolift-root .sl-grid-4,
+  #sonolift-root .sl-grid-3{
+    grid-template-columns:repeat(2,minmax(0,1fr))
+  }
+
+  #sonolift-root .sl-footer-grid{
+    grid-template-columns:1fr 1fr
+  }
+}
+
+@media(max-width:767px){
+  #sonolift-root{
+    font-size:21px
+  }
+
+  #sonolift-root .sl-container{
+    width:min(100% - 28px,1120px)
+  }
+
+  #sonolift-root .sl-section{
+    padding:68px 0
+  }
+
+  #sonolift-root h1{
+    font-size:2.9rem;
+    line-height:1.04
+  }
+
+  #sonolift-root h2{
+    font-size:2.45rem;
+    line-height:1.08
+  }
+
+  #sonolift-root h3{
+    font-size:1.9rem
+  }
+
+  #sonolift-root .sl-header-inner{
+    min-height:58px
+  }
+
+  #sonolift-root .sl-header nav{
+    display:none
+  }
+
+  #sonolift-root .sl-mobile-buy{
+    display:block;
+    position:absolute;
+    left:0;
+    color:var(--gold-dark);
+    font-size:.85rem;
+    font-weight:800;
+    letter-spacing:.1em;
+    text-transform:uppercase
+  }
+
+  #sonolift-root .sl-logo{
+    font-size:1.7rem
+  }
+
+  #sonolift-root .sl-urgency{
+    font-size:.85rem;
+    line-height:1.35
+  }
+
+  #sonolift-root .sl-grid-2,
+  #sonolift-root .sl-grid-3,
+  #sonolift-root .sl-grid-4,
+  #sonolift-root .sl-grid-5{
+    grid-template-columns:1fr;
+    gap:16px
+  }
+
+  #sonolift-root .sl-grid-5{
+    grid-template-columns:repeat(2,minmax(0,1fr))
+  }
+
+  #sonolift-root .sl-grid-5 .sl-region-card:last-child{
+    grid-column:span 2;
+    width:calc(50% - 8px);
+    margin:0 auto
+  }
+
+  #sonolift-root .sl-video{
+    border-radius:22px
+  }
+
+  #sonolift-root .sl-video video{
+    max-height:560px
+  }
+
+  #sonolift-root .sl-cta{
+    padding:18px;
+    font-size:1rem
+  }
+
+  #sonolift-root .sl-price{
+    font-size:4.3rem
+  }
+
+  #sonolift-root .sl-product-panel,
+  #sonolift-root .sl-offer-card{
+    padding:25px
+  }
+
+  #sonolift-root .sl-step-content{
+    padding:19px
+  }
+
+  #sonolift-root .sl-quote p{
+    font-size:1.55rem
+  }
+
+  #sonolift-root .sl-ugc{
+    border-radius:18px
+  }
+
+  #sonolift-root .sl-ugc video{
+    max-height:520px
+  }
+
+  #sonolift-root .sl-footer-grid{
+    grid-template-columns:1fr;
+    gap:35px
+  }
+
+  #sonolift-root .sl-footer-bottom{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:8px
+  }
+
+  #sonolift-root .sl-whatsapp{
+    width:52px;
+    height:52px;
+    right:14px;
+    bottom:14px
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  #sonolift-root .sl-reveal{
+    opacity:1;
+    transform:none;
+    transition:none
+  }
+
+  #sonolift-root .sl-cta{
+    transition:none
+  }
+}
+
+#sonolift-root .sl-ba{
+  position:relative;
+  width:min(860px,100%);
+  margin:44px auto 0;
+  aspect-ratio:4/3;
+  overflow:hidden;
+  border-radius:26px;
+  box-shadow:0 30px 60px -20px rgba(26,28,51,.35);
+  background:#eee9f4;
+  cursor:ew-resize;
+  touch-action:pan-y;
+  user-select:none;
+  -webkit-user-select:none
+}
+
+#sonolift-root .sl-ba-img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  pointer-events:none
+}
+
+#sonolift-root .sl-ba-before{
+  clip-path:inset(0 50% 0 0)
+}
+
+#sonolift-root .sl-ba-tag{
+  position:absolute;
+  top:14px;
+  padding:6px 13px;
+  border-radius:999px;
+  font-size:.75rem;
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  pointer-events:none
+}
+
+#sonolift-root .sl-ba-tag-left{
+  left:14px;
+  background:rgba(20,22,42,.82);
+  color:#fbf7ee
+}
+
+#sonolift-root .sl-ba-tag-right{
+  right:14px;
+  background:var(--gold);
+  color:#1a1c33
+}
+
+#sonolift-root .sl-ba-handle{
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:50%;
+  transform:translateX(-50%);
+  pointer-events:none
+}
+
+#sonolift-root .sl-ba-line{
+  height:100%;
+  width:3px;
+  background:#fff;
+  box-shadow:0 0 12px rgba(26,28,51,.4)
+}
+
+#sonolift-root .sl-ba-knob{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  background:#fff;
+  color:#1a1c33;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1.15rem;
+  font-weight:800;
+  box-shadow:0 10px 24px -8px rgba(26,28,51,.5)
+}
+
+</style>
+
+<div id="sonolift-root">
+
+  <div class="sl-urgency">
+    <span>🎁</span>
+    <span style="color:#ff5555;">KIT COLO GRÁTIS</span>
+    NA COMPRA DO KIT FACIAL
+  </div>
+
+  <header class="sl-header">
+    <div class="sl-header-inner">
+      <a href="#oferta" class="sl-mobile-buy">Comprar</a>
+
+      <a href="#top" class="sl-logo">
+        SonoLift<sup>™</sup>
+      </a>
+
+      <nav>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#experiencias">Experiências</a>
+        <a href="#oferta"><span style="color:#c99340;">Comprar</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="top" style="background:var(--cream);">
+    <div class="sl-container" style="padding:58px 0 72px;">
+      <div class="sl-narrow sl-center">
+
+        <p class="sl-eyebrow">
+          Cuidado noturno para rosto e colo
+        </p>
+
+        <h1 style="margin-top:18px;">
+          Acorda com <em class="sl-gold">marcas do travesseiro</em> no rosto?
+        </h1>
+
+        <p class="sl-muted" style="max-width:650px;margin:20px auto 0;font-size:1.35rem;">
+          Talvez sua rotina de cuidados esteja esquecendo justamente as horas em que você passa dormindo.
+        </p>
+
+        <div style="width:min(100%,430px);margin:32px auto 0;">
+          <div class="sl-video">
+            <video
+              controls
+              playsinline
+              preload="metadata"
+              aria-label="Vanessa apresentando o SonoLift">
+              <source
+                src="https://cdn.shopify.com/videos/c/o/v/1376214f2bc549d388683fc409b69908.mp4"
+                type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div style="width:min(100%,430px);margin:24px auto 0;">
+
+          <div class="sl-offer-box">
+            <p style="color:#7a5a10;font-size:1.1rem;font-weight:800;">
+              <span>🎁</span>
+              Compre o Kit Facial e receba o Kit Colo grátis
+            </p>
+          </div>
+
+          <div style="margin-top:20px;">
+
+            <div class="sl-price-old dark-text">
+              R$ 397
+            </div>
+
+            <div class="sl-price">
+              <div class="sl-price-number">
+                <span class="sl-price-currency">R$</span>
+                <span>197</span>
+              </div>
+            </div>
+
+            <div style="display:flex;justify-content:center;width:100%;margin-top:8px;">
+              <strong style="color:var(--text);font-size:1.15rem;">
+                12x de R$ 16,42
+              </strong>
+            </div>
+
+          </div>
+
+          <a
+            href="https://sono-lift.pay.yampi.com.br/r/R558X0P2M5"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="sl-cta"
+            style="margin-top:14px;">
+            QUERO MEU SONOLIFT
+            <span>→</span>
+          </a>
+
+          <div class="sl-trust-row" style="margin-top:20px;">
+            <span><span>🔒</span> Compra segura</span>
+            <span><span>🎁</span> Kit Colo grátis</span>
+            <span><span>🛡️</span> Garantia 30 dias</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sl-section sl-reveal" style="background:#fff;">
+    <div class="sl-container">
+
+      <div class="sl-narrow sl-center">
+
+        <p class="sl-eyebrow">
+          Talvez você já tenha percebido
+        </p>
+
+        <h2 style="margin-top:15px;">
+          Você cuida da sua pele durante o dia.
+          <em class="sl-gold">Mas e durante a noite?</em>
+        </h2>
+
+        <p class="sl-muted" style="margin-top:20px;font-size:1.25rem;">
+          Durante o sono, principalmente quando dormimos de lado,
+          rosto e colo podem permanecer em determinada posição por horas.
+        </p>
+
+        <p class="sl-muted" style="margin-top:14px;font-size:1.25rem;">
+          É nesse momento que algumas pessoas percebem marcas associadas
+          à posição em que dormiram.
+        </p>
+
+      </div>
+
+      <div class="sl-grid-4" style="margin-top:42px;">
+
+        <div class="sl-card" style="padding:24px;text-align:center;">
+          <div style="font-size:2.4rem;color:var(--gold);">01</div>
+          <strong style="display:block;margin-top:7px;">Testa</strong>
+          <span class="sl-muted" style="font-size:1.05rem;">
+            Região de aplicação
+          </span>
+        </div>
+
+        <div class="sl-card" style="padding:24px;text-align:center;">
+          <div style="font-size:2.4rem;color:var(--gold);">02</div>
+          <strong style="display:block;margin-top:7px;">Olhos</strong>
+          <span class="sl-muted" style="font-size:1.05rem;">
+            Região de aplicação
+          </span>
+        </div>
+
+        <div class="sl-card" style="padding:24px;text-align:center;">
+          <div style="font-size:2.4rem;color:var(--gold);">03</div>
+          <strong style="display:block;margin-top:7px;">Bochechas</strong>
+          <span class="sl-muted" style="font-size:1.05rem;">
+            Região de aplicação
+          </span>
+        </div>
+
+        <div class="sl-card" style="padding:24px;text-align:center;">
+          <div style="font-size:2.4rem;color:var(--gold);">04</div>
+          <strong style="display:block;margin-top:7px;">Colo</strong>
+          <span class="sl-muted" style="font-size:1.05rem;">
+            Região de aplicação
+          </span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="sl-section sl-reveal" style="background:var(--cream);">
+    <div class="sl-container">
+
+      <div class="sl-grid-2">
+
+        <div>
+
+          <p class="sl-eyebrow">
+            Uma nova forma de pensar o cuidado noturno
+          </p>
+
+          <h2 style="margin-top:15px;">
+            E se o cuidado com essas marcas começasse
+            <em class="sl-gold">enquanto você dorme?</em>
+          </h2>
+
+          <p class="sl-muted" style="margin-top:22px;">
+            Durante a noite, a pele permanece em contato com o travesseiro
+            e pode ficar sujeita à pressão e às dobras provocadas pela
+            posição em que você dorme.
+          </p>
+
+          <p class="sl-muted" style="margin-top:15px;">
+            A proposta do SonoLift é simples:
+            acrescentar uma abordagem física à sua rotina noturna.
+          </p>
+
+          <div class="sl-quote">
+            <p>
+              “Não é sobre complicar sua rotina. É sobre aproveitar
+              uma parte dela que já existe: a hora de dormir.”
+            </p>
+          </div>
+
+        </div>
+
+        <div style="padding:34px;border-radius:28px;background:var(--midnight-deep);color:#fff;box-shadow:0 30px 60px -20px rgba(26,28,51,.35);">
+
+          <p class="sl-eyebrow">
+            A ideia
+          </p>
+
+          <div style="margin-top:28px;">
+
+            <div style="display:flex;gap:18px;margin-top:20px;">
+              <strong class="sl-serif sl-gold" style="font-size:2.5rem;">
+                01
+              </strong>
+
+              <div>
+                <strong class="fw">Você aplica</strong>
+
+                <p class="fl" style="margin-top:4px;font-size:1.15rem;">
+                  Sobre a região desejada.
+                </p>
+              </div>
+            </div>
+
+            <div style="display:flex;gap:18px;margin-top:24px;">
+              <strong class="sl-serif sl-gold" style="font-size:2.5rem;">
+                02
+              </strong>
+
+              <div>
+                <strong class="fw">Você dorme</strong>
+
+                <p class="fl" style="margin-top:4px;font-size:1.15rem;">
+                  Seguindo sua rotina normalmente.
+                </p>
+              </div>
+            </div>
+
+            <div style="display:flex;gap:18px;margin-top:24px;">
+              <strong class="sl-serif sl-gold" style="font-size:2.5rem;">
+                03
+              </strong>
+
+              <div>
+                <strong class="fw">Você remove</strong>
+
+                <p class="fl" style="margin-top:4px;font-size:1.15rem;">
+                  Pela manhã, seguindo as instruções de uso.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="como-funciona" class="sl-section sl-reveal" style="background:#fff;">
+    <div class="sl-container">
+
+      <div class="sl-narrow sl-center">
+
+        <p class="sl-eyebrow">
+          O princípio do produto
+        </p>
+
+        <h2 style="margin-top:15px;">
+          Uma pequena mudança na rotina noturna.
+        </h2>
+
+        <p class="sl-muted" style="margin-top:18px;">
+          O SonoLift acrescenta adesivos de silicone reutilizáveis
+          à sua rotina de cuidados durante o período de sono.
+        </p>
+
+      </div>
+
+      <div class="sl-grid-4" style="margin-top:46px;">
+
+        <article class="sl-mechanism">
+          <div class="sl-mechanism-number">01</div>
+          <h3>Posicione</h3>
+          <p>
+            Prepare a pele e aplique o adesivo sobre a região desejada
+            conforme as instruções.
+          </p>
+        </article>
+
+        <article class="sl-mechanism">
+          <div class="sl-mechanism-number">02</div>
+          <h3>Adira</h3>
+          <p>
+            O adesivo permanece em contato com a pele durante o período
+            recomendado de utilização.
+          </p>
+        </article>
+
+        <article class="sl-mechanism">
+          <div class="sl-mechanism-number">03</div>
+          <h3>Durma</h3>
+          <p>
+            O produto acompanha sua rotina enquanto você descansa.
+          </p>
+        </article>
+
+        <article class="sl-mechanism">
+          <div class="sl-mechanism-number">04</div>
+          <h3>Reutilize</h3>
+          <p>
+            Remova, higienize e conserve conforme as orientações do produto.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="sl-section sl-reveal" style="background:var(--cream);">
+
+    <div class="sl-container">
+
+      <div class="sl-narrow sl-center">
+
+        <p class="sl-eyebrow">
+          Comparativo visual
+        </p>
+
+        <h2 style="margin-top:14px">
+          Antes e depois
+        </h2>
+
+        <p class="sl-muted" style="margin-top:16px;font-size:1.15rem">
+          Compare visualmente o registro apresentado neste exemplo.
+        </p>
+
+      </div>
+
+      <div id="sl-ba" class="sl-ba" aria-label="Comparador antes e depois">
+
+        <img class="sl-ba-img" src="https://sonoliftbr.lovable.app/__l5e/assets-v1/ee13a90a-ef08-4fdf-b1a8-10d2d2e9e3f3/depois.png" alt="Depois" draggable="false">
+
+        <img id="sl-ba-before" class="sl-ba-img sl-ba-before" src="https://sonoliftbr.lovable.app/__l5e/assets-v1/636add08-96df-44c6-a92b-64e913b9e48f/antes.png" alt="Antes" draggable="false">
+
+        <span class="sl-ba-tag sl-ba-tag-left">Antes</span>
+
+        <span class="sl-ba-tag sl-ba-tag-right">Depois</span>
+
+        <div id="sl-ba-handle" class="sl-ba-handle">
+          <div class="sl-ba-line"></div>
+          <div class="sl-ba-knob">⇔</div>
+        </div>
+
+      </div>
+
+      <div class="sl-narrow sl-center" style="margin-top:20px">
+
+        <p style="font-weight:700;font-size:1.05rem">
+          Deslize para comparar as duas imagens.
+        </p>
+
+        <p class="sl-muted" style="margin-top:8px;font-size:.9rem">
+          Resultados individuais podem variar.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="sl-section sl-dark sl-reveal">
+    <div class="sl-container">
+
+      <div class="sl-grid-2">
+
+        <div>
+
+          <p class="sl-eyebrow">
+            Conheça o SonoLift™
+          </p>
+
+          <h2 class="fw" style="margin-top:15px;">
+            Seu cuidado noturno.
+            <em class="sl-gold">Agora com uma abordagem física.</em>
+          </h2>
+
+          <p class="fl" style="margin-top:22px;">
+            O SonoLift é um sistema de adesivos de silicone reutilizáveis
+            pensado para regiões específicas do rosto e do colo.
+          </p>
+
+          <p class="fl" style="margin-top:14px;">
+            A proposta é incorporar o produto facilmente à rotina
+            que você já tem antes de dormir.
+          </p>
+
+          <div style="display:flex;flex-wrap:wrap;gap:9px;margin-top:25px;">
+            <span class="sl-tag fw">Rosto</span>
+            <span class="sl-tag fw">Colo</span>
+            <span class="sl-tag fw">Uso noturno</span>
+            <span class="sl-tag fw">Reutilizável</span>
+          </div>
+
+        </div>
+
+        <div class="sl-product-panel">
+
+          <img
+            src="https://cdn.shopify.com/s/files/1/1016/0118/1977/files/Captura_de_tela_2026-09-17_211138.png?v=1789690412"
+            alt="Vanessa segurando os adesivos SonoLift"
+            loading="lazy"
+            class="sl-img sl-img-rounded"
+            style="aspect-ratio:4/5; object-fit: cover;">
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="sl-section sl-reveal" style="background:var(--cream);">
+    <div class="sl-container">
+
+      <div class="sl-narrow sl-center">
+
+        <p class="sl-eyebrow">
+          Rosto + Colo
+        </p>
+
+        <h2 style="margin-top:15px;">
+          Um sistema pensado para diferentes regiões.
+        </h2>
+
+        <p class="sl-muted" style="margin-top:18px;">
+          O SonoLift foi desenvolvido para aplicação localizada
+          em diferentes áreas do rosto e do colo durante a rotina noturna.
+        </p>
+
+      </div>
+
+      <div class="sl-grid-5" style="margin-top:42px;">
+
+        <div class="sl-region-card">
+          <img
+            src="https://sonoliftbr.lovable.app/__l5e/assets-v1/16cff6e7-14d1-413f-af9d-b73ed70d024f/testa.jpg"
+            alt="Região da testa"
+            loading="lazy"
+            class="sl-img">
+          <div class="sl-region-label">Testa</div>
+        </div>
+
+        <div class="sl-region-card">
+          <img
+            src="https://sonoliftbr.lovable.app/__l5e/assets-v1/88cea427-d065-47a0-b2df-5e0ca06eaaa8/olho-sorriso.jpg"
+            alt="Região dos olhos e sorriso"
+            loading="lazy"
+            class="sl-img">
+          <div class="sl-region-label">Olhos</div>
+        </div>
+
+        <div class="sl-region-card">
+          <img
+            src="https://sonoliftbr.lovable.app/__l5e/assets-v1/cffa8769-d684-4a84-91c1-da16b9d3c64a/labio.jpg"
+            alt="Região dos lábios"
+            loading="lazy"
+            class="sl-img">
+          <div class="sl-region-label">Lábios</div>
+        </div>
+
+        <div class="sl-region-card">
+          <img
+            src="https://sonoliftbr.lovable.app/__l5e/assets-v1/6d58f43e-dce9-4ac1-be6e-ddfdabe525ce/pescoco.jpg"
+            alt="Região do pescoço"
+            loading="lazy"
+            class="sl-img">
+          <div class="sl-region-label">Pescoço</div>
+        </div>
+
+        <div class="sl-region-card">
+          <img
+            src="https://sonoliftbr.lovable.app/__l5e/assets-v1/2659e8e7-44ce-44ce-9b5e-cba0bab43994/peito.jpg"
+            alt="Região do colo"
+            loading="lazy"
+            class="sl-img">
+          <div class="sl-region-label">Colo</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="sl-section sl-reveal" style="background:#fff;">
+    <div class="sl-container">
+
+      <div class="sl-narrow sl-center">
+
+        <p class="sl-eyebrow">
+          Ritual simples
+        </p>
+
+        <h2 style="margin-top:15px;">
+          Alguns minutos antes de dormir.
+        </h2>
+
+        <p class="sl-muted" style="margin-top:18px;">
+          Um ritual simples para incorporar os adesivos à sua rotina noturna.
+        </p>
+
+      </div>
+
+      <div class="sl-grid-4" style="margin-top:46px;">
+
+        <article class="sl-step">
+
+          <img
+            src="https://sonoliftbr.lovable.app/__l5e/assets-v1/00a82198-30b1-4465-b793-ada529e83874/ritual-prep.webp"
+            alt="Preparação da pele"
+            loading="lazy"
+            class="sl-img">
+
+          <div class="sl-step-content">
+            <span class="sl-step-number">01</span>
+            <h3>Prepare</h3>
+            <p>Limpe e seque completamente a pele.</p>
+          </div>
+
+        </article>
+
+        <article class="sl-step">
+
+          <img
+            src="https://sonoliftbr.lovable.app/__l5e/assets-v1/d7587ebc-3267-42c0-a400-af0b41899329/ritual-pos.webp"
+            alt="Posicionamento do adesivo"
+            loading="lazy"
+            class="sl-img">
+
+          <div class="sl-step-content">
+            <span class="sl-step-number">02</span>
+            <h3>Aplique</h3>
+            <p>Posicione o adesivo sobre a região desejada.</p>
+          </div>
+
+        </article>
+
+        <article class="sl-step">
+
+          <img
+            src="https://sonoliftbr.lovable.app/__l5e/assets-v1/237a76f1-c4a7-4659-856e-a6e554bb9215/ritual-noite.webp"
+            alt="SonoLift durante a noite"
+            loading="lazy"
+            class="sl-img">
+
+          <div class="sl-step-content">
+            <span class="sl-step-number">03</span>
+            <h3>Durma</h3>
+            <p>Deixe o produto durante o período recomendado.</p>
+          </div>
+
+        </article>
+
+        <article class="sl-step">
+
+          <img
+            src="https://sonoliftbr.lovable.app/__l5e/assets-v1/0c371b4a-b5c5-40b9-854e-c41cf2b19345/step-store.webp"
+            alt="Armazenamento do SonoLift"
+            loading="lazy"
+            class="sl-img">
+
+          <div class="sl-step-content">
+            <span class="sl-step-number">04</span>
+            <h3>Reutilize</h3>
+            <p>Remova, higienize e guarde conforme as instruções.</p>
+          </div>
+
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="experiencias" class="sl-section sl-reveal" style="background:#eee9f4;">
+    <div class="sl-container">
+
+      <div class="sl-narrow sl-center">
+
+        <p class="sl-eyebrow">
+          Experiências
+        </p>
+
+        <h2 style="margin-top:15px;">
+          Veja o produto na rotina.
+        </h2>
+
+        <p class="sl-muted" style="margin-top:18px;">
+          Conteúdos reais de uso ajudam a visualizar como o SonoLift
+          pode fazer parte da rotina noturna.
+        </p>
+
+      </div>
+
+      <div class="sl-grid-4" style="margin-top:42px;">
+
+        <div class="sl-ugc">
+          <video
+            src="https://sonoliftbr.lovable.app/__l5e/assets-v1/cfde5e8d-5278-41ec-8181-80a19906197d/ugc1.mp4"
+            class="sl-img"
+            muted
+            loop
+            playsinline
+            autoplay
+            controls>
+          </video>
+        </div>
+
+        <div class="sl-ugc">
+          <video
+            src="https://sonoliftbr.lovable.app/__l5e/assets-v1/9fe228ad-48bf-43ad-ad23-4e787be49624/ugc2.mp4"
+            class="sl-img"
+            muted
+            loop
+            playsinline
+            autoplay
+            controls>
+          </video>
+        </div>
+
+        <div class="sl-ugc">
+          <video
+            src="https://sonoliftbr.lovable.app/__l5e/assets-v1/5070636b-a0df-43aa-8456-1ef20f5d5f15/ugc3.mp4"
+            class="sl-img"
+            muted
+            loop
+            playsinline
+            autoplay
+            controls>
+          </video>
+        </div>
+
+        <div class="sl-ugc">
+          <video
+            src="https://sonoliftbr.lovable.app/__l5e/assets-v1/6cb749fe-29db-421a-b501-3d0b3b1df3ab/ugc4.mp4"
+            class="sl-img"
+            muted
+            loop
+            playsinline
+            autoplay
+            controls>
+          </video>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="sl-section sl-reveal" style="background:#fff;padding-top:62px;padding-bottom:62px;">
+    <div class="sl-narrow sl-center">
+
+      <p class="sl-eyebrow">
+        Se essa ideia fez sentido para você
+      </p>
+
+      <h2 style="margin-top:14px;">
+        Sua rotina noturna pode começar de um jeito diferente.
+      </h2>
+
+      <p class="sl-muted" style="margin-top:16px;">
+        Conheça o Sistema SonoLift Facial + Colo.
+      </p>
+
+      <a
+        href="https://sono-lift.pay.yampi.com.br/r/R558X0P2M5"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="sl-cta"
+        style="max-width:500px;margin:28px auto 0;">
+        QUERO MEU SONOLIFT →
+      </a>
+
+    </div>
+  </section>
+
+  <section id="oferta" class="sl-section sl-dark sl-reveal">
+    <div class="sl-container">
+
+      <div class="sl-narrow sl-center">
+
+        <p class="sl-eyebrow">
+          Oferta SonoLift™
+        </p>
+
+        <h2 class="fw" style="margin-top:15px;">
+          Facial + Colo.
+          <span class="sl-gold">O sistema completo.</span>
+        </h2>
+
+        <p class="fl" style="margin-top:18px;max-width:550px;margin-left:auto;margin-right:auto;">
+          Uma solução simples para incluir os adesivos na sua rotina
+          de cuidados noturnos.
+        </p>
+
+      </div>
+
+      <div class="sl-grid-2" style="margin-top:44px;align-items:stretch;">
+
+        <div class="sl-offer-card">
+
+          <p class="fl" style="font-size:.95rem;font-weight:800;letter-spacing:.17em;text-transform:uppercase;">
+            Produto principal
+          </p>
+
+          <h3 class="fw" style="margin-top:10px;">
+            SonoLift™ Facial
+          </h3>
+
+          <ul class="sl-checklist">
+
+            <li>
+              <span class="sl-check">✓</span>
+              <span class="fl">
+                Adesivos para regiões específicas do rosto
+              </span>
+            </li>
+
+            <li>
+              <span class="sl-check">✓</span>
+              <span class="fl">
+                Uso durante a rotina noturna
+              </span>
+            </li>
+
+            <li>
+              <span class="sl-check">✓</span>
+              <span class="fl">
+                Aplicação localizada
+              </span>
+            </li>
+
+            <li>
+              <span class="sl-check">✓</span>
+              <span class="fl">
+                Reutilizável conforme as instruções do produto
+              </span>
+            </li>
+
+          </ul>
+        </div>
+
+        <div class="sl-offer-card bonus">
+
+          <span class="sl-bonus">
+            Grátis
+          </span>
+
+          <p style="margin-top:20px;color:var(--gold-dark);font-size:.95rem;font-weight:800;letter-spacing:.17em;text-transform:uppercase;">
+            Bônus da oferta
+          </p>
+
+          <h3 style="margin-top:10px;">
+            SonoLift™ Colo
+          </h3>
+
+          <ul class="sl-checklist">
+
+            <li>
+              <span class="sl-check">✓</span>
+              <span>
+                Adesivo para a região do colo
+              </span>
+            </li>
+
+            <li>
+              <span class="sl-check">✓</span>
+              <span>
+                Pensado para a rotina noturna
+              </span>
+            </li>
+
+            <li>
+              <span class="sl-check">✓</span>
+              <span>
+                Aplicação localizada
+              </span>
+            </li>
+
+            <li>
+              <span class="sl-check">✓</span>
+              <span>
+                Reutilizável conforme as instruções
+              </span>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+      <div style="margin-top:22px;padding:36px 24px;border-radius:28px;background:#fff;color:var(--text);text-align:center;box-shadow:0 30px 60px -20px rgba(0,0,0,.35);">
+
+        <p class="sl-eyebrow">
+          Sistema SonoLift completo
+        </p>
+
+        <div style="margin-top:18px;">
+
+          <div class="sl-price-old dark-text">
+            R$ 397
+          </div>
+
+          <div class="sl-price">
+            <div class="sl-price-number">
+              <span class="sl-price-currency">R$</span>
+              <span>197</span>
+            </div>
+          </div>
+
+          <div style="display:flex;justify-content:center;width:100%;margin-top:8px;">
+            <strong style="color:var(--text);font-size:1.3rem;">
+              12x de R$ 16,42
+            </strong>
+          </div>
+
+        </div>
+
+        <div class="sl-offer-box" style="max-width:450px;margin:22px auto 0;">
+
+          <p style="color:#7a5a10;font-weight:800;font-size:1.15rem;">
+            <span>🎁</span>
+            <span>Kit Colo incluído gratuitamente</span>
+          </p>
+
+        </div>
+
+        <a
+          href="https://sono-lift.pay.yampi.com.br/r/R558X0P2M5"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="sl-cta"
+          style="max-width:620px;margin:22px auto 0;">
+          GARANTIR MEU KIT FACIAL + COLO
+          <span>→</span>
+        </a>
+
+        <div class="sl-trust-row" style="margin-top:20px;">
+          <span><span>🔒</span> Compra segura</span>
+          <span>VISA</span>
+          <span>MASTERCARD</span>
+          <span>ELO</span>
+          <span>PIX</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="sl-section sl-reveal" style="background:var(--cream);">
+    <div class="sl-narrow sl-center">
+
+      <div class="sl-guarantee-icon">
+        🛡️
+      </div>
+
+      <p class="sl-eyebrow" style="margin-top:25px;">
+        Compra protegida
+      </p>
+
+      <h2 style="margin-top:14px;">
+        Você não precisa decidir no escuro.
+      </h2>
+
+      <p class="sl-muted" style="margin-top:18px;">
+        Conheça o produto, siga as instruções de uso e veja se o SonoLift
+        faz sentido para sua rotina.
+      </p>
+
+      <p style="margin-top:18px;font-weight:700;">
+        Garantia de 30 dias, conforme os termos da política de compra.
+      </p>
+
+      <a
+        href="https://sono-lift.pay.yampi.com.br/r/R558X0P2M5"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="sl-cta"
+        style="max-width:450px;margin:26px auto 0;">
+        QUERO EXPERIMENTAR →
+      </a>
+
+    </div>
+  </section>
+
+  <section class="sl-section sl-reveal" style="background:#fff;">
+    <div class="sl-narrow">
+
+      <div class="sl-center">
+
+        <p class="sl-eyebrow">
+          Dúvidas frequentes
+        </p>
+
+        <h2 style="margin-top:14px;">
+          Antes de começar.
+        </h2>
+
+      </div>
+
+      <div style="margin-top:38px;">
+
+        <details>
+          <summary>
+            Como devo preparar a pele?
+            <span>+</span>
+          </summary>
+
+          <p>
+            Siga as instruções oficiais de preparação e aplicação
+            fornecidas com o produto.
+          </p>
+        </details>
+
+        <details>
+          <summary>
+            Posso usar durante a noite?
+            <span>+</span>
+          </summary>
+
+          <p>
+            Sim. O produto foi desenvolvido para fazer parte da rotina
+            noturna, respeitando o período de utilização indicado
+            nas instruções.
+          </p>
+        </details>
+
+        <details>
+          <summary>
+            O SonoLift é reutilizável?
+            <span>+</span>
+          </summary>
+
+          <p>
+            Sim. A reutilização deve seguir as orientações de limpeza,
+            conservação e durabilidade fornecidas com o produto.
+          </p>
+        </details>
+
+        <details>
+          <summary>
+            Posso usar junto com meu skincare?
+            <span>+</span>
+          </summary>
+
+          <p>
+            A compatibilidade e a ordem de aplicação devem seguir
+            as instruções oficiais do produto e os produtos utilizados
+            na sua rotina.
+          </p>
+        </details>
+
+        <details>
+          <summary>
+            E se minha pele apresentar irritação?
+            <span>+</span>
+          </summary>
+
+          <p>
+            Interrompa o uso e siga as orientações de segurança do produto.
+            Em caso de reação persistente, procure orientação profissional.
+          </p>
+        </details>
+
+        <details>
+          <summary>
+            Como funciona a garantia?
+            <span>+</span>
+          </summary>
+
+          <p>
+            Consulte os termos completos da política de garantia,
+            trocas e devoluções da SonoLift.
+          </p>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="sl-section sl-dark sl-reveal" style="padding-bottom:92px;">
+    <div class="sl-narrow sl-center">
+
+      <p class="sl-eyebrow">
+        SonoLift™
+      </p>
+
+      <h2 class="fw" style="margin-top:15px;">
+        Enquanto você dorme,
+        <em class="sl-gold">sua rotina continua.</em>
+      </h2>
+
+      <p class="fl" style="margin-top:18px;">
+        Acrescente o SonoLift à sua rotina noturna e cuide das regiões
+        que fazem parte do seu ritual.
+      </p>
+
+      <div style="margin-top:34px;">
+
+        <div class="sl-price-old">
+          R$ 397
+        </div>
+
+        <div class="sl-price gold-text">
+
+          <div class="sl-price-number">
+            <span class="sl-price-currency">R$</span>
+            <span>197</span>
+          </div>
+
+        </div>
+
+        <div style="display:flex;justify-content:center;width:100%;margin-top:8px;">
+          <span class="fl" style="font-size:1.3rem;">
+            Facial + Colo
+          </span>
+        </div>
+
+      </div>
+
+      <a
+        href="https://sono-lift.pay.yampi.com.br/r/R558X0P2M5"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="sl-cta"
+        style="max-width:620px;margin:26px auto 0;">
+        QUERO MEU SONOLIFT →
+      </a>
+
+      <div class="sl-trust-row dark-bg" style="margin-top:20px;">
+        <span><span>🔒</span> Compra segura</span>
+        <span><span>🎁</span> Kit Colo grátis</span>
+        <span><span>🛡️</span> Garantia 30 dias</span>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="sl-footer">
+
+    <div class="sl-container" style="padding:58px 0 30px;">
+
+      <div class="sl-footer-grid">
+
+        <div>
+
+          <p class="sl-serif fw" style="font-size:2rem;">
+            SonoLift<sup style="color:var(--gold);font-size:.45em;">™</sup>
+          </p>
+
+          <p class="fl" style="margin-top:12px;max-width:390px;font-size:1.05rem;">
+            Sistema de adesivos de silicone desenvolvido para fazer parte
+            da sua rotina de cuidados noturnos.
+          </p>
+
+        </div>
+
+        <div>
+
+          <p class="sl-footer-title fw">
+            Navegação
+          </p>
+
+          <div class="sl-footer-links">
+
+            <a href="#como-funciona">
+              Como funciona
+            </a>
+
+            <a href="#experiencias">
+              Experiências
+            </a>
+
+            <a href="#oferta">
+              Oferta
+            </a>
+
+          </div>
+
+        </div>
+
+        <div>
+
+          <p class="sl-footer-title fw">
+            Institucional
+          </p>
+
+          <div class="sl-footer-links">
+
+            <a href="/pages/quem-somos">
+              Quem somos
+            </a>
+
+            <a href="/pages/politica-de-privacidade">
+              Política de privacidade
+            </a>
+
+            <a href="/pages/termos-de-uso">
+              Termos de uso
+            </a>
+
+            <a href="/pages/reembolso-trocas-e-devolucoes">
+              Reembolso e trocas
+            </a>
+
+            <a href="/pages/frete-e-entrega">
+              Frete e entrega
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="sl-footer-bottom">
+
+        <span>
+          © 2026 SonoLift Beauty LTDA · CNPJ 76.047.876/0001-90
+        </span>
+
+        <span>
+          Visa · Mastercard · ELO · Pix
+        </span>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+  <a
+    href="https://wa.me/5511941942267?text=Ol%C3%A1!%20Vi%20o%20SonoLift%20e%20quero%20saber%20mais."
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Fale conosco pelo WhatsApp"
+    class="sl-whatsapp">
+
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor">
+
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-9.715A9.944 9.944 0 0 0 12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2.546 22l4.915-1.375A9.944 9.944 0 0 0 12 22c5.523 0 10-4.477 10-10a9.943 9.943 0 0 0-4.949-8.333Z"/>
+
+    </svg>
+
+  </a>
+
+</div>
+
+<script>
+(function(){
+
+  var root=document.getElementById('sonolift-root');
+
+  if(!root)return;
+
+  var revealElements=root.querySelectorAll('.sl-reveal');
+
+  if('IntersectionObserver' in window){
+
+    var observer=new IntersectionObserver(
+      function(entries){
+
+        entries.forEach(function(entry){
+
+          if(entry.isIntersecting){
+
+            entry.target.classList.add('in');
+
+            observer.unobserve(entry.target);
+
+          }
+
+        });
+
+      },
+      {
+        threshold:.08,
+        rootMargin:'0px 0px -50px 0px'
+      }
+    );
+
+    revealElements.forEach(function(element){
+      observer.observe(element)
+    });
+
+  }else{
+
+    revealElements.forEach(function(element){
+      element.classList.add('in')
+    });
+
+  }
+
+  var ctas=root.querySelectorAll('.sl-cta');
+
+  ctas.forEach(function(button){
+
+    button.addEventListener('click',function(){
+
+      try{
+
+        if(typeof fbq==='function'){
+          fbq('track','InitiateCheckout')
+        }
+
+      }catch(error){}
+
+    });
+
+  });
+
+  var faqItems=root.querySelectorAll('details');
+
+  faqItems.forEach(function(item){
+
+    item.addEventListener('toggle',function(){
+
+      if(item.open){
+
+        faqItems.forEach(function(other){
+
+          if(other!==item){
+            other.removeAttribute('open')
+          }
+
+        });
+
+      }
+
+    });
+
+  });
+
+})();
+</script>
+
+<script>
+(function(){
+
+  var area=document.getElementById('sl-ba');
+  var before=document.getElementById('sl-ba-before');
+  var handle=document.getElementById('sl-ba-handle');
+
+  if(!area||!before||!handle)return;
+
+  var dragging=false;
+
+  function setPosition(clientX){
+
+    var rect=area.getBoundingClientRect();
+    var percent=((clientX-rect.left)/rect.width)*100;
+
+    if(percent<0)percent=0;
+    if(percent>100)percent=100;
+
+    before.style.clipPath='inset(0 '+(100-percent)+'% 0 0)';
+    handle.style.left=percent+'%';
+
+  }
+
+  function onDown(event){
+    dragging=true;
+    setPosition(event.touches?event.touches[0].clientX:event.clientX);
+  }
+
+  function onMove(event){
+
+    if(!dragging)return;
+
+    if(event.touches){
+      setPosition(event.touches[0].clientX);
+      if(event.cancelable)event.preventDefault();
+    }else{
+      setPosition(event.clientX);
+    }
+
+  }
+
+  function onUp(){
+    dragging=false;
+  }
+
+  area.addEventListener('mousedown',onDown);
+  window.addEventListener('mousemove',onMove);
+  window.addEventListener('mouseup',onUp);
+
+  area.addEventListener('touchstart',onDown,{passive:true});
+  area.addEventListener('touchmove',onMove,{passive:false});
+  window.addEventListener('touchend',onUp);
+
+})();
+</script>
