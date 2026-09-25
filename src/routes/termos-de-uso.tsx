@@ -18,7 +18,7 @@ function TermsPage() {
   return (
     <PolicyLayout title="Termos de Uso" updatedAt="Julho de 2026">
       <P>
-        Estes Termos regulam o acesso e uso do site e serviços da SonoLift Beauty LTDA (CNPJ 76.047.876/0001-90).
+        Estes Termos regulam o acesso e uso do site e serviços da SonoLift Beauty LTDA (CNPJ 69.329.600/0001-02).
         Ao navegar ou comprar em nosso site, você concorda com as condições abaixo.
       </P>
 

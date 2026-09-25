@@ -18,7 +18,7 @@ function PrivacyPage() {
   return (
     <PolicyLayout title="Política de Privacidade" updatedAt="Julho de 2026">
       <P>
-        A SonoLift Beauty LTDA (CNPJ 76.047.876/0001-90) valoriza a privacidade dos seus clientes e usuários.
+        A SonoLift Beauty LTDA (CNPJ 69.329.600/0001-02) valoriza a privacidade dos seus clientes e usuários.
         Esta política descreve como coletamos, utilizamos, armazenamos e protegemos as informações pessoais fornecidas em nosso site.
       </P>
 

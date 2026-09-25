@@ -19,7 +19,7 @@ function RefundPage() {
     <PolicyLayout title="Reembolso, Trocas e Devoluções" updatedAt="Julho de 2026">
       <P>
         Sua satisfação é nossa prioridade. Esta política define as regras de trocas, devoluções e reembolsos
-        para produtos adquiridos no site da SonoLift Beauty LTDA (CNPJ 76.047.876/0001-90).
+        para produtos adquiridos no site da SonoLift Beauty LTDA (CNPJ 69.329.600/0001-02).
       </P>
 
       <H2>1. Garantia de 30 noites</H2>

@@ -1,0 +1,3 @@
+- [x] Restaurar a página inicial a partir do HTML enviado, sem duplicar os pixels já instalados.
+- [x] Atualizar o CNPJ no rodapé e nas páginas institucionais citadas.
+- [ ] Conferir a página restaurada e os links no navegador.
