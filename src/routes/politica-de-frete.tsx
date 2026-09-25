@@ -8,6 +8,8 @@ export const Route = createFileRoute("/politica-de-frete")({
       { name: "description", content: "Prazos, valores e regras de envio dos pedidos SonoLift." },
       { property: "og:title", content: "Política de Frete e Entrega — SonoLift™" },
       { property: "og:description", content: "Prazos, valores e regras de envio dos pedidos SonoLift." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { name: "robots", content: "noindex" },
     ],
   }),

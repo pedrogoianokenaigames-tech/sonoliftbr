@@ -16,6 +16,8 @@ export const Route = createFileRoute("/quem-somos")({
         content:
           "Muito mais que skincare. Prevenção inteligente enquanto você dorme.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: QuemSomosPage,

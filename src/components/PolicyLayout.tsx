@@ -47,7 +47,7 @@ export function PolicyLayout({
         <div className="mx-auto flex max-w-3xl flex-col items-center justify-between gap-3 px-4 py-8 text-center text-xs text-muted-foreground md:flex-row md:text-left">
           <div>
             <p className="font-medium text-midnight-deep">SonoLift Beauty LTDA</p>
-            <p>CNPJ 76.047.876/0001-90</p>
+            <p>CNPJ 69.329.600/0001-02</p>
           </div>
           <p className="tracking-wide text-midnight-deep/70">
             Visa · Mastercard · ELO · Pix

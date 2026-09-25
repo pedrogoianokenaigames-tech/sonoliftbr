@@ -8,6 +8,8 @@ export const Route = createFileRoute("/termos-de-uso")({
       { name: "description", content: "Termos e condições para uso do site e produtos SonoLift." },
       { property: "og:title", content: "Termos de Uso — SonoLift™" },
       { property: "og:description", content: "Termos e condições para uso do site e produtos SonoLift." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { name: "robots", content: "noindex" },
     ],
   }),
@@ -18,7 +20,7 @@ function TermsPage() {
   return (
     <PolicyLayout title="Termos de Uso" updatedAt="Julho de 2026">
       <P>
-        Estes Termos regulam o acesso e uso do site e serviços da SonoLift Beauty LTDA (CNPJ 76.047.876/0001-90).
+        Estes Termos regulam o acesso e uso do site e serviços da SonoLift Beauty LTDA (CNPJ 69.329.600/0001-02).
         Ao navegar ou comprar em nosso site, você concorda com as condições abaixo.
       </P>
 
