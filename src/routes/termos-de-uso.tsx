@@ -8,6 +8,8 @@ export const Route = createFileRoute("/termos-de-uso")({
       { name: "description", content: "Termos e condições para uso do site e produtos SonoLift." },
       { property: "og:title", content: "Termos de Uso — SonoLift™" },
       { property: "og:description", content: "Termos e condições para uso do site e produtos SonoLift." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { name: "robots", content: "noindex" },
     ],
   }),

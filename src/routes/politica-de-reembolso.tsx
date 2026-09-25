@@ -8,6 +8,8 @@ export const Route = createFileRoute("/politica-de-reembolso")({
       { name: "description", content: "Como funcionam trocas, devoluções e reembolsos SonoLift." },
       { property: "og:title", content: "Política de Reembolso — SonoLift™" },
       { property: "og:description", content: "Como funcionam trocas, devoluções e reembolsos SonoLift." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { name: "robots", content: "noindex" },
     ],
   }),

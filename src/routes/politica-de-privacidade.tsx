@@ -8,6 +8,8 @@ export const Route = createFileRoute("/politica-de-privacidade")({
       { name: "description", content: "Como a SonoLift Beauty coleta, usa e protege seus dados pessoais." },
       { property: "og:title", content: "Política de Privacidade — SonoLift™" },
       { property: "og:description", content: "Como a SonoLift Beauty coleta, usa e protege seus dados pessoais." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { name: "robots", content: "noindex" },
     ],
   }),
