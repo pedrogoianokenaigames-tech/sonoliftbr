@@ -42,7 +42,7 @@ const trimmed = page
   .replace(/ >/g, '>')
   .replace('<link rel="preconnect" href="https://fonts.googleapis.com">', '')
   .replace(' crossorigin>', '>')
-  .replace(/ alt="[^"]{12,}"/g, ' alt="SonoLift"');
+  .replace(/ alt="[^"]*"/g, ' alt="SonoLift"');
 
 const out = inline + '\n' + noscript + '\n' + trimmed;
 fs.writeFileSync('sonolift-shopify-v55.html', out);
