@@ -26,6 +26,7 @@ const trimmed = page
   .replace(/\/\*[^*]*\*\//g, '')
   .replace(/\n\s*/g, '\n')
   .replace(/\n{2,}/g, "\n")
+  .replace(/<!--[\s\S]*?-->/g, '')
   .replace(/>\s+</g, "><")
   .replace(/\s{2,}/g, " ")
   .split(ASSET_HOST).join(SHORT_HOST)
