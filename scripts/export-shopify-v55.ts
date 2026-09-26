@@ -33,7 +33,11 @@ const trimmed = page
   .replace(/ poster="[^"]*"/g, '')
   .replace(/ preload="metadata"/g, '')
   .replace(/ controlslist="nodownload"/g, '')
-  .replace(/ draggable="false"/g, '');
+  .replace(/ draggable="false"/g, '')
+  .replace(/ loading="lazy"/g, '')
+  .replace(/ xmlns="http:\/\/www\.w3\.org\/2000\/svg"/g, '')
+  .replace(/style="([^"]*)"/g, (_m, s: string) => `style="${s.replace(/:\s+/g, ':').replace(/;\s+/g, ';').replace(/;$/,'')}"`)
+  .replace(/\n/g, '');
 
 const out = inline + '\n' + noscript + '\n' + trimmed;
 fs.writeFileSync('sonolift-shopify-v55.html', out);
