@@ -37,7 +37,11 @@ const trimmed = page
   .replace(/ loading="lazy"/g, '')
   .replace(/ xmlns="http:\/\/www\.w3\.org\/2000\/svg"/g, '')
   .replace(/style="([^"]*)"/g, (_m, s: string) => `style="${s.replace(/:\s+/g, ':').replace(/;\s+/g, ';').replace(/;$/,'')}"`)
-  .replace(/\n/g, '');
+  .replace(/\n/g, '')
+  .replace(/ aria-label="[^"]*"/g, '')
+  .replace(/ >/g, '>')
+  .replace('<link rel="preconnect" href="https://fonts.googleapis.com">', '')
+  .replace(' crossorigin>', '>');
 
 const out = inline + '\n' + noscript + '\n' + trimmed;
 fs.writeFileSync('sonolift-shopify-v55.html', out);
