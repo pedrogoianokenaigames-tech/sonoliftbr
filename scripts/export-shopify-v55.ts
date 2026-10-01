@@ -45,5 +45,5 @@ const trimmed = page
   .replace(/ alt="[^"]*"/g, ' alt=""');
 
 const out = inline + '\n' + noscript + '\n' + trimmed;
-fs.writeFileSync('sonolift-shopify-v55.html', out);
-console.log('sonolift-shopify-v55.html', out.length, 'chars');
+fs.writeFileSync('sonolift-shopify-v56.html', out);
+console.log('sonolift-shopify-v56.html', out.length, 'chars');

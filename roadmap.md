@@ -1,7 +1,7 @@
 - [x] Restaurar a página inicial a partir do HTML enviado, sem duplicar os pixels já instalados.
 - [x] Atualizar o CNPJ no rodapé e nas páginas institucionais citadas.
 - [x] Conferir a página restaurada e os links no navegador.
-- [ ] Atualizar a barra de anúncio e o cronômetro para 25 minutos em loop.
-- [ ] Unificar o preço anunciado para R$ 197,00 no Pix ou 12x de R$ 16,42 sem juros.
-- [ ] Corrigir e validar os quatro percentuais da seção de eficácia.
-- [ ] Gerar e conferir o novo HTML completo para Shopify.
+- [x] Atualizar a barra de anúncio e o cronômetro para 25 minutos em loop.
+- [x] Unificar o preço anunciado para R$ 197,00 no Pix ou 12x de R$ 16,42 sem juros.
+- [x] Corrigir e validar os quatro percentuais da seção de eficácia.
+- [x] Gerar e conferir o novo HTML completo para Shopify.
