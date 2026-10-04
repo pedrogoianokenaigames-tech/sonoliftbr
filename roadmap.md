@@ -5,3 +5,6 @@
 - [x] Unificar o preço anunciado para R$ 197,00 no Pix ou 12x de R$ 16,42 sem juros.
 - [x] Corrigir e validar os quatro percentuais da seção de eficácia.
 - [x] Gerar e conferir o novo HTML completo para Shopify.
+
+- [x] Substituir o carrossel pelo vídeo de 12 s da Karine, com a oferta visível no celular.
+- [x] Colocar o vídeo completo na seção dos quatro passos e verificar no navegador.
