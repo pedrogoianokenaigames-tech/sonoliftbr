@@ -35,6 +35,8 @@ const trimmed = page
   .replace(' crossorigin>', '>')
   .replace(/ alt="[^"]*"/g, ' alt=""');
 
-const out = inline + '\n' + noscript + '\n' + trimmed;
+// Shorten private, page-scoped selectors only in the Shopify copy.
+const compact = trimmed.replaceAll('sonolift-root', 's').replaceAll('sl-', 's-');
+const out = inline + '\n' + noscript + '\n' + compact;
 fs.writeFileSync('sonolift-shopify-v58.html', out);
 console.log('sonolift-shopify-v58.html', out.length, 'chars');
