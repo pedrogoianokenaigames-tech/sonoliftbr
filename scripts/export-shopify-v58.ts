@@ -8,6 +8,7 @@ const noscript = '<noscript><img height="1" width="1" style="display:none" src="
 const ASSET_HOST = 'https://project--8e2875b6-88f6-4189-acb8-98d3a3a05914.lovable.app/__l5e/assets-v1/';
 const SHORT_HOST = 'https://sonoliftbr.lovable.app/__l5e/assets-v1/';
 const trimmed = page
+  .replace('aria-label="Ativar som do depoimento" aria-pressed="false"', 'data-audio-a11y')
   .replace(/^\s*\/\/.*$/gm, '')
   .replace(/\/\*[^*]*\*\//g, '')
   .replace(/\n\s*/g, '\n')
@@ -24,6 +25,9 @@ const trimmed = page
   .replace(/ xmlns="http:\/\/www\.w3\.org\/2000\/svg"/g, '')
   .replace(/style="([^"]*)"/g, (_m, s: string) => `style="${s.replace(/:\s+/g, ':').replace(/;\s+/g, ';').replace(/;$/,'')}"`)
   .replace(/\n/g, '')
+  .replace(/ aria-label="[^"]*"/g, '')
+  .replace(/ aria-hidden="[^"]*"/g, '')
+  .replace('data-audio-a11y', 'aria-label="Ativar som do depoimento" aria-pressed="false"')
   .replace(/ class="transition group-hover:translate-x-1"/g, '')
   .replace(/ rel="noopener noreferrer"/g, '')
   .replace(/ >/g, '>')
