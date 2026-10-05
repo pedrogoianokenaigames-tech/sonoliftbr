@@ -33,7 +33,7 @@ const trimmed = page
   .replace(/ >/g, '>')
   .replace('<link rel="preconnect" href="https://fonts.googleapis.com">', '')
   .replace(' crossorigin>', '>')
-  .replace(/ alt="[^"]*"/g, ' alt=""');
+  .replace(/ alt="[^"]*"/g, '');
 
 // Shorten private, page-scoped selectors only in the Shopify copy.
 const compact = trimmed.replaceAll('sonolift-root', 's').replaceAll('sl-', 's-');
