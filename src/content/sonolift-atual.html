@@ -61,7 +61,11 @@ soft: "0 10px 30px -12px rgba(26,28,51,.18)",
 #sonolift-root .sl-scroll::-webkit-scrollbar-thumb:hover{background:#c99340}
 #sonolift-root .sl-hero-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,390px);grid-template-areas:"intro video" "offer video";grid-template-rows:auto auto;align-content:center;align-items:center;column-gap:4rem;max-width:72rem;margin:auto;padding:3rem 1rem 4rem;text-align:center}
 #sonolift-root .sl-hero-intro{grid-area:intro;align-self:end}
+#sonolift-root .sl-hero-intro,#sonolift-root .sl-hero-offer{display:flex;flex-direction:column;align-items:center;width:100%;text-align:center}
+#sonolift-root .sl-hero-intro h1,#sonolift-root .sl-hero-intro p{width:100%;margin-left:auto;margin-right:auto;text-align:center;text-wrap:balance}
 #sonolift-root .sl-hero-offer{grid-area:offer;align-self:start;padding-top:1.25rem}
+#sonolift-root .sl-hero-offer>div,#sonolift-root .sl-hero-offer>ul{margin-left:auto;margin-right:auto;text-align:center}
+#sonolift-root .sl-hero-offer li{justify-content:center;text-align:center}
 #sonolift-root .sl-karine-frame{grid-area:video;position:relative;width:100%;aspect-ratio:9/16;border-radius:1.5rem;overflow:hidden;box-shadow:0 30px 60px -20px rgba(26,28,51,.35);background:#1a1c33}
 #sonolift-root .sl-karine-frame video{display:block;width:100%;height:100%;object-fit:cover}
 #sonolift-root .sl-karine-badge{position:absolute;top:1rem;left:1rem;z-index:1;padding:.4rem .7rem;border-radius:.5rem;background:rgba(26,28,51,.85);color:#fbf7ee;font-size:.85rem;font-weight:700;line-height:1.3}
