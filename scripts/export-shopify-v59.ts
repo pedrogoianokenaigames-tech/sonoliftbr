@@ -36,7 +36,14 @@ const trimmed = page
   .replace(/ alt="[^"]*"/g, '');
 
 // Shorten private, page-scoped selectors only in the Shopify copy.
-const compact = trimmed.replaceAll('sonolift-root', 's').replaceAll('sl-', 's-');
+const cssMin = (css: string) => css.replace(/\s*:\s+/g, ':').replace(/\s*;\s*/g, ';').replace(/\s*\{\s*/g, '{').replace(/\s*\}\s*/g, '}').replace(/,\s+/g, ',').replace(/\s*\n\s*/g, '');
+const compact = trimmed
+  .replace(/<style>([\s\S]*?)<\/style>/g, (_m, css: string) => `<style>${cssMin(css)}</style>`)
+  .replace(/<script>([\s\S]*?)<\/script>/g, (_m, js: string) => `<script>${js.replace(/\s*\n\s*/g, ' ')}</script>`)
+  .replace(/(@media[^\{]*\{)/g, '$1').replaceAll('sonolift-root', 's').replaceAll('sl-', 's-');
 const out = inline + '\n' + noscript + '\n' + compact;
-fs.writeFileSync('sonolift-shopify-v59.html', out);
-console.log('sonolift-shopify-v59.html', out.length, 'chars');
+
+let o = out;
+for (let i = 59; o.length > 50000 && i < 100; i++) o = o;
+fs.writeFileSync('sonolift-shopify-v59.html', o);
+console.log('sonolift-shopify-v59.html', o.length, 'chars', o.length <= 50000 ? 'OK' : 'OVER LIMIT');
