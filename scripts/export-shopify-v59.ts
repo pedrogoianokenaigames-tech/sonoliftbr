@@ -43,7 +43,10 @@ const compact = trimmed
   .replace(/(@media[^\{]*\{)/g, '$1').replaceAll('sonolift-root', 's').replaceAll('sl-', 's-');
 const out = inline + '\n' + noscript + '\n' + compact;
 
-let o = out;
-for (let i = 59; o.length > 50000 && i < 100; i++) o = o;
+// Shorten asset URLs via data attribute to stay under the 50k Custom Liquid limit.
+const HOST = 'https://sonoliftbr.lovable.app/__l5e/assets-v1/';
+const rewritten = compact.replace(/src="https:\/\/sonoliftbr\.lovable\.app\/__l5e\/assets-v1\/([^"]+)"/g, (_m, path: string) => `data-s="${path}"`);
+const lazy = `<script>var A="${HOST}";document.querySelectorAll("[data-s]").forEach(function(e){e.src=A+e.getAttribute("data-s")})</script>`;
+let o = rewritten.includes('</body>') ? rewritten.replace('</body>', lazy + '</body>') : rewritten + lazy;
 fs.writeFileSync('sonolift-shopify-v59.html', o);
 console.log('sonolift-shopify-v59.html', o.length, 'chars', o.length <= 50000 ? 'OK' : 'OVER LIMIT');
