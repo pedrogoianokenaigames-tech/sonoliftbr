@@ -8,6 +8,6 @@
 
 - [x] Substituir o carrossel pelo vídeo de 12 s da Karine, com a oferta visível no celular.
 - [x] Colocar o vídeo completo na seção dos quatro passos e verificar no navegador.
-- [ ] Adicionar controle de áudio ao vídeo da Hero.
-- [ ] Centralizar verticalmente a coluna de venda no desktop sem alterar o mobile.
-- [ ] Validar vídeo, áudio, CTA fixo e gerar o novo HTML para Shopify.
+- [x] Adicionar controle de áudio ao vídeo da Hero.
+- [x] Centralizar verticalmente a coluna de venda no desktop sem alterar o mobile.
+- [x] Validar vídeo, áudio, CTA fixo e gerar o novo HTML para Shopify.
