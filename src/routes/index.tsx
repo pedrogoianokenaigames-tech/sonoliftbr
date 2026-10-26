@@ -6,17 +6,17 @@ export const Route = createFileRoute("/")({
   component: Home,
   head: () => ({
     meta: [
-      { title: "SonoLift™ — Adesivos de silicone contra as rugas do sono" },
+      { title: "SonoLift™ — Kit Facial Completo + Colo de brinde por R$ 239" },
       {
         name: "description",
         content:
-          "Acorde sem as marcas do travesseiro. Kit Facial SonoLift™ + Kit Colo grátis. Silicone médico hipoalergênico, reutilizável por 30 noites. Frete grátis Brasil.",
+          "Kit Facial Completo SonoLift™ por R$ 239,00 com tratamento para o colo de brinde. Silicone médico reutilizável. Frete grátis Brasil.",
       },
-      { property: "og:title", content: "SonoLift™ — Adeus marcas do travesseiro" },
+      { property: "og:title", content: "SonoLift™ — Kit Facial Completo + Colo de brinde por R$ 239" },
       {
         property: "og:description",
         content:
-          "Compre o Kit Facial SonoLift™ e ganhe o Kit Colo 100% grátis. 12x de R$ 16,42 sem juros.",
+          "Kit Facial Completo por R$ 239,00 com tratamento para o colo de brinde. Em até 12x de R$ 19,92 sem juros.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

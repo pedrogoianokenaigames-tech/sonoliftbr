@@ -11,3 +11,5 @@
 - [x] Adicionar controle de áudio ao vídeo da Hero.
 - [x] Centralizar verticalmente a coluna de venda no desktop sem alterar o mobile.
 - [x] Validar vídeo, áudio, CTA fixo e gerar o novo HTML para Shopify.
+- [x] Atualizar o HTML enviado para R$ 239,00 e kit facial completo com colo de brinde.
+- [x] Conferir preços e botão fixo e entregar HTML completo para Shopify.
