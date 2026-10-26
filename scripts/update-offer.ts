@@ -9,7 +9,19 @@ const updated = original
   .replaceAll('R$ 16,42', 'R$ 19,92')
   .replace('Compre o Kit Rosto e GANHE o Kit Colo 100% Gr&#225;tis', 'Leve o Kit Facial Completo + tratamento para o Colo de BRINDE')
   .replace('Receba o Sistema Facial SonoLift™ e ganhe proteção para o colo.', 'Leve o Kit Facial Completo SonoLift™ e receba o tratamento para o colo de brinde.')
-  .replace('>Sistema Facial <span', '>Kit Facial Completo <span');
+  .replace('>Sistema Facial <span', '>Kit Facial Completo <span')
+  .replaceAll('var root = ', 'var root=')
+  .replaceAll('var el = ', 'var el=')
+  .replaceAll('var range = ', 'var range=')
+  .replaceAll('var before = ', 'var before=')
+  .replaceAll('var handle = ', 'var handle=')
+  .replaceAll('var sroot = ', 'var sroot=')
+  .replaceAll('var slides = ', 'var slides=')
+  .replaceAll('var dotsWrap = ', 'var dotsWrap=')
+  .replaceAll('var dots = ', 'var dots=')
+  .replaceAll('; ', ';')
+  .replaceAll('{ ', '{')
+  .replaceAll(' }', '}');
 
 // Do not fabricate reference prices: the existing R$ 230 + R$ 167 total R$ 397.
 // The supplied Shopify file already includes both tracking scripts.
