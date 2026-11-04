@@ -18,6 +18,11 @@ output = '<style>'+css+'</style>'+output
 host = 'https://sonoliftbr.lovable.app/__l5e/assets-v1/'
 output = output.replace('src="'+host, 'data-s="')
 output += '<script>document.querySelectorAll("#slr [data-s]").forEach(function(e){e.src="'+host+'"+e.getAttribute("data-s")})</script>'
+# Remove only legacy handlers whose associated controls are absent in this file.
+assert 'id="sl-ba-range"' not in source and 'class="sl-count"' not in source and 'sl-scroll"' not in source
+start = output.index("var range=document.getElementById('sl-ba-range')")
+end = output.index("(function(){var sroot=document.getElementById('sl-hero-slideshow')", start)
+output = output[:start]+output[end:]
 # Remove indentation and inter-tag whitespace only; keep visible copy and scripts.
 output = re.sub(r'>\s+<', '><', output)
 output = re.sub(r'/\*.*?\*/', '', output, flags=re.S)
