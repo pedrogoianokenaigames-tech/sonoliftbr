@@ -23,6 +23,7 @@ output = output.replace('src="'+review_host, 'data-r="')
 output += '<script>document.querySelectorAll("#avaliacoes [data-r]").forEach(function(e){e.src="'+review_host+'"+e.getAttribute("data-r")})</script>'
 output = output.replace('alt="Foto enviada por ', 'alt="Foto: ')
 output = output.replace(' width="480" height="240"', '')
+output = output.replace(' aria-label="5 de 5 estrelas"', '')
 # Remove only legacy handlers whose associated controls are absent in this file.
 assert 'id="sl-ba-range"' not in source and 'class="sl-count"' not in source and 'sl-scroll"' not in source
 start = output.index("var range=document.getElementById('sl-ba-range')")
