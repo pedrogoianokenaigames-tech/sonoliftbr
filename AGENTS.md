@@ -11,3 +11,4 @@
 
 - Keep the landing content in the imported raw HTML and export Shopify as a complete HTML fragment; this preserves the submitted layout and standalone storefront behavior.
 - Keep tracking scripts in the root head for the preview and in the standalone export only once; this avoids duplicate page events.
+- Generate the review export from the supplied Shopify fragment, stripping trackers only from the preview copy; this keeps storefront content and tracking intact.
