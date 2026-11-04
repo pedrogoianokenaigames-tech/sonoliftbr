@@ -18,6 +18,11 @@ output = '<style>'+css+'</style>'+output
 host = 'https://sonoliftbr.lovable.app/__l5e/assets-v1/'
 output = output.replace('src="'+host, 'data-s="')
 output += '<script>document.querySelectorAll("#slr [data-s]").forEach(function(e){e.src="'+host+'"+e.getAttribute("data-s")})</script>'
+review_host = 'https://ae-pic-a1.aliexpress-media.com/kf/'
+output = output.replace('src="'+review_host, 'data-r="')
+output += '<script>document.querySelectorAll("#avaliacoes [data-r]").forEach(function(e){e.src="'+review_host+'"+e.getAttribute("data-r")})</script>'
+output = output.replace('alt="Foto enviada por ', 'alt="Foto: ')
+output = output.replace(' width="480" height="240"', '')
 # Remove only legacy handlers whose associated controls are absent in this file.
 assert 'id="sl-ba-range"' not in source and 'class="sl-count"' not in source and 'sl-scroll"' not in source
 start = output.index("var range=document.getElementById('sl-ba-range')")
