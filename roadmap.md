@@ -15,3 +15,4 @@
 - [x] Conferir preços e botão fixo e entregar HTML completo para Shopify.
 - [x] Adicionar as oito avaliações enviadas imediatamente antes da oferta final.
 - [x] Conferir fotos e disposição no celular/computador e entregar o HTML completo para Shopify dentro de 50.000 caracteres.
+- [ ] Transformar as oito avaliações em carrossel com setas e swipe, validar e entregar HTML revisado para Shopify.
