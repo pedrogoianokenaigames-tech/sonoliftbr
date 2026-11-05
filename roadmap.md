@@ -15,4 +15,6 @@
 - [x] Conferir preços e botão fixo e entregar HTML completo para Shopify.
 - [x] Adicionar as oito avaliações enviadas imediatamente antes da oferta final.
 - [x] Conferir fotos e disposição no celular/computador e entregar o HTML completo para Shopify dentro de 50.000 caracteres.
-- [ ] Transformar as oito avaliações em carrossel com setas e swipe, validar e entregar HTML revisado para Shopify.
+- [x] Transformar as oito avaliações em carrossel com setas e swipe, validar e entregar HTML revisado para Shopify.
+- [x] Reorganizar o HTML enviado para Black Friday com textos curtos, provas próximas ao botão, cronômetro e garantia de 7 dias.
+- [x] Validar mídias, carrossel, celular e acesso ao checkout; entregar o HTML completo atualizado sem realizar compra.

@@ -6,20 +6,22 @@ export const Route = createFileRoute("/")({
   component: Home,
   head: () => ({
     meta: [
-      { title: "SonoLift™ — Kit Facial Completo + Colo de brinde por R$ 239" },
+      { title: "Black Friday SonoLift™ — Kit Facial + Colo Grátis" },
       {
         name: "description",
         content:
-          "Kit Facial Completo SonoLift™ por R$ 239,00 com tratamento para o colo de brinde. Silicone médico reutilizável. Frete grátis Brasil.",
+          "Patches reutilizáveis SonoLift: kit facial de 16 peças com colo grátis. R$ 239,00 no cartão ou R$ 227,05 no Pix. Frete grátis e garantia de 7 dias.",
       },
-      { property: "og:title", content: "SonoLift™ — Kit Facial Completo + Colo de brinde por R$ 239" },
+      { property: "og:title", content: "Black Friday SonoLift™ — Kit Facial + Colo Grátis" },
       {
         property: "og:description",
         content:
-          "Kit Facial Completo por R$ 239,00 com tratamento para o colo de brinde. Em até 12x de R$ 19,92 sem juros.",
+          "Kit facial de 16 peças e colo grátis. Em 12x de R$ 19,92 ou R$ 227,05 no Pix, com frete grátis.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:image", content: "https://sonoliftbr.lovable.app/__l5e/assets-v1/00a82198-30b1-4465-b793-ada529e83874/ritual-prep.webp" },
+      { name: "twitter:image", content: "https://sonoliftbr.lovable.app/__l5e/assets-v1/00a82198-30b1-4465-b793-ada529e83874/ritual-prep.webp" },
     ],
   }),
 });
