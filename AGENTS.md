@@ -13,3 +13,4 @@
 - Keep tracking scripts in the root head for the preview and in the standalone export only once; this avoids duplicate page events.
 - Generate the review export from the supplied Shopify fragment, stripping trackers only from the preview copy; this keeps storefront content and tracking intact.
 - Generate campaign fragments with inline semantic CSS and native scroll-snap reviews; this keeps Shopify exports standalone and touch navigation accessible.
+- Apply fixed campaign deadlines in the standalone fragment and preview together, marking free-gift blocks for expiry; this keeps countdown and bonus visibility consistent without changing checkout controls.

@@ -19,4 +19,4 @@
 - [x] Reorganizar o HTML enviado para Black Friday com textos curtos, provas próximas ao botão, cronômetro e garantia de 7 dias.
 - [x] Validar mídias, carrossel, celular e acesso ao checkout; entregar o HTML completo atualizado sem realizar compra.
 - [x] Adicionar somente a linha abaixo do botão do topo e o bloco de valor antes do botão final no HTML enviado; preservar preços e conferir o HTML completo para Shopify.
-- [ ] Atualizar a faixa para Black Friday Estendida com prazo fixo em 01/12/2026, conferir contagem e encerramento, entregar HTML completo.
+- [x] Atualizar a faixa para Black Friday Estendida com prazo fixo em 01/12/2026, conferir contagem e encerramento, entregar HTML completo.
